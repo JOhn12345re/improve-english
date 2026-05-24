@@ -1,0 +1,124 @@
+# Prompt : SaaS mobile d'apprentissage de l'anglais (iOS + Android)
+
+## 🎯 Contexte et vision
+
+Crée une application mobile cross-platform (iOS + Android) en mode **SaaS d'apprentissage de l'anglais**, avec un modèle freemium (gratuit avec limites + abonnement Premium mensuel/annuel).
+
+L'application doit être :
+- **Multilingue côté UI** : démarrage en **français** par défaut, avec possibilité de changer l'interface selon la langue natale de l'utilisateur (FR, ES, IT, AR, PT, DE pour commencer).
+- **Adaptive learning** : le contenu pédagogique s'adapte automatiquement au niveau de l'utilisateur (A1 → C2, basé sur le CECRL).
+- **Centrée mobile-first**, avec une expérience type Duolingo / Babbel mais plus moderne et personnalisée.
+
+---
+
+## 🧱 Stack technique recommandée
+
+- **Frontend mobile** : React Native (Expo) ou Flutter — choisir le plus pertinent pour un déploiement rapide iOS + Android.
+- **Backend** : Node.js (NestJS ou Fastify) + PostgreSQL + Redis (cache des sessions et progression).
+- **Auth** : Firebase Auth ou Supabase Auth (email + Google + Apple Sign-In obligatoire pour iOS).
+- **Paiements** : RevenueCat (gère Apple IAP + Google Play Billing + Stripe web de manière unifiée).
+- **i18n** : `i18next` (React Native) ou `intl` (Flutter), avec fichiers JSON par langue.
+- **Analytics** : PostHog ou Amplitude.
+- **IA / contenu adaptatif** : intégration API OpenAI ou Anthropic pour génération d'exercices personnalisés et correction de phrases libres.
+- **Infra** : Docker, déploiement sur Scaleway / OVH / AWS, CI/CD GitHub Actions ou GitLab CI.
+
+---
+
+## 🚪 Parcours d'onboarding (obligatoire)
+
+L'application doit imposer **un onboarding en 4 étapes** avant tout accès au contenu :
+
+1. **Écran de bienvenue** (en français par défaut)
+   - Logo + slogan court
+   - Boutons : "Commencer" / "J'ai déjà un compte"
+
+2. **Choix de la langue natale**
+   - Liste avec drapeaux + nom natif (Français 🇫🇷, Español 🇪🇸, Italiano 🇮🇹, العربية 🇸🇦, Português 🇵🇹, Deutsch 🇩🇪…)
+   - À la sélection, **toute l'interface bascule immédiatement** dans la langue choisie.
+   - Stocker en base : `user.native_language`.
+
+3. **Évaluation du niveau d'anglais**
+   - Proposer deux options :
+     - **"Je débute"** → niveau A1 par défaut.
+     - **"Évaluer mon niveau"** → test rapide de 10–15 questions (compréhension écrite, vocabulaire, grammaire), avec scoring qui mappe vers A1/A2/B1/B2/C1/C2.
+   - Stocker `user.level` (enum CECRL).
+
+4. **Définition d'objectif et de routine**
+   - Pourquoi apprends-tu l'anglais ? (Voyage / Travail / Études / Loisirs / Autre)
+   - Combien de minutes par jour ? (5 / 10 / 15 / 30)
+   - Activer les notifications push de rappel quotidien.
+
+---
+
+## 📚 Logique d'adaptation du contenu
+
+Le moteur pédagogique doit :
+
+- **Filtrer les leçons** selon `user.level` : un A1 ne voit jamais de contenu B2.
+- **Adapter la difficulté à l'intérieur d'une même leçon** :
+  - Pour un A1, les consignes restent en **français** (langue natale), seul le contenu cible est en anglais.
+  - Pour un B2+, les consignes passent progressivement en **anglais**.
+- **Système de progression dynamique** : 
+  - Si l'utilisateur réussit 90 %+ sur 3 leçons consécutives → propose une montée de niveau.
+  - Si l'utilisateur échoue à 60 %+ sur 3 leçons → propose des révisions ciblées.
+- **Mémoire espacée (spaced repetition)** : algorithme SM-2 ou FSRS pour le vocabulaire.
+- **Exercices variés** : QCM, traduction, écoute (TTS), prononciation (STT via Whisper ou Web Speech), construction de phrases, conversation libre avec IA.
+
+---
+
+## 🗄️ Modèle de données (minimum)
+
+```sql
+users (id, email, native_language, level, daily_goal, streak, created_at)
+lessons (id, level, theme, order, content_json)
+user_progress (user_id, lesson_id, score, completed_at, attempts)
+vocabulary (id, word_en, translations_json, level, audio_url)
+user_vocabulary (user_id, word_id, mastery_level, next_review_at)
+subscriptions (user_id, plan, status, started_at, expires_at, revenuecat_id)
+```
+
+---
+
+## 💰 Monétisation SaaS
+
+- **Free tier** : 3 leçons par jour, 1 langue natale, pas d'exercices de conversation IA.
+- **Premium** (9,99 €/mois ou 59,99 €/an) :
+  - Leçons illimitées
+  - Conversation libre avec IA (correction de prononciation et grammaire)
+  - Mode hors-ligne (téléchargement de leçons)
+  - Statistiques avancées et certificat de niveau
+- **Essai gratuit** de 7 jours obligatoire à l'inscription Premium.
+
+---
+
+## 🎨 Design / UX
+
+- Style **moderne, doux, gamifié** : couleurs primaires accessibles (contraste WCAG AA), animations légères (Lottie ou Reanimated).
+- **Streak counter** visible en permanence (flamme + nombre de jours).
+- **XP / niveaux gamifiés** par-dessus le niveau CECRL.
+- **Dark mode** natif.
+- Onboarding et menus doivent être **utilisables sans aucune connaissance d'anglais** — c'est crucial.
+
+---
+
+## ✅ Livrables attendus
+
+1. Architecture du projet (mono-repo ou multi-repo).
+2. Code frontend (React Native / Flutter) avec écrans : onboarding, dashboard, leçon, profil, paywall.
+3. Code backend (API REST ou GraphQL) avec auth, gestion utilisateurs, progression, contenu.
+4. Scripts de seed pour générer 50 leçons de démo réparties sur A1 → B2.
+5. Fichiers i18n FR (complet) + EN (complet) + au moins 2 autres langues.
+6. README avec instructions d'installation et de déploiement.
+
+---
+
+## 🔒 Contraintes non négociables
+
+- RGPD compliant (export et suppression de compte, consentement cookies/analytics).
+- Apple Sign-In **obligatoire** si Google Sign-In est proposé (règle App Store).
+- Pas de paiement Stripe direct dans l'app mobile (interdit par Apple) — uniquement IAP via RevenueCat.
+- Mode hors-ligne pour au moins le contenu de la leçon en cours.
+
+---
+
+**Commence par générer l'architecture du projet et la maquette des écrans d'onboarding.**

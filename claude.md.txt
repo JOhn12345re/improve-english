@@ -1,0 +1,240 @@
+# CLAUDE.md
+
+---
+
+## 🎯 Projet
+
+**Nom de code** : EnglishFlow (à adapter)
+**Type** : Application mobile cross-platform (iOS + Android) — SaaS d'apprentissage de l'anglais
+**Langue de l'équipe** : Français (commentaires, commits, docs en français ; code et noms de variables en anglais)
+**Modèle économique** : Freemium avec abonnement Premium via RevenueCat
+
+### Cible utilisateur
+Utilisateurs francophones (et autres langues natales) qui apprennent l'anglais de A1 à C2. L'interface s'affiche dans la **langue natale** de l'utilisateur, le contenu pédagogique est en anglais avec adaptation progressive selon le niveau CECRL.
+
+---
+
+## 🧱 Stack technique
+
+| Couche | Technologie | Notes |
+|---|---|---|
+| Mobile | React Native (Expo SDK 51+) | Pas de Flutter sur ce repo |
+| Langage | TypeScript strict | `strict: true` obligatoire dans `tsconfig.json` |
+| Navigation | Expo Router (file-based) | Pas de React Navigation manuelle |
+| State global | Zustand | Pas de Redux, pas de Context API pour le state métier |
+| Data fetching | TanStack Query (React Query) | Toujours via hooks dans `src/hooks/queries/` |
+| Backend | NestJS + PostgreSQL + Prisma | API REST, pas de GraphQL |
+| Auth | Supabase Auth | Email + Apple + Google Sign-In |
+| Paiements | RevenueCat | Jamais de Stripe direct dans l'app mobile |
+| i18n | `i18next` + `react-i18next` | Fichiers JSON dans `src/locales/{lang}/` |
+| Tests | Jest + React Native Testing Library + Detox (E2E) | |
+| CI/CD | GitHub Actions | Workflows dans `.github/workflows/` |
+
+---
+
+## 📁 Structure du projet
+
+```
+/
+├── apps/
+│   ├── mobile/              # App React Native (Expo)
+│   │   ├── src/
+│   │   │   ├── app/         # Routes Expo Router
+│   │   │   ├── components/  # Composants UI réutilisables
+│   │   │   ├── features/    # Logique métier par feature
+│   │   │   ├── hooks/
+│   │   │   ├── locales/     # Fichiers i18n JSON
+│   │   │   ├── services/    # Appels API, Supabase, RevenueCat
+│   │   │   ├── stores/      # Stores Zustand
+│   │   │   └── types/
+│   │   └── app.json
+│   └── api/                 # Backend NestJS
+│       ├── src/
+│       │   ├── modules/     # Un module par domaine
+│       │   ├── prisma/
+│       │   └── common/
+│       └── prisma/schema.prisma
+├── packages/
+│   └── shared-types/        # Types TypeScript partagés mobile <-> API
+└── CLAUDE.md
+```
+
+---
+
+## 📜 Conventions de code
+
+### Général
+- **TypeScript strict partout**, jamais de `any` sans commentaire `// eslint-disable-next-line` justifié.
+- **Imports** : utiliser les alias `@/` (mobile) et `@api/` (backend) configurés dans `tsconfig.json`. Jamais de chemins relatifs `../../../`.
+- **Nommage** :
+  - Fichiers de composants : `PascalCase.tsx` (ex: `LessonCard.tsx`)
+  - Hooks : `useCamelCase.ts` (ex: `useUserLevel.ts`)
+  - Utils / services : `kebab-case.ts` (ex: `level-calculator.ts`)
+- **Pas de `console.log`** en code commité. Utiliser le logger (`@/services/logger`).
+
+### Composants React Native
+- **Functional components uniquement**, jamais de classes.
+- Un fichier = un composant exporté par défaut + ses sous-composants privés.
+- Props typées via `interface` (pas `type` pour les props).
+- StyleSheet créé via `StyleSheet.create()`, jamais inline sauf pour valeurs dynamiques.
+- Si un composant dépasse **200 lignes**, le découper.
+
+### Backend NestJS
+- Architecture en modules : un module par domaine métier (`users`, `lessons`, `progress`, `subscriptions`).
+- DTOs avec `class-validator` pour toute entrée API.
+- Pas de logique métier dans les controllers, tout dans les services.
+- Migrations Prisma générées avec `pnpm prisma migrate dev --name <description>`.
+
+---
+
+## 🌍 Règles i18n (CRITIQUES)
+
+L'i18n est le cœur de l'app, **toute violation casse l'expérience utilisateur** :
+
+1. **Aucune chaîne de caractères en dur dans l'UI.** Toujours passer par `t('key.path')`.
+2. **L'UI suit `user.native_language`** (FR par défaut), jamais la langue système du device.
+3. **Le contenu pédagogique suit une logique différente** :
+   - Niveaux A1–A2 : consignes en langue natale, contenu cible en anglais.
+   - Niveaux B1–B2 : consignes bilingues (toggle disponible).
+   - Niveaux C1–C2 : consignes 100 % en anglais.
+4. **Ajout d'une clé i18n** : doit être ajoutée dans **toutes** les langues supportées simultanément (FR, EN, ES, IT, AR, PT, DE). Sinon le build CI échoue.
+5. **Locale RTL** : l'arabe doit fonctionner en RTL natif (`I18nManager.forceRTL`).
+
+---
+
+## 🎓 Règles métier — Adaptive Learning
+
+- **Niveau CECRL** stocké en enum : `A1 | A2 | B1 | B2 | C1 | C2`.
+- **Jamais afficher du contenu au-dessus du niveau utilisateur** (filtrage côté backend obligatoire, pas côté client).
+- **Algorithme de progression** :
+  - 90 %+ sur 3 leçons consécutives → suggérer montée de niveau (non automatique).
+  - <60 % sur 3 leçons consécutives → injecter des leçons de révision du niveau précédent.
+- **Mémoire espacée** : algorithme FSRS pour le vocabulaire (pas SM-2). Implémenté dans `apps/api/src/modules/vocabulary/fsrs.service.ts`.
+- **Streak** : se casse à minuit dans le fuseau horaire de l'utilisateur (stocké dans `users.timezone`).
+
+---
+
+## 💰 Règles monétisation
+
+- **Paywall jamais bloquant à l'inscription** : l'utilisateur doit pouvoir tester le freemium avant.
+- **Tous les achats passent par RevenueCat**, jamais d'appel direct à Apple/Google billing.
+- **Vérification d'entitlement** : toujours côté backend via webhook RevenueCat, jamais en se fiant uniquement au client.
+- **Free tier limits** stockés dans `apps/api/src/config/limits.ts`, jamais hardcodés dans le code métier.
+
+---
+
+## 🗄️ Base de données
+
+- **Source de vérité** : `apps/api/prisma/schema.prisma`.
+- **Toute modification de schéma** → migration générée + script de seed mis à jour.
+- **Pas de requêtes SQL brutes** sauf cas explicitement validé (perfs critiques uniquement).
+- **Soft delete** sur `users` (champ `deleted_at`), hard delete sur le reste.
+- **Index obligatoires** sur toutes les clés étrangères et colonnes de filtrage fréquent.
+
+---
+
+## 🧪 Tests
+
+- **Coverage minimum** : 70 % global, 90 % sur les services métier (`apps/api/src/modules/**/*.service.ts`).
+- **Tests unitaires** pour toute fonction de calcul (level scoring, FSRS, streak).
+- **Tests E2E** Detox sur les parcours critiques : onboarding, première leçon, achat Premium.
+- **Lancer les tests avant chaque commit** (hook husky configuré).
+
+---
+
+## 🔧 Commandes principales
+
+```bash
+# Setup initial
+pnpm install
+pnpm prisma migrate dev
+pnpm seed
+
+# Dev
+pnpm --filter mobile start          # Expo dev server
+pnpm --filter api dev               # NestJS hot-reload
+
+# Tests
+pnpm test                           # Tous les tests
+pnpm test:e2e                       # Detox E2E
+pnpm lint                           # ESLint + Prettier check
+pnpm typecheck                      # TS strict check
+
+# Build production
+pnpm --filter mobile build:ios
+pnpm --filter mobile build:android
+pnpm --filter api build
+```
+
+**Avant tout commit**, Claude doit lancer : `pnpm lint && pnpm typecheck && pnpm test`.
+
+---
+
+## 🔒 Contraintes non négociables
+
+### App Store / Play Store
+- Apple Sign-In **obligatoire** si Google Sign-In est présent.
+- **Aucun paiement Stripe** dans l'app mobile (rejet App Store garanti).
+- Aucun lien externe vers un paiement web depuis l'app (règle Apple).
+- Politique de confidentialité accessible **sans connexion** depuis l'app.
+
+### RGPD
+- Export des données utilisateur : endpoint `GET /users/me/export` (JSON complet).
+- Suppression de compte : endpoint `DELETE /users/me` avec confirmation 14 jours.
+- Consentement analytics : opt-in explicite au premier lancement, pas opt-out.
+- Aucun PII dans les logs (utiliser le `LoggerService` qui masque automatiquement).
+
+### Sécurité
+- **Jamais de secret en clair** dans le repo. Toujours via `.env` + `expo-secure-store` côté mobile.
+- **Toutes les routes API authentifiées** sauf `/auth/*` et `/health`.
+- Rate limiting actif sur l'API (config dans `apps/api/src/common/throttler.config.ts`).
+- Dépendances scannées via Dependabot + `pnpm audit` dans la CI.
+
+---
+
+## ❌ À ne JAMAIS faire
+
+- Ne pas introduire de nouvelle dépendance sans justification dans le PR (préférer 50 lignes maison à une lib de 2 Mo).
+- Ne pas modifier `prisma/schema.prisma` sans générer la migration associée.
+- Ne pas commenter du code en le laissant "au cas où". On git, on supprime, git le retrouve.
+- Ne pas désactiver des règles ESLint au niveau du fichier sans commentaire explicatif.
+- Ne pas créer de composants UI sans vérifier qu'un équivalent n'existe pas déjà dans `src/components/`.
+- Ne pas faire de tâche non demandée par l'utilisateur (pas de refactor "au passage" non explicité).
+- Ne pas créer de fichiers de documentation `.md` non demandés.
+
+---
+
+## 🤝 Workflow Git
+
+- Branches : `feat/<scope>`, `fix/<scope>`, `chore/<scope>`, `refactor/<scope>`.
+- Commits : convention **Conventional Commits** (`feat(auth): add Apple Sign-In`).
+- Pas de commit direct sur `main`, toujours via PR.
+- PR template à respecter (description, checklist tests, captures d'écran si UI).
+
+---
+
+## 📖 Quand Claude doit poser des questions
+
+Claude doit **demander avant d'agir** si :
+- L'utilisateur demande quelque chose qui violerait une règle ci-dessus.
+- Une décision d'architecture impacte plusieurs modules sans précédent clair.
+- Une migration de DB risquerait une perte de données.
+- Un changement touche au paywall ou à l'auth (zones critiques).
+
+Sinon, Claude agit directement et explique brièvement ce qu'il a fait.
+
+---
+
+## 🧭 Priorités en cas de conflit
+
+Quand deux règles entrent en conflit, l'ordre de priorité est :
+1. **Sécurité utilisateur** (RGPD, données)
+2. **Conformité stores** (Apple, Google)
+3. **Cohérence i18n et adaptive learning** (cœur métier)
+4. **Conventions de code**
+5. **Performance**
+6. **Esthétique / DX**
+
+---
+
+_Dernière mise à jour : 2026-05-22_

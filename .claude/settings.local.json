@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm install:*)",
+      "Bash(npm --version)",
+      "Bash(npx --version)",
+      "Bash(npm install:*)",
+      "Bash(pnpm --filter mobile start)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :8081)",
+      "Bash(taskkill:*)",
+      "Bash(cmd /c \"taskkill /PID 26648 /F\" 2>&1)",
+      "Bash(cmd /c \"taskkill /PID 26648 /F && echo OK\" 2>&1)",
+      "Bash(powershell -Command \"Stop-Process -Id 26648 -Force\" 2>&1)",
+      "Bash(pnpm add:*)",
+      "Bash(npx expo:*)",
+      "Bash(pnpm --filter @englishflow/api install)",
+      "Bash(npx jest:*)",
+      "Bash(ls jest.config*)",
+      "Bash(node -e \"require\\(''ts-jest''\\)\")",
+      "Bash(node -e \"require\\(''@nestjs/testing''\\)\")",
+      "Bash(node:*)",
+      "Bash(npx prisma:*)"
+    ]
+  }
+}
