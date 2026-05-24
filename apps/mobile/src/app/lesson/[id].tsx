@@ -1,6 +1,7 @@
-﻿import { ActivityIndicator,  router, useLocalSearchParams } from 'expo-router';
-import { ActivityIndicator,  useState } from 'react';
-import { ActivityIndicator, 
+﻿import { router, useLocalSearchParams } from 'expo-router';
+import { useState } from 'react';
+import {
+  ActivityIndicator,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
@@ -10,12 +11,12 @@ import { ActivityIndicator,
   TouchableOpacity,
   View,
 } from 'react-native';
-import { ActivityIndicator,  SafeAreaView } from 'react-native-safe-area-context';
-import { ActivityIndicator,  useLesson } from '@/hooks/queries/useLessons';
-import { ActivityIndicator,  Exercise } from '@/data/lessons';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useLesson } from '@/hooks/queries/useLessons';
+import { Exercise } from '@/data/lessons';
 import ProgressBar from '@/components/ui/ProgressBar';
 import Button from '@/components/ui/Button';
-import { ActivityIndicator,  useProfileStore } from '@/stores/profile.store';
+import { useProfileStore } from '@/stores/profile.store';
 
 type AnswerState = 'idle' | 'correct' | 'wrong';
 
