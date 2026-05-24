@@ -1,0 +1,127 @@
+{
+  "common": {
+    "continue": "Continua",
+    "cancel": "Annulla",
+    "or": "o",
+    "back": "Indietro",
+    "save": "Salva",
+    "loading": "Caricamento..."
+  },
+  "onboarding": {
+    "step": "Passo {{current}} di {{total}}",
+    "welcome": {
+      "tagline": "Impara l'inglese al tuo ritmo, ovunque tu sia.",
+      "start": "Inizia gratuitamente",
+      "login": "Ho già un account"
+    },
+    "name": {
+      "title": "Come ti chiami?",
+      "subtitle": "Personalizza la tua esperienza di apprendimento.",
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "firstNamePlaceholder": "Es: Marco",
+      "lastNamePlaceholder": "Es: Rossi"
+    },
+    "nativeLanguage": {
+      "title": "Qual è la tua lingua madre?",
+      "subtitle": "L'interfaccia sarà visualizzata nella tua lingua."
+    },
+    "levelAssessment": {
+      "title": "Qual è il tuo livello di inglese?",
+      "subtitle": "Sii onesto — ci aiuta a personalizzare il tuo percorso.",
+      "beginner": "Sono principiante",
+      "beginnerDesc": "Non ho mai o quasi mai imparato l'inglese.",
+      "evaluate": "Valuta il mio livello",
+      "evaluateDesc": "Test rapido di 5 domande — 2 minuti.",
+      "questionOf": "Domanda {{current}} / {{total}}",
+      "resultTitle": "Il tuo livello stimato",
+      "resultScore": "Punteggio: {{score}} / {{total}}"
+    },
+    "goals": {
+      "title": "Personalizza il tuo apprendimento",
+      "whyLearning": "Perché stai imparando l'inglese?",
+      "travel": "Viaggi",
+      "work": "Lavoro",
+      "studies": "Studi",
+      "leisure": "Tempo libero",
+      "other": "Altro",
+      "dailyGoal": "Obiettivo giornaliero",
+      "minutes": "min/giorno",
+      "notifInfo": "Attiva i promemoria per mantenere la tua serie e progredire ogni giorno.",
+      "finish": "Crea il mio account"
+    }
+  },
+  "auth": {
+    "email": "Indirizzo email",
+    "password": "Password",
+    "continueWithApple": "Continua con Apple",
+    "continueWithGoogle": "Continua con Google",
+    "signup": {
+      "title": "Crea il tuo account",
+      "subtitle": "I tuoi progressi saranno salvati.",
+      "submit": "Registrati",
+      "alreadyHaveAccount": "Ho già un account"
+    },
+    "login": {
+      "title": "Bentornato!",
+      "submit": "Accedi",
+      "forgotPassword": "Password dimenticata?",
+      "noAccount": "Non hai ancora un account?"
+    },
+    "error": {
+      "title": "Errore",
+      "signupFailed": "Registrazione fallita. Controlla la tua email.",
+      "loginFailed": "Accesso fallito. Controlla le tue credenziali."
+    }
+  },
+  "tabs": {
+    "home": "Home",
+    "lessons": "Lezioni",
+    "vocabulary": "Vocabolario",
+    "profile": "Profilo"
+  },
+  "dashboard": {
+    "greeting": "Ciao!",
+    "level": "Livello {{level}}",
+    "todayProgress": "Progressi di oggi",
+    "lessons": "lezioni",
+    "continueLesson": "Continua ad imparare",
+    "sampleLesson": "Saluti e presentazioni",
+    "sampleLessonDesc": "Impara a presentarti in inglese"
+  },
+  "lessons": {
+    "title": "Lezioni",
+    "subtitle": "Livello attuale: {{level}}"
+  },
+  "vocabulary": {
+    "title": "Vocabolario",
+    "subtitle": "Ripassa con la ripetizione spaziata (FSRS)",
+    "toReview": "Da ripassare",
+    "learned": "Appreso",
+    "mastery": "Padronanza",
+    "startReview": "Inizia il ripasso"
+  },
+  "profile": {
+    "title": "Profilo",
+    "level": "Livello {{level}}",
+    "logout": "Esci",
+    "logoutConfirm": {
+      "title": "Uscire?",
+      "message": "I tuoi progressi sono salvati nel cloud."
+    },
+    "exportData": "Esporta i miei dati (GDPR)",
+    "privacyPolicy": "Informativa sulla privacy",
+    "deleteAccount": "Elimina il mio account"
+  },
+  "notifications": {
+    "dailyReminder": {
+      "title": "È ora di imparare! 🔥",
+      "body": "Mantieni la tua serie facendo la lezione di oggi."
+    }
+  },
+  "errors": {
+    "generic": "Si è verificato un errore. Riprova.",
+    "network": "Nessuna connessione internet.",
+    "unauthorized": "Sessione scaduta. Accedi di nuovo."
+  }
+}

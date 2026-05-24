@@ -1,0 +1,127 @@
+{
+  "common": {
+    "continue": "Continuer",
+    "cancel": "Annuler",
+    "or": "ou",
+    "back": "Retour",
+    "save": "Enregistrer",
+    "loading": "Chargement..."
+  },
+  "onboarding": {
+    "step": "Étape {{current}} sur {{total}}",
+    "welcome": {
+      "tagline": "Apprenez l'anglais à votre rythme, où que vous soyez.",
+      "start": "Commencer gratuitement",
+      "login": "J'ai déjà un compte"
+    },
+    "name": {
+      "title": "Comment vous appelez-vous ?",
+      "subtitle": "Personnalisez votre expérience d'apprentissage.",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "firstNamePlaceholder": "Ex : Marie",
+      "lastNamePlaceholder": "Ex : Dupont"
+    },
+    "nativeLanguage": {
+      "title": "Quelle est votre langue natale ?",
+      "subtitle": "L'interface s'affichera dans votre langue."
+    },
+    "levelAssessment": {
+      "title": "Quel est votre niveau en anglais ?",
+      "subtitle": "Soyez honnête, cela nous aide à personnaliser votre parcours.",
+      "beginner": "Je débute",
+      "beginnerDesc": "Je n'ai jamais appris l'anglais ou très peu.",
+      "evaluate": "Évaluer mon niveau",
+      "evaluateDesc": "Test rapide de 5 questions — 2 minutes.",
+      "questionOf": "Question {{current}} / {{total}}",
+      "resultTitle": "Votre niveau estimé",
+      "resultScore": "Score : {{score}} / {{total}}"
+    },
+    "goals": {
+      "title": "Personnalisez votre apprentissage",
+      "whyLearning": "Pourquoi apprenez-vous l'anglais ?",
+      "travel": "Voyage",
+      "work": "Travail",
+      "studies": "Études",
+      "leisure": "Loisirs",
+      "other": "Autre",
+      "dailyGoal": "Objectif quotidien",
+      "minutes": "min/jour",
+      "notifInfo": "Activez les rappels pour maintenir votre streak et progresser chaque jour.",
+      "finish": "Commencer l'aventure !"
+    }
+  },
+  "auth": {
+    "email": "Adresse email",
+    "password": "Mot de passe",
+    "continueWithApple": "Continuer avec Apple",
+    "continueWithGoogle": "Continuer avec Google",
+    "signup": {
+      "title": "Créez votre compte",
+      "subtitle": "Votre progression sera sauvegardée.",
+      "submit": "S'inscrire",
+      "alreadyHaveAccount": "J'ai déjà un compte"
+    },
+    "login": {
+      "title": "Content de vous revoir !",
+      "submit": "Se connecter",
+      "forgotPassword": "Mot de passe oublié ?",
+      "noAccount": "Pas encore de compte ?"
+    },
+    "error": {
+      "title": "Erreur",
+      "signupFailed": "L'inscription a échoué. Vérifiez votre email.",
+      "loginFailed": "Connexion échouée. Vérifiez vos identifiants."
+    }
+  },
+  "tabs": {
+    "home": "Accueil",
+    "lessons": "Leçons",
+    "vocabulary": "Vocabulaire",
+    "profile": "Profil"
+  },
+  "dashboard": {
+    "greeting": "Bonjour,",
+    "level": "Niveau {{level}}",
+    "todayProgress": "Progression du jour",
+    "lessons": "leçons",
+    "continueLesson": "Continuer votre apprentissage",
+    "sampleLesson": "Salutations & Présentations",
+    "sampleLessonDesc": "Apprenez à vous présenter en anglais"
+  },
+  "lessons": {
+    "title": "Leçons",
+    "subtitle": "Niveau actuel : {{level}}"
+  },
+  "vocabulary": {
+    "title": "Vocabulaire",
+    "subtitle": "Révisez avec la mémoire espacée (FSRS)",
+    "toReview": "À réviser",
+    "learned": "Appris",
+    "mastery": "Maîtrise",
+    "startReview": "Commencer la révision"
+  },
+  "profile": {
+    "title": "Profil",
+    "level": "Niveau {{level}}",
+    "logout": "Se déconnecter",
+    "logoutConfirm": {
+      "title": "Se déconnecter ?",
+      "message": "Votre progression est sauvegardée dans le cloud."
+    },
+    "exportData": "Exporter mes données (RGPD)",
+    "privacyPolicy": "Politique de confidentialité",
+    "deleteAccount": "Supprimer mon compte"
+  },
+  "notifications": {
+    "dailyReminder": {
+      "title": "C'est l'heure d'apprendre ! 🔥",
+      "body": "Maintenez votre streak en faisant votre leçon du jour."
+    }
+  },
+  "errors": {
+    "generic": "Une erreur est survenue. Réessayez.",
+    "network": "Pas de connexion internet.",
+    "unauthorized": "Session expirée. Reconnectez-vous."
+  }
+}

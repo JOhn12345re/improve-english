@@ -1,0 +1,127 @@
+{
+  "common": {
+    "continue": "Weiter",
+    "cancel": "Abbrechen",
+    "or": "oder",
+    "back": "Zurück",
+    "save": "Speichern",
+    "loading": "Wird geladen..."
+  },
+  "onboarding": {
+    "step": "Schritt {{current}} von {{total}}",
+    "welcome": {
+      "tagline": "Lerne Englisch in deinem Tempo, wo immer du bist.",
+      "start": "Kostenlos starten",
+      "login": "Ich habe bereits ein Konto"
+    },
+    "name": {
+      "title": "Wie heißt du?",
+      "subtitle": "Personalisiere deine Lernerfahrung.",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "firstNamePlaceholder": "z.B. Max",
+      "lastNamePlaceholder": "z.B. Müller"
+    },
+    "nativeLanguage": {
+      "title": "Was ist deine Muttersprache?",
+      "subtitle": "Die Benutzeroberfläche wird in deiner Sprache angezeigt."
+    },
+    "levelAssessment": {
+      "title": "Wie ist dein Englischniveau?",
+      "subtitle": "Sei ehrlich — das hilft uns, deinen Weg zu personalisieren.",
+      "beginner": "Ich bin Anfänger",
+      "beginnerDesc": "Ich habe noch nie oder kaum Englisch gelernt.",
+      "evaluate": "Mein Niveau bewerten",
+      "evaluateDesc": "Schneller Test mit 5 Fragen — 2 Minuten.",
+      "questionOf": "Frage {{current}} / {{total}}",
+      "resultTitle": "Dein geschätztes Niveau",
+      "resultScore": "Ergebnis: {{score}} / {{total}}"
+    },
+    "goals": {
+      "title": "Personalisiere dein Lernen",
+      "whyLearning": "Warum lernst du Englisch?",
+      "travel": "Reisen",
+      "work": "Arbeit",
+      "studies": "Studium",
+      "leisure": "Freizeit",
+      "other": "Sonstiges",
+      "dailyGoal": "Tagesziel",
+      "minutes": "Min/Tag",
+      "notifInfo": "Aktiviere Erinnerungen, um deinen Streak zu halten und täglich Fortschritte zu machen.",
+      "finish": "Mein Konto erstellen"
+    }
+  },
+  "auth": {
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "continueWithApple": "Mit Apple fortfahren",
+    "continueWithGoogle": "Mit Google fortfahren",
+    "signup": {
+      "title": "Erstelle dein Konto",
+      "subtitle": "Dein Fortschritt wird gespeichert.",
+      "submit": "Registrieren",
+      "alreadyHaveAccount": "Ich habe bereits ein Konto"
+    },
+    "login": {
+      "title": "Willkommen zurück!",
+      "submit": "Anmelden",
+      "forgotPassword": "Passwort vergessen?",
+      "noAccount": "Noch kein Konto?"
+    },
+    "error": {
+      "title": "Fehler",
+      "signupFailed": "Registrierung fehlgeschlagen. Überprüfe deine E-Mail.",
+      "loginFailed": "Anmeldung fehlgeschlagen. Überprüfe deine Anmeldedaten."
+    }
+  },
+  "tabs": {
+    "home": "Startseite",
+    "lessons": "Lektionen",
+    "vocabulary": "Vokabular",
+    "profile": "Profil"
+  },
+  "dashboard": {
+    "greeting": "Hallo!",
+    "level": "Niveau {{level}}",
+    "todayProgress": "Heutiger Fortschritt",
+    "lessons": "Lektionen",
+    "continueLesson": "Weiterlernen",
+    "sampleLesson": "Begrüßungen & Vorstellungen",
+    "sampleLessonDesc": "Lerne, dich auf Englisch vorzustellen"
+  },
+  "lessons": {
+    "title": "Lektionen",
+    "subtitle": "Aktuelles Niveau: {{level}}"
+  },
+  "vocabulary": {
+    "title": "Vokabular",
+    "subtitle": "Wiederhole mit Spaced Repetition (FSRS)",
+    "toReview": "Zu wiederholen",
+    "learned": "Gelernt",
+    "mastery": "Beherrschung",
+    "startReview": "Wiederholung starten"
+  },
+  "profile": {
+    "title": "Profil",
+    "level": "Niveau {{level}}",
+    "logout": "Abmelden",
+    "logoutConfirm": {
+      "title": "Abmelden?",
+      "message": "Dein Fortschritt ist in der Cloud gespeichert."
+    },
+    "exportData": "Meine Daten exportieren (DSGVO)",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "deleteAccount": "Mein Konto löschen"
+  },
+  "notifications": {
+    "dailyReminder": {
+      "title": "Zeit zum Lernen! 🔥",
+      "body": "Halte deinen Streak aufrecht, indem du die heutige Lektion machst."
+    }
+  },
+  "errors": {
+    "generic": "Ein Fehler ist aufgetreten. Bitte versuche es erneut.",
+    "network": "Keine Internetverbindung.",
+    "unauthorized": "Sitzung abgelaufen. Bitte erneut anmelden."
+  }
+}

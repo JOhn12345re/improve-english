@@ -1,0 +1,192 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum CefrLevel {
+  A1
+  A2
+  B1
+  B2
+  C1
+  C2
+}
+
+enum NativeLanguage {
+  fr
+  en
+  es
+  it
+  ar
+  pt
+  de
+}
+
+enum LearningGoal {
+  travel
+  work
+  studies
+  leisure
+  other
+}
+
+enum SubscriptionPlan {
+  free
+  premium_monthly
+  premium_yearly
+}
+
+enum SubscriptionStatus {
+  active
+  expired
+  cancelled
+  trial
+}
+
+model User {
+  id              String         @id @default(uuid())
+  email           String         @unique
+  native_language NativeLanguage @default(fr)
+  level           CefrLevel      @default(A1)
+  daily_goal      Int            @default(10)
+  learning_goal   LearningGoal   @default(other)
+  streak          Int            @default(0)
+  last_activity   DateTime?
+  timezone        String         @default("Europe/Paris")
+  xp              Int            @default(0)
+  created_at      DateTime       @default(now())
+  updated_at      DateTime       @updatedAt
+  deleted_at      DateTime?      // Soft delete (RGPD)
+
+  progress        UserProgress[]
+  vocabulary      UserVocabulary[]
+  subscription    Subscription?
+
+  @@index([email])
+  @@index([deleted_at])
+}
+
+model Lesson {
+  id           String       @id @default(uuid())
+  level        CefrLevel
+  theme        String
+  order        Int
+  content_json Json
+  is_premium   Boolean      @default(false)
+  created_at   DateTime     @default(now())
+
+  progress     UserProgress[]
+
+  @@index([level])
+  @@index([level, order])
+}
+
+model UserProgress {
+  id           String   @id @default(uuid())
+  user_id      String
+  lesson_id    String
+  score        Float    @default(0)
+  completed_at DateTime @default(now())
+  attempts     Int      @default(1)
+
+  user   User   @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  lesson Lesson @relation(fields: [lesson_id], references: [id], onDelete: Cascade)
+
+  @@unique([user_id, lesson_id])
+  @@index([user_id])
+  @@index([lesson_id])
+  @@index([user_id, completed_at])
+}
+
+model VocabularyWord {
+  id                String         @id @default(uuid())
+  word_en           String         @unique
+  translations_json Json
+  level             CefrLevel
+  audio_url         String?
+  created_at        DateTime       @default(now())
+
+  user_vocabulary   UserVocabulary[]
+
+  @@index([level])
+}
+
+model UserVocabulary {
+  id            String   @id @default(uuid())
+  user_id       String
+  word_id       String
+  mastery_level Float    @default(0)
+  stability     Float    @default(1)   // FSRS: stabilite
+  difficulty    Float    @default(5)   // FSRS: difficulte
+  reps          Int      @default(0)
+  lapses        Int      @default(0)
+  next_review_at DateTime @default(now())
+  last_review_at DateTime?
+
+  user User           @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  word VocabularyWord @relation(fields: [word_id], references: [id], onDelete: Cascade)
+
+  @@unique([user_id, word_id])
+  @@index([user_id])
+  @@index([user_id, next_review_at])
+}
+
+// ── Tatoeba ────────────────────────────────────────────────────────────────
+
+model TatoebaSentence {
+  id           Int        @id             // Original Tatoeba sentence ID
+  lang         String     @db.VarChar(3)  // ISO 639-3: 'eng', 'fra', 'spa', etc.
+  text         String
+  lengthChars  Int
+  cecrlLevel   CefrLevel?
+
+  // Links where this sentence is the source (EN side)
+  linksAsSource TatoebaLink[] @relation("SourceSentence")
+  // Links where this sentence is the translation
+  linksAsTarget TatoebaLink[] @relation("TargetSentence")
+
+  @@index([lang])
+  @@index([lang, cecrlLevel])
+  @@index([cecrlLevel])
+}
+
+model TatoebaLink {
+  id             Int @id @default(autoincrement())
+  sourceLang     String @db.VarChar(3)
+  targetLang     String @db.VarChar(3)
+  sourceId       Int
+  targetId       Int
+
+  source TatoebaSentence @relation("SourceSentence", fields: [sourceId], references: [id], onDelete: Cascade)
+  target TatoebaSentence @relation("TargetSentence", fields: [targetId], references: [id], onDelete: Cascade)
+
+  @@unique([sourceId, targetId])
+  @@index([sourceLang, targetLang])
+  @@index([sourceId])
+  @@index([targetId])
+}
+
+// ── Subscriptions ──────────────────────────────────────────────────────────
+
+model Subscription {
+  id             String             @id @default(uuid())
+  user_id        String             @unique
+  plan           SubscriptionPlan   @default(free)
+  status         SubscriptionStatus @default(active)
+  started_at     DateTime           @default(now())
+  expires_at     DateTime?
+  trial_ends_at  DateTime?
+  revenuecat_id  String?            @unique
+  created_at     DateTime           @default(now())
+  updated_at     DateTime           @updatedAt
+
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@index([user_id])
+  @@index([revenuecat_id])
+  @@index([status])
+}

@@ -1,0 +1,127 @@
+{
+  "common": {
+    "continue": "متابعة",
+    "cancel": "إلغاء",
+    "or": "أو",
+    "back": "رجوع",
+    "save": "حفظ",
+    "loading": "جاري التحميل..."
+  },
+  "onboarding": {
+    "step": "الخطوة {{current}} من {{total}}",
+    "welcome": {
+      "tagline": "تعلّم الإنجليزية بوتيرتك الخاصة، أينما كنت.",
+      "start": "ابدأ مجاناً",
+      "login": "لدي حساب بالفعل"
+    },
+    "name": {
+      "title": "ما اسمك؟",
+      "subtitle": "خصِّص تجربة التعلم الخاصة بك.",
+      "firstName": "الاسم الأول",
+      "lastName": "اسم العائلة",
+      "firstNamePlaceholder": "مثال: أحمد",
+      "lastNamePlaceholder": "مثال: محمد"
+    },
+    "nativeLanguage": {
+      "title": "ما هي لغتك الأم؟",
+      "subtitle": "ستُعرض الواجهة بلغتك."
+    },
+    "levelAssessment": {
+      "title": "ما مستواك في الإنجليزية؟",
+      "subtitle": "كن صادقاً — هذا يساعدنا على تخصيص مسارك.",
+      "beginner": "أنا مبتدئ",
+      "beginnerDesc": "لم أتعلم الإنجليزية أو تعلّمتها قليلاً جداً.",
+      "evaluate": "تقييم مستواي",
+      "evaluateDesc": "اختبار سريع من 5 أسئلة — دقيقتان.",
+      "questionOf": "السؤال {{current}} / {{total}}",
+      "resultTitle": "مستواك المقدَّر",
+      "resultScore": "النتيجة: {{score}} / {{total}}"
+    },
+    "goals": {
+      "title": "خصِّص تعلّمك",
+      "whyLearning": "لماذا تتعلم الإنجليزية؟",
+      "travel": "السفر",
+      "work": "العمل",
+      "studies": "الدراسة",
+      "leisure": "الترفيه",
+      "other": "أخرى",
+      "dailyGoal": "الهدف اليومي",
+      "minutes": "دقيقة/يوم",
+      "notifInfo": "فعِّل التذكيرات للحفاظ على تسلسلك والتقدم كل يوم.",
+      "finish": "إنشاء حسابي"
+    }
+  },
+  "auth": {
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "continueWithApple": "المتابعة مع Apple",
+    "continueWithGoogle": "المتابعة مع Google",
+    "signup": {
+      "title": "أنشئ حسابك",
+      "subtitle": "سيتم حفظ تقدمك.",
+      "submit": "إنشاء حساب",
+      "alreadyHaveAccount": "لدي حساب بالفعل"
+    },
+    "login": {
+      "title": "مرحباً بعودتك!",
+      "submit": "تسجيل الدخول",
+      "forgotPassword": "نسيت كلمة المرور؟",
+      "noAccount": "ليس لديك حساب بعد؟"
+    },
+    "error": {
+      "title": "خطأ",
+      "signupFailed": "فشل إنشاء الحساب. تحقق من بريدك الإلكتروني.",
+      "loginFailed": "فشل تسجيل الدخول. تحقق من بياناتك."
+    }
+  },
+  "tabs": {
+    "home": "الرئيسية",
+    "lessons": "الدروس",
+    "vocabulary": "المفردات",
+    "profile": "الملف الشخصي"
+  },
+  "dashboard": {
+    "greeting": "مرحباً!",
+    "level": "المستوى {{level}}",
+    "todayProgress": "تقدم اليوم",
+    "lessons": "دروس",
+    "continueLesson": "متابعة التعلم",
+    "sampleLesson": "التحيات والتعريفات",
+    "sampleLessonDesc": "تعلّم كيف تُعرِّف عن نفسك بالإنجليزية"
+  },
+  "lessons": {
+    "title": "الدروس",
+    "subtitle": "المستوى الحالي: {{level}}"
+  },
+  "vocabulary": {
+    "title": "المفردات",
+    "subtitle": "راجع بالتكرار المتباعد (FSRS)",
+    "toReview": "للمراجعة",
+    "learned": "تمّ تعلّمه",
+    "mastery": "الإتقان",
+    "startReview": "بدء المراجعة"
+  },
+  "profile": {
+    "title": "الملف الشخصي",
+    "level": "المستوى {{level}}",
+    "logout": "تسجيل الخروج",
+    "logoutConfirm": {
+      "title": "تسجيل الخروج؟",
+      "message": "تقدمك محفوظ في السحابة."
+    },
+    "exportData": "تصدير بياناتي (RGPD)",
+    "privacyPolicy": "سياسة الخصوصية",
+    "deleteAccount": "حذف حسابي"
+  },
+  "notifications": {
+    "dailyReminder": {
+      "title": "حان وقت التعلم! 🔥",
+      "body": "حافظ على تسلسلك بالقيام بدرس اليوم."
+    }
+  },
+  "errors": {
+    "generic": "حدث خطأ. يرجى المحاولة مجدداً.",
+    "network": "لا يوجد اتصال بالإنترنت.",
+    "unauthorized": "انتهت الجلسة. سجّل الدخول مجدداً."
+  }
+}

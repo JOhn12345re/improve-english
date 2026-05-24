@@ -1,0 +1,127 @@
+{
+  "common": {
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "or": "or",
+    "back": "Back",
+    "save": "Save",
+    "loading": "Loading..."
+  },
+  "onboarding": {
+    "step": "Step {{current}} of {{total}}",
+    "welcome": {
+      "tagline": "Learn English at your own pace, wherever you are.",
+      "start": "Get started for free",
+      "login": "I already have an account"
+    },
+    "name": {
+      "title": "What is your name?",
+      "subtitle": "Personalize your learning experience.",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "firstNamePlaceholder": "E.g. John",
+      "lastNamePlaceholder": "E.g. Smith"
+    },
+    "nativeLanguage": {
+      "title": "What is your native language?",
+      "subtitle": "The interface will display in your language."
+    },
+    "levelAssessment": {
+      "title": "What is your English level?",
+      "subtitle": "Be honest — it helps us personalize your path.",
+      "beginner": "I'm a beginner",
+      "beginnerDesc": "I have never or barely learned English.",
+      "evaluate": "Assess my level",
+      "evaluateDesc": "Quick 5-question test — 2 minutes.",
+      "questionOf": "Question {{current}} / {{total}}",
+      "resultTitle": "Your estimated level",
+      "resultScore": "Score: {{score}} / {{total}}"
+    },
+    "goals": {
+      "title": "Personalize your learning",
+      "whyLearning": "Why are you learning English?",
+      "travel": "Travel",
+      "work": "Work",
+      "studies": "Studies",
+      "leisure": "Leisure",
+      "other": "Other",
+      "dailyGoal": "Daily goal",
+      "minutes": "min/day",
+      "notifInfo": "Enable reminders to keep your streak and progress every day.",
+      "finish": "Create my account"
+    }
+  },
+  "auth": {
+    "email": "Email address",
+    "password": "Password",
+    "continueWithApple": "Continue with Apple",
+    "continueWithGoogle": "Continue with Google",
+    "signup": {
+      "title": "Create your account",
+      "subtitle": "Your progress will be saved.",
+      "submit": "Sign up",
+      "alreadyHaveAccount": "I already have an account"
+    },
+    "login": {
+      "title": "Welcome back!",
+      "submit": "Sign in",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "No account yet?"
+    },
+    "error": {
+      "title": "Error",
+      "signupFailed": "Sign up failed. Please check your email.",
+      "loginFailed": "Login failed. Please check your credentials."
+    }
+  },
+  "tabs": {
+    "home": "Home",
+    "lessons": "Lessons",
+    "vocabulary": "Vocabulary",
+    "profile": "Profile"
+  },
+  "dashboard": {
+    "greeting": "Hello!",
+    "level": "Level {{level}}",
+    "todayProgress": "Today's progress",
+    "lessons": "lessons",
+    "continueLesson": "Continue learning",
+    "sampleLesson": "Greetings & Introductions",
+    "sampleLessonDesc": "Learn to introduce yourself in English"
+  },
+  "lessons": {
+    "title": "Lessons",
+    "subtitle": "Current level: {{level}}"
+  },
+  "vocabulary": {
+    "title": "Vocabulary",
+    "subtitle": "Review with spaced repetition (FSRS)",
+    "toReview": "To review",
+    "learned": "Learned",
+    "mastery": "Mastery",
+    "startReview": "Start review"
+  },
+  "profile": {
+    "title": "Profile",
+    "level": "Level {{level}}",
+    "logout": "Sign out",
+    "logoutConfirm": {
+      "title": "Sign out?",
+      "message": "Your progress is saved in the cloud."
+    },
+    "exportData": "Export my data (GDPR)",
+    "privacyPolicy": "Privacy Policy",
+    "deleteAccount": "Delete my account"
+  },
+  "notifications": {
+    "dailyReminder": {
+      "title": "Time to learn! 🔥",
+      "body": "Keep your streak by doing today's lesson."
+    }
+  },
+  "errors": {
+    "generic": "An error occurred. Please try again.",
+    "network": "No internet connection.",
+    "unauthorized": "Session expired. Please sign in again."
+  }
+}

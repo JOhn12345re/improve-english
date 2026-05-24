@@ -1,0 +1,127 @@
+{
+  "common": {
+    "continue": "Continuar",
+    "cancel": "Cancelar",
+    "or": "ou",
+    "back": "Voltar",
+    "save": "Salvar",
+    "loading": "Carregando..."
+  },
+  "onboarding": {
+    "step": "Passo {{current}} de {{total}}",
+    "welcome": {
+      "tagline": "Aprenda inglês no seu ritmo, onde quer que esteja.",
+      "start": "Começar gratuitamente",
+      "login": "Já tenho uma conta"
+    },
+    "name": {
+      "title": "Qual é o seu nome?",
+      "subtitle": "Personalize sua experiência de aprendizado.",
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "firstNamePlaceholder": "Ex: João",
+      "lastNamePlaceholder": "Ex: Silva"
+    },
+    "nativeLanguage": {
+      "title": "Qual é a sua língua nativa?",
+      "subtitle": "A interface será exibida no seu idioma."
+    },
+    "levelAssessment": {
+      "title": "Qual é o seu nível de inglês?",
+      "subtitle": "Seja honesto — isso nos ajuda a personalizar o seu caminho.",
+      "beginner": "Sou iniciante",
+      "beginnerDesc": "Nunca ou quase nunca aprendi inglês.",
+      "evaluate": "Avaliar meu nível",
+      "evaluateDesc": "Teste rápido de 5 perguntas — 2 minutos.",
+      "questionOf": "Pergunta {{current}} / {{total}}",
+      "resultTitle": "Seu nível estimado",
+      "resultScore": "Pontuação: {{score}} / {{total}}"
+    },
+    "goals": {
+      "title": "Personalize seu aprendizado",
+      "whyLearning": "Por que você está aprendendo inglês?",
+      "travel": "Viagens",
+      "work": "Trabalho",
+      "studies": "Estudos",
+      "leisure": "Lazer",
+      "other": "Outro",
+      "dailyGoal": "Meta diária",
+      "minutes": "min/dia",
+      "notifInfo": "Ative os lembretes para manter sua sequência e progredir todos os dias.",
+      "finish": "Criar minha conta"
+    }
+  },
+  "auth": {
+    "email": "Endereço de e-mail",
+    "password": "Senha",
+    "continueWithApple": "Continuar com Apple",
+    "continueWithGoogle": "Continuar com Google",
+    "signup": {
+      "title": "Crie sua conta",
+      "subtitle": "Seu progresso será salvo.",
+      "submit": "Cadastrar",
+      "alreadyHaveAccount": "Já tenho uma conta"
+    },
+    "login": {
+      "title": "Bem-vindo de volta!",
+      "submit": "Entrar",
+      "forgotPassword": "Esqueceu a senha?",
+      "noAccount": "Ainda não tem uma conta?"
+    },
+    "error": {
+      "title": "Erro",
+      "signupFailed": "Cadastro falhou. Verifique seu e-mail.",
+      "loginFailed": "Login falhou. Verifique suas credenciais."
+    }
+  },
+  "tabs": {
+    "home": "Início",
+    "lessons": "Lições",
+    "vocabulary": "Vocabulário",
+    "profile": "Perfil"
+  },
+  "dashboard": {
+    "greeting": "Olá!",
+    "level": "Nível {{level}}",
+    "todayProgress": "Progresso de hoje",
+    "lessons": "lições",
+    "continueLesson": "Continuar aprendendo",
+    "sampleLesson": "Saudações e Apresentações",
+    "sampleLessonDesc": "Aprenda a se apresentar em inglês"
+  },
+  "lessons": {
+    "title": "Lições",
+    "subtitle": "Nível atual: {{level}}"
+  },
+  "vocabulary": {
+    "title": "Vocabulário",
+    "subtitle": "Revise com repetição espaçada (FSRS)",
+    "toReview": "Para revisar",
+    "learned": "Aprendido",
+    "mastery": "Domínio",
+    "startReview": "Iniciar revisão"
+  },
+  "profile": {
+    "title": "Perfil",
+    "level": "Nível {{level}}",
+    "logout": "Sair",
+    "logoutConfirm": {
+      "title": "Sair?",
+      "message": "Seu progresso está salvo na nuvem."
+    },
+    "exportData": "Exportar meus dados (LGPD)",
+    "privacyPolicy": "Política de privacidade",
+    "deleteAccount": "Excluir minha conta"
+  },
+  "notifications": {
+    "dailyReminder": {
+      "title": "Hora de aprender! 🔥",
+      "body": "Mantenha sua sequência fazendo a lição de hoje."
+    }
+  },
+  "errors": {
+    "generic": "Ocorreu um erro. Tente novamente.",
+    "network": "Sem conexão com a internet.",
+    "unauthorized": "Sessão expirada. Faça login novamente."
+  }
+}
