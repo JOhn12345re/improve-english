@@ -21,7 +21,8 @@ COPY packages/shared-types packages/shared-types
 COPY apps/api apps/api
 WORKDIR /app/packages/shared-types
 RUN npx tsc && ls dist/index.js
-RUN cp package.json /app/node_modules/@englishflow/shared-types/ && \
+RUN mkdir -p /app/node_modules/@englishflow/shared-types && \
+    cp package.json /app/node_modules/@englishflow/shared-types/ && \
     cp -r dist /app/node_modules/@englishflow/shared-types/
 WORKDIR /app/apps/api
 RUN npx prisma generate --schema=./prisma/schema.prisma
