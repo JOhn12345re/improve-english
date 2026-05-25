@@ -19,7 +19,7 @@ COPY --from=deps /app/apps/api/node_modules ./apps/api/node_modules
 COPY packages/shared-types packages/shared-types
 COPY apps/api apps/api
 WORKDIR /app/packages/shared-types
-RUN npx tsc --outDir dist --declaration --esModuleInterop --module commonjs --target ES2021 src/index.ts || true
+RUN npx tsc
 WORKDIR /app/apps/api
 RUN npx prisma generate --schema=./prisma/schema.prisma
 RUN pnpm build
