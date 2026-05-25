@@ -13,6 +13,7 @@ RUN pnpm install --frozen-lockfile --filter @englishflow/api...
 # ── Build ─────────────────────────────────────────────────────────────────────
 FROM base AS build
 WORKDIR /app
+COPY .npmrc pnpm-workspace.yaml package.json ./
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/apps/api/node_modules ./apps/api/node_modules
 COPY packages/shared-types packages/shared-types
