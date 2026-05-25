@@ -11,6 +11,6 @@ echo "==> Linking project..."
 railway link
 
 echo "==> Deploying with fresh build (no cache)..."
-railway up --detach --no-cache
+railway up --detach
 
 echo "==> Done. Check Railway dashboard for deployment status."
