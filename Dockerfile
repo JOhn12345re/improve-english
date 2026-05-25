@@ -1,4 +1,5 @@
 FROM node:20-alpine AS base
+RUN apk add --no-cache openssl python3 make g++
 RUN npm install -g pnpm@9
 
 # ── Install dependencies ──────────────────────────────────────────────────────
@@ -17,12 +18,13 @@ COPY --from=deps /app/apps/api/node_modules ./apps/api/node_modules
 COPY packages/shared-types packages/shared-types
 COPY apps/api apps/api
 WORKDIR /app/apps/api
+RUN npx prisma generate --schema=./prisma/schema.prisma
 RUN pnpm build
 
 # ── Production image ──────────────────────────────────────────────────────────
 FROM node:20-alpine AS production
+RUN apk add --no-cache openssl
 WORKDIR /app
-RUN npm install -g pnpm@9
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/apps/api/node_modules ./apps/api/node_modules
