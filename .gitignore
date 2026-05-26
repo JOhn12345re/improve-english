@@ -1,6 +1,7 @@
 node_modules/
 .expo/
 dist/
+!packages/shared-types/dist/
 build/
 .env
 .env.local
