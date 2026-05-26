@@ -18,6 +18,11 @@ config.resolver.nodeModulesPaths = [
 // 3. Force Metro to resolve (sub)dependencies only from the `nodeModulesPaths`
 config.resolver.disableHierarchicalLookup = true;
 
+// 4. Mock @opentelemetry/api — uses dynamic import() incompatible with Hermes
+config.resolver.extraNodeModules = {
+  '@opentelemetry/api': path.resolve(projectRoot, 'src/mocks/opentelemetry-api.js'),
+};
+
 // 4. Disable Hermes bytecode compilation to avoid version mismatch with Expo Go
 //    (Expo Go 54.0.2 uses a different Hermes build than react-native 0.81.5)
 config.server = {
