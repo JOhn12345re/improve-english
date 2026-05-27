@@ -12,7 +12,12 @@
       "distribution": "internal"
     },
     "production": {
-      "autoIncrement": true
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://englishflowapi-production.up.railway.app",
+        "EXPO_PUBLIC_SUPABASE_URL": "https://fybyetowkvnpdxczvwgp.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_N1AMiI8xj_isecmH06HYwA_eK9jws3I"
+      }
     }
   },
   "submit": {
