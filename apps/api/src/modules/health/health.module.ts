@@ -68,8 +68,16 @@ export class HealthController {
   }
 }
 
+@Controller('api/v1')
+export class LegacyHealthController {
+  @Get('health')
+  check() {
+    return { status: 'ok', timestamp: new Date().toISOString() };
+  }
+}
+
 @Module({
   imports: [IntegrationsModule],
-  controllers: [HealthController],
+  controllers: [HealthController, LegacyHealthController],
 })
 export class HealthModule {}
