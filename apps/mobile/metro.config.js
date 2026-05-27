@@ -19,8 +19,16 @@ config.resolver.nodeModulesPaths = [
 config.resolver.disableHierarchicalLookup = true;
 
 // 4. Mock @opentelemetry/api — uses dynamic import() incompatible with Hermes
-config.resolver.extraNodeModules = {
-  '@opentelemetry/api': path.resolve(projectRoot, 'src/mocks/opentelemetry-api.js'),
+//    extraNodeModules doesn't override packages already in node_modules,
+//    so we use resolveRequest to intercept the module resolution directly.
+config.resolver.resolveRequest = (context, moduleName, platform) => {
+  if (moduleName === '@opentelemetry/api') {
+    return {
+      filePath: path.resolve(projectRoot, 'src/mocks/opentelemetry-api.js'),
+      type: 'sourceFile',
+    };
+  }
+  return context.resolveRequest(context, moduleName, platform);
 };
 
 // 4. Disable Hermes bytecode compilation to avoid version mismatch with Expo Go
