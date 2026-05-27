@@ -18,13 +18,13 @@ config.resolver.nodeModulesPaths = [
 // 3. Force Metro to resolve (sub)dependencies only from the `nodeModulesPaths`
 config.resolver.disableHierarchicalLookup = true;
 
-// 4. Mock @opentelemetry/api — uses dynamic import() incompatible with Hermes
-//    extraNodeModules doesn't override packages already in node_modules,
-//    so we use resolveRequest to intercept the module resolution directly.
+// 4. Fix Hermes incompatibility: @supabase/supabase-js dist/index.mjs inlines
+//    @opentelemetry/api which uses dynamic import(variable) — invalid in Hermes.
+//    Force Metro to use the CJS build instead (uses require() which is valid).
 config.resolver.resolveRequest = (context, moduleName, platform) => {
-  if (moduleName === '@opentelemetry/api') {
+  if (moduleName === '@supabase/supabase-js') {
     return {
-      filePath: path.resolve(projectRoot, 'src/mocks/opentelemetry-api.js'),
+      filePath: path.resolve(workspaceRoot, 'node_modules/@supabase/supabase-js/dist/index.cjs'),
       type: 'sourceFile',
     };
   }
