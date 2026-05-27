@@ -13,7 +13,7 @@ async function bootstrap() {
     }),
   );
 
-  app.setGlobalPrefix('api/v1');
+  // No global prefix — mobile app calls /lessons, /users, etc. directly
   app.enableCors({ origin: process.env.ALLOWED_ORIGINS?.split(',') ?? '*' });
 
   const port = process.env.PORT ?? 3000;
