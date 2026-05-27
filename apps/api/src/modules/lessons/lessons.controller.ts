@@ -10,16 +10,16 @@ export class LessonsController {
 
   @Get()
   async findAll(
-    @Req() req: { user: { id: string }; userLevel: CefrLevel; isPremium: boolean },
+    @Req() req: { user: { id: string; level: CefrLevel; isPremium: boolean } },
   ) {
-    return this.lessonsService.findByLevel(req.userLevel, req.isPremium);
+    return this.lessonsService.findByLevel(req.user.level, req.user.isPremium);
   }
 
   @Get(':id')
   async findOne(
     @Param('id') id: string,
-    @Req() req: { userLevel: CefrLevel },
+    @Req() req: { user: { level: CefrLevel } },
   ) {
-    return this.lessonsService.findById(id, req.userLevel);
+    return this.lessonsService.findById(id, req.user.level);
   }
 }
