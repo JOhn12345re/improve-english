@@ -761,4 +761,7 @@ main()
     console.error('Seed failed:', e);
     process.exit(1);
   })
-  .finally(() => prisma.$disconnect());
+  .finally(async () => {
+    await prisma.$disconnect();
+    process.exit(0);
+  });
