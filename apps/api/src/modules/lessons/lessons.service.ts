@@ -1,7 +1,6 @@
-import { Injectable, NotFoundException, OnApplicationBootstrap } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../../common/prisma/prisma.service';
 import { CefrLevel } from '@englishflow/shared-types';
-import { seedLessons } from '../../database/seed';
 
 const LEVEL_ORDER: CefrLevel[] = [
   CefrLevel.A1, CefrLevel.A2, CefrLevel.B1,
@@ -9,14 +8,8 @@ const LEVEL_ORDER: CefrLevel[] = [
 ];
 
 @Injectable()
-export class LessonsService implements OnApplicationBootstrap {
+export class LessonsService {
   constructor(private readonly prisma: PrismaService) {}
-
-  async onApplicationBootstrap() {
-    await seedLessons(this.prisma).catch((e) =>
-      console.error('Seed error (non-fatal):', e),
-    );
-  }
 
   /**
    * Filtre les lecons selon le niveau utilisateur.
