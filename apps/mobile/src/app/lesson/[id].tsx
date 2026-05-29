@@ -112,6 +112,46 @@ export default function LessonScreen() {
       setSelectedOption(null);
       setTranslationInput('');
       setShowFr(false);
+      setAiExplanation(null);
+    }
+  }
+
+  async function handleAskAi() {
+    if (aiLoading || answerState !== 'wrong') return;
+    setAiLoading(true);
+    try {
+      const ex = exercise;
+      let question = '';
+      let correctAnswer = '';
+      if (ex.type === 'mcq') {
+        question = ex.question;
+        correctAnswer = ex.options[ex.correctIndex];
+      } else if (ex.type === 'fill') {
+        question = ex.sentence;
+        correctAnswer = ex.answer;
+      } else if (ex.type === 'translation') {
+        question = ex.sourceFr;
+        correctAnswer = ex.targetEn;
+      }
+      const result = await api.post<{ explanation: string }>('/ai/feedback', {
+        exerciseType: ex.type,
+        question,
+        correctAnswer,
+        userAnswer:
+          ex.type === 'translation'
+            ? translationInput
+            : selectedOption !== null && ex.type === 'mcq'
+            ? ex.options[selectedOption]
+            : selectedOption !== null && ex.type === 'fill'
+            ? ex.options[selectedOption]
+            : '',
+        level: 'A1',
+      });
+      setAiExplanation(result.explanation);
+    } catch {
+      setAiExplanation("Désolé, l'explication IA n'est pas disponible pour le moment.");
+    } finally {
+      setAiLoading(false);
     }
   }
 
