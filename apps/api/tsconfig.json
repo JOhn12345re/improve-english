@@ -10,7 +10,8 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "types": ["node"],
+    "types": ["node", "jest"],
+    "strictPropertyInitialization": false,
     "paths": {
       "@api/*": ["./src/*"]
     }
