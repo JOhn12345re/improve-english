@@ -164,7 +164,12 @@ describe('VoaIngesterService', () => {
         { provide: PrismaService, useValue: mockPrisma },
         {
           provide: ConfigService,
-          useValue: { get: jest.fn(() => '') },
+          useValue: {
+            get: jest.fn((key: string, def = '') => {
+              if (key === 'aws.region') return 'eu-west-3';
+              return def;
+            }),
+          },
         },
       ],
     }).compile();
