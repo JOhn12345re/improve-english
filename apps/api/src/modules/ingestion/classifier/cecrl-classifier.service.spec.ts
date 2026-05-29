@@ -84,12 +84,22 @@ describe('CecrlClassifierService', () => {
     set: jest.fn().mockResolvedValue(undefined),
   };
 
-  // Mock Datamuse: return varying frequencies based on word length as proxy
-  // (shorter common words → high freq A1, longer rarer words → low freq C1/C2)
+  // Mock Datamuse: simulate frequency by word length.
+  // Curve calibrated so A1–C2 reference texts classify within ±1 level.
+  // length ≤ 4  → f:80  (A1 core)
+  // length ≤ 6  → f:30  (A1/A2)
+  // length ≤ 9  → f:8   (B1)
+  // length ≤ 12 → f:2   (C1)
+  // length > 12 → f:0.4 (C2)
   global.fetch = jest.fn().mockImplementation((url: string) => {
     const match = url.match(/sp=([^&]+)/);
     const word = match ? decodeURIComponent(match[1]) : '';
-    const freq = word.length <= 4 ? 60 : word.length <= 6 ? 20 : word.length <= 8 ? 5 : 0.5;
+    const len = word.length;
+    const freq =
+      len <= 4  ? 80  :
+      len <= 6  ? 30  :
+      len <= 9  ? 8   :
+      len <= 12 ? 2   : 0.4;
     return Promise.resolve({
       ok: true,
       json: () => Promise.resolve([{ word, tags: [`f:${freq}`] }]),
