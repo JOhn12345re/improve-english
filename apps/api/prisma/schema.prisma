@@ -47,6 +47,32 @@ enum SubscriptionStatus {
   trial
 }
 
+enum ContentSource {
+  VOA_BEGINNING
+  VOA_INTERMEDIATE
+  VOA_ADVANCED
+  GITHUB_OER
+  ARCHIVE_ORG
+  GUTENBERG
+  WIKIPEDIA_SIMPLE
+  MANUAL_UPLOAD
+}
+
+enum IngestionStatus {
+  PENDING
+  CLASSIFIED
+  GENERATING
+  COMPLETED
+  FAILED
+  REJECTED
+}
+
+enum JobStatus {
+  RUNNING
+  COMPLETED
+  FAILED
+}
+
 model User {
   id              String         @id @default(uuid())
   email           String         @unique
