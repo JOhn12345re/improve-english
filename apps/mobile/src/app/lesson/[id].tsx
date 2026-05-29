@@ -252,8 +252,9 @@ export default function LessonScreen() {
         {/* Feedback + bouton suivant */}
         {answerState !== 'idle' && (
           <View style={[styles.feedback, answerState === 'correct' ? styles.feedbackCorrect : styles.feedbackWrong]}>
-            <Text style={styles.feedbackEmoji}>{answerState === 'correct' ? 'âœ…' : 'âŒ'}</Text>
-            <View style={{ flex: 1 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+              <Text style={styles.feedbackEmoji}>{answerState === 'correct' ? 'âœ…' : 'âŒ'}</Text>
+              <View style={{ flex: 1 }}>
               <Text style={styles.feedbackTitle}>
                 {answerState === 'correct' ? 'Correct !' : 'Pas tout Ã  faitâ€¦'}
               </Text>
@@ -272,10 +273,28 @@ export default function LessonScreen() {
                   RÃ©ponse : {(exercise as Extract<Exercise, { type: 'fill' }>).answer}
                 </Text>
               )}
-            </View>
-            <TouchableOpacity style={styles.nextBtn} onPress={handleNext}>
+              </View>
+              <TouchableOpacity style={styles.nextBtn} onPress={handleNext}>
               <Text style={styles.nextBtnText}>{isLast ? 'Terminer' : 'Suivant â†’'}</Text>
             </TouchableOpacity>
+            </View>
+            {answerState === 'wrong' && (
+              <View style={{ marginTop: 10 }}>
+                {aiExplanation ? (
+                  <View style={styles.aiBox}>
+                    <Text style={styles.aiLabel}>🤖 Explication IA</Text>
+                    <Text style={styles.aiText}>{aiExplanation}</Text>
+                  </View>
+                ) : (
+                  <TouchableOpacity style={styles.aiBtn} onPress={handleAskAi} disabled={aiLoading}>
+                    {aiLoading
+                      ? <ActivityIndicator size="small" color="#4F46E5" />
+                      : <Text style={styles.aiBtnText}>🤖 Explique-moi</Text>
+                    }
+                  </TouchableOpacity>
+                )}
+              </View>
+            )}
           </View>
         )}
       </KeyboardAvoidingView>
@@ -519,6 +538,25 @@ const styles = StyleSheet.create({
   resultXp: { fontSize: 16, color: '#F97316', fontWeight: '700' },
   retryBanner: { backgroundColor: '#FFF7ED', borderRadius: 12, padding: 14, width: '100%' },
   retryText: { fontSize: 13, color: '#92400E', lineHeight: 18 },
+  aiBtn: {
+    backgroundColor: '#EEF2FF',
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 14,
+    alignItems: 'center' as const,
+    flexDirection: 'row' as const,
+    justifyContent: 'center' as const,
+    gap: 6,
+  },
+  aiBtnText: { fontSize: 14, fontWeight: '600' as const, color: '#4F46E5' },
+  aiBox: {
+    backgroundColor: '#EEF2FF',
+    borderRadius: 10,
+    padding: 12,
+    gap: 4,
+  },
+  aiLabel: { fontSize: 12, fontWeight: '700' as const, color: '#4F46E5' },
+  aiText: { fontSize: 13, color: '#374151', lineHeight: 18 },
   frToggle: {
     alignSelf: 'flex-start',
     backgroundColor: '#F3F4F6',

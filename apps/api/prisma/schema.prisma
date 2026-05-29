@@ -81,8 +81,8 @@ model Lesson {
 
   progress     UserProgress[]
 
+  @@unique([level, order])
   @@index([level])
-  @@index([level, order])
 }
 
 model UserProgress {
