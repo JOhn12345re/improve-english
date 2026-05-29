@@ -33,7 +33,10 @@ const mockFeed = {
 
 jest.mock('rss-parser', () => {
   return jest.fn().mockImplementation(() => ({
-    parseURL: jest.fn().mockResolvedValue(mockFeed),
+    // Return real items on first page, empty on subsequent pages (pagination simulation)
+    parseURL: jest.fn()
+      .mockResolvedValueOnce(mockFeed)
+      .mockResolvedValue({ items: [] }),
   }));
 });
 
