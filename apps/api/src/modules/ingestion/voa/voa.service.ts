@@ -54,7 +54,7 @@ export class VoaIngesterService {
   }
 
   async ingestFeed(source: VoaSource): Promise<JobMetrics> {
-    const feedUrl = VOA_FEEDS[source];
+    const feedConfig = VOA_FEEDS[source];
     const prismaSource: ContentSource = SOURCE_TO_PRISMA[source];
 
     this.logger.log(`Starting VOA ingest: ${source}`);
