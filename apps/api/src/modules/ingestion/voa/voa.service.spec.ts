@@ -14,8 +14,8 @@ const mockFeed = {
       guid: 'guid-1',
       pubDate: '2026-01-01',
       categories: ['News'],
-      contentSnippet: 'Learning English is fun.', // > 5 words → PENDING
-      content: 'Learning English is fun.',
+      contentSnippet: 'Learning English is both fun and rewarding.', // 7 words → PENDING
+      content: 'Learning English is both fun and rewarding.',
       enclosure: { url: 'https://example.com/audio1.mp3' },
     },
     {
