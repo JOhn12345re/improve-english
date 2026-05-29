@@ -196,10 +196,8 @@ export class LlmService {
   private async callAnthropic(params: LlmCallParams): Promise<LlmResult> {
     if (!this.anthropic) throw new Error('Anthropic client not initialised');
 
-    // Default: Haiku (fast + cheap). Sonnet for conversation (history present).
-    const model =
-      params.model ??
-      (params.history?.length ? 'claude-opus-4-6' : 'claude-opus-4-6');
+    // Default: Haiku (fast + cheap). Haiku for conversation too.
+    const model = params.model ?? 'claude-haiku-4-5-20251001';
 
     return withRetry(
       async () => {
