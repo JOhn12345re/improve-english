@@ -12,6 +12,7 @@ import { SubscriptionsModule } from './modules/subscriptions/subscriptions.modul
 import { HealthModule } from './modules/health/health.module';
 import { IntegrationsModule } from './modules/integrations/integrations.module';
 import { AiModule } from './modules/ai/ai.module';
+import { IngestionModule } from './modules/ingestion/ingestion.module';
 import configuration from './config/configuration';
 import { validate } from './config/config.validation';
 
