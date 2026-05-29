@@ -1,6 +1,7 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, OnApplicationBootstrap } from '@nestjs/common';
 import { PrismaService } from '../../common/prisma/prisma.service';
 import { CefrLevel } from '@englishflow/shared-types';
+import { seedLessons } from '../../database/seed';
 
 const LEVEL_ORDER: CefrLevel[] = [
   CefrLevel.A1, CefrLevel.A2, CefrLevel.B1,
