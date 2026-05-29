@@ -15,8 +15,8 @@ const mockFeed = {
       pubDate: '2026-01-01',
       categories: ['News'],
       contentSnippet:
-        'The quick brown fox jumps over the lazy dog. '.repeat(10), // 90 words × 1 = enough
-      content: 'The quick brown fox jumps over the lazy dog. '.repeat(10),
+        'The quick brown fox jumps over the lazy dog. '.repeat(15), // ~135 words > 100 min
+      content: 'The quick brown fox jumps over the lazy dog. '.repeat(15),
       enclosure: { url: 'https://example.com/audio1.mp3' },
     },
     {
