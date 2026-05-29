@@ -1,19 +1,22 @@
-const tseslint = require('typescript-eslint');
-
-module.exports = tseslint.config(
-  ...tseslint.configs.recommended,
-  {
-    files: ['src/**/*.ts'],
-    rules: {
-      '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-      '@typescript-eslint/no-unsafe-assignment': 'off',
-      '@typescript-eslint/no-unsafe-member-access': 'off',
-      '@typescript-eslint/no-unsafe-call': 'off',
-      '@typescript-eslint/no-unsafe-return': 'off',
-    },
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: 'tsconfig.json',
+    tsconfigRootDir: __dirname,
+    sourceType: 'module',
   },
-  {
-    ignores: ['dist/**', 'node_modules/**', '**/*.spec.ts'],
+  plugins: ['@typescript-eslint/eslint-plugin'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+  ],
+  root: true,
+  env: {
+    node: true,
+    jest: true,
   },
-);
+  ignorePatterns: ['.eslintrc.js', 'dist/', 'eslint.config.js'],
+  rules: {
+    '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+  },
+};
