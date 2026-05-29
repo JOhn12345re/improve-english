@@ -164,7 +164,7 @@ describe('LlmService', () => {
       });
 
       const callArgs = mockAnthropicCreate.mock.calls[0][0];
-      expect(callArgs.model).toContain('sonnet');
+      expect(callArgs.model).toContain('opus');
     });
 
     it('falls back to Groq when Anthropic key is absent', async () => {
