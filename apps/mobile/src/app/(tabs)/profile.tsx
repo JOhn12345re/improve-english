@@ -45,6 +45,15 @@ export default function ProfileScreen() {
             <Text style={styles.menuItemText}>{t('profile.privacyPolicy')}</Text>
             <Text style={styles.menuItemArrow}>→</Text>
           </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.menuItem}
+            activeOpacity={0.7}
+            onPress={() => router.push('/credits')}
+            accessibilityLabel="View content sources and credits"
+          >
+            <Text style={styles.menuItemText}>Sources & Credits</Text>
+            <Text style={styles.menuItemArrow}>→</Text>
+          </TouchableOpacity>
         </View>
 
         <Button
