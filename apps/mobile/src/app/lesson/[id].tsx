@@ -191,7 +191,7 @@ export default function LessonScreen() {
       <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
+          <TouchableOpacity onPress={() => router.back()} style={styles.backBtn} accessibilityLabel="Retour">
             <Text style={styles.backText}>âœ•</Text>
           </TouchableOpacity>
           <View style={styles.progressWrap}>
@@ -208,7 +208,7 @@ export default function LessonScreen() {
           <Text style={styles.lessonTitle}>{lesson.title}</Text>
 
           {/* Toggle FR */}
-          <TouchableOpacity style={styles.frToggle} onPress={() => setShowFr((v) => !v)}>
+          <TouchableOpacity style={styles.frToggle} onPress={() => setShowFr((v) => !v)} accessibilityLabel="Basculer la traduction française">
             <Text style={[styles.frToggleText, showFr && styles.frToggleActive]}>
               ðŸ‡«ðŸ‡· {showFr ? 'Masquer le franÃ§ais' : 'Voir en franÃ§ais'}
             </Text>
@@ -274,7 +274,7 @@ export default function LessonScreen() {
                 </Text>
               )}
               </View>
-              <TouchableOpacity style={styles.nextBtn} onPress={handleNext}>
+              <TouchableOpacity style={styles.nextBtn} onPress={handleNext} accessibilityLabel="Question suivante">
               <Text style={styles.nextBtnText}>{isLast ? 'Terminer' : 'Suivant â†’'}</Text>
             </TouchableOpacity>
             </View>
@@ -286,7 +286,7 @@ export default function LessonScreen() {
                     <Text style={styles.aiText}>{aiExplanation}</Text>
                   </View>
                 ) : (
-                  <TouchableOpacity style={styles.aiBtn} onPress={handleAskAi} disabled={aiLoading}>
+                  <TouchableOpacity style={styles.aiBtn} onPress={handleAskAi} disabled={aiLoading} accessibilityLabel="Demander une explication à l'IA">
                     {aiLoading
                       ? <ActivityIndicator size="small" color="#4F46E5" />
                       : <Text style={styles.aiBtnText}>🤖 Explique-moi</Text>
