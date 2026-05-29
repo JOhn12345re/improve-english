@@ -67,13 +67,38 @@ export default function LessonScreen() {
     if (correct) setScore((s) => s + 1);
   }
 
-  function handleTranslationCheck() {
+  async function handleTranslationCheck() {
     if (answerState !== 'idle') return;
     const ex = exercise as Extract<Exercise, { type: 'translation' }>;
     const normalize = (s: string) => s.toLowerCase().trim().replace(/[.!?,]/g, '');
-    const correct = normalize(translationInput) === normalize(ex.targetEn);
-    setAnswerState(correct ? 'correct' : 'wrong');
-    if (correct) setScore((s) => s + 1);
+
+    // Quick local check first
+    if (normalize(translationInput) === normalize(ex.targetEn)) {
+      setAnswerState('correct');
+      setScore((s) => s + 1);
+      return;
+    }
+
+    // AI soft check for near-correct answers
+    try {
+      const result = await api.post<{ correct: boolean; explanation: string }>(
+        '/ai/translation-check',
+        {
+          sourceFr: ex.sourceFr,
+          correctEn: ex.targetEn,
+          userAnswer: translationInput,
+          level: 'A1',
+        },
+      );
+      setAnswerState(result.correct ? 'correct' : 'wrong');
+      if (result.correct) setScore((s) => s + 1);
+      if (!result.correct && result.explanation) {
+        setAiExplanation(result.explanation);
+      }
+    } catch {
+      // Fallback to strict check if AI unavailable
+      setAnswerState('wrong');
+    }
   }
 
   function handleNext() {
