@@ -10,7 +10,7 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "types": ["node", "jest"],
+    "types": ["node", "jest", "multer"],
     "strictPropertyInitialization": false,
     "paths": {
       "@api/*": ["./src/*"]
