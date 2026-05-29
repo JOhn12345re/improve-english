@@ -168,7 +168,7 @@ export class VoaIngesterService {
       data: {
         source,
         source_url: sourceUrl,
-        source_meta: { feedItem: sanitizeMeta(item) },
+        source_meta: { feedItem: sanitizeMeta(item) } as Prisma.InputJsonValue,
         title: item.title ?? 'Untitled',
         text,
         audio_url: audioUrl ?? null,
