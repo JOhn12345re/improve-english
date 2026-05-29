@@ -97,18 +97,21 @@ model User {
 }
 
 model Lesson {
-  id           String       @id @default(uuid())
-  level        CefrLevel
-  theme        String
-  order        Int
-  content_json Json
-  is_premium   Boolean      @default(false)
-  created_at   DateTime     @default(now())
+  id              String       @id @default(uuid())
+  level           CefrLevel
+  theme           String
+  order           Int
+  content_json    Json
+  is_premium      Boolean      @default(false)
+  created_at      DateTime     @default(now())
+  raw_content_id  String?
 
-  progress     UserProgress[]
+  progress        UserProgress[]
+  raw_content     RawContent?  @relation(fields: [raw_content_id], references: [id], onDelete: SetNull)
 
   @@unique([level, order])
   @@index([level])
+  @@index([raw_content_id])
 }
 
 model UserProgress {
