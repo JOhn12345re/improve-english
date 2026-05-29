@@ -743,15 +743,13 @@ const lessons = [
 ];
 
 export async function seedLessons(client: PrismaClient) {
-  const count = await client.lesson.count();
-  if (count > 0) {
-    console.log(`Seed skipped — database already has ${count} lessons.`);
-    return;
-  }
-
-  console.log('Seeding lessons...');
+  console.log('Seeding lessons (upsert)...');
   for (const lesson of lessons) {
-    await client.lesson.create({ data: lesson });
+    await client.lesson.upsert({
+      where: { level_order: { level: lesson.level, order: lesson.order } },
+      update: { theme: lesson.theme, content_json: lesson.content_json, is_premium: lesson.is_premium },
+      create: lesson,
+    });
   }
   console.log(`Seeded ${lessons.length} lessons successfully.`);
 }
