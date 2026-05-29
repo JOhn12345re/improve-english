@@ -40,5 +40,17 @@ async function bootstrap() {
   console.log(`Application is running on: http://0.0.0.0:${port}`);
 }
 
+process.on('uncaughtException', (err) => {
+  console.error('[FATAL] Uncaught exception:', err);
+  process.exit(1);
+});
+process.on('unhandledRejection', (reason) => {
+  console.error('[FATAL] Unhandled rejection:', reason);
+  process.exit(1);
+});
+
 applySchema();
-bootstrap();
+bootstrap().catch((err) => {
+  console.error('[FATAL] bootstrap failed:', err);
+  process.exit(1);
+});
