@@ -4,6 +4,7 @@ import { ConfigService } from '@nestjs/config';
 import { PrismaService } from '../../../common/prisma/prisma.service';
 import { ContentSource, IngestionStatus, JobStatus } from '@prisma/client';
 import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
+import { Prisma } from '@prisma/client';
 import RssParser from 'rss-parser';
 import {
   VOA_FEEDS,
