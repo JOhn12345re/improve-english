@@ -11,6 +11,7 @@ import {
   VOA_MAX_WORDS,
   VOA_MIN_WORDS,
   SOURCE_TO_PRISMA,
+  buildVoaFeedUrl,
 } from './voa.constants';
 
 type VoaSource = keyof typeof VOA_FEEDS;
