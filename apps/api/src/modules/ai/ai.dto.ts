@@ -2,37 +2,37 @@ import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
 
 export class FeedbackDto {
   @IsEnum(['mcq', 'fill', 'translation'])
-  exerciseType: 'mcq' | 'fill' | 'translation';
+  exerciseType!: 'mcq' | 'fill' | 'translation';
 
   @IsString()
   @IsNotEmpty()
-  question: string;
+  question!: string;
 
   @IsString()
   @IsNotEmpty()
-  correctAnswer: string;
+  correctAnswer!: string;
 
   @IsString()
   @IsNotEmpty()
-  userAnswer: string;
+  userAnswer!: string;
 
   @IsString()
-  level: string;
+  level!: string;
 }
 
 export class TranslationCheckDto {
   @IsString()
   @IsNotEmpty()
-  sourceFr: string;
+  sourceFr!: string;
 
   @IsString()
   @IsNotEmpty()
-  correctEn: string;
+  correctEn!: string;
 
   @IsString()
   @IsNotEmpty()
-  userAnswer: string;
+  userAnswer!: string;
 
   @IsString()
-  level: string;
+  level!: string;
 }
