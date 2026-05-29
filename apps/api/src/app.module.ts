@@ -11,6 +11,7 @@ import { VocabularyModule } from './modules/vocabulary/vocabulary.module';
 import { SubscriptionsModule } from './modules/subscriptions/subscriptions.module';
 import { HealthModule } from './modules/health/health.module';
 import { IntegrationsModule } from './modules/integrations/integrations.module';
+import { AiModule } from './modules/ai/ai.module';
 import configuration from './config/configuration';
 import { validate } from './config/config.validation';
 
