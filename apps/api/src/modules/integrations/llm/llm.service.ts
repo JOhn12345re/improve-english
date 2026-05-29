@@ -199,7 +199,7 @@ export class LlmService {
     // Default: Haiku (fast + cheap). Sonnet for conversation (history present).
     const model =
       params.model ??
-      (params.history?.length ? 'claude-sonnet-4-6' : 'claude-haiku-4-5-20251001');
+      (params.history?.length ? 'claude-opus-4-6' : 'claude-opus-4-6');
 
     return withRetry(
       async () => {
