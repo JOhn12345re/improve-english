@@ -199,6 +199,48 @@ model TatoebaLink {
   @@index([targetId])
 }
 
+// ── Content Ingestion ───────────────────────────────────────────────────────
+
+model RawContent {
+  id              String          @id @default(cuid())
+  source          ContentSource
+  source_url      String          @unique
+  source_meta     Json
+  title           String
+  text            String          @db.Text
+  audio_url       String?
+  language        String          @default("en")
+  detected_level  CefrLevel?
+  topics          String[]
+  word_count      Int
+  avg_word_freq   Float?
+  status          IngestionStatus @default(PENDING)
+  ingested_at     DateTime        @default(now())
+  processed_at    DateTime?
+
+  generated_lessons Lesson[]
+
+  @@index([source, status])
+  @@index([detected_level])
+  @@index([status])
+}
+
+model IngestionJob {
+  id              String        @id @default(cuid())
+  source          ContentSource
+  started_at      DateTime      @default(now())
+  finished_at     DateTime?
+  items_found     Int           @default(0)
+  items_imported  Int           @default(0)
+  items_skipped   Int           @default(0)
+  items_failed    Int           @default(0)
+  error_log       Json?
+  status          JobStatus     @default(RUNNING)
+
+  @@index([source, status])
+  @@index([started_at])
+}
+
 // ── Subscriptions ──────────────────────────────────────────────────────────
 
 model Subscription {
