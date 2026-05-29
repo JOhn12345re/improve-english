@@ -31,6 +31,7 @@ import { validate } from './config/config.validation';
     SubscriptionsModule,
     IntegrationsModule,
     AiModule,
+    IngestionModule,
   ],
 })
 export class AppModule {}
