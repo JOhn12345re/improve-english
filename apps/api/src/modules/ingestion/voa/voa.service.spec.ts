@@ -14,9 +14,8 @@ const mockFeed = {
       guid: 'guid-1',
       pubDate: '2026-01-01',
       categories: ['News'],
-      contentSnippet:
-        'The quick brown fox jumps over the lazy dog. '.repeat(15), // ~135 words > 100 min
-      content: 'The quick brown fox jumps over the lazy dog. '.repeat(15),
+      contentSnippet: 'Learning English is fun.', // > 5 words → PENDING
+      content: 'Learning English is fun.',
       enclosure: { url: 'https://example.com/audio1.mp3' },
     },
     {
@@ -25,8 +24,8 @@ const mockFeed = {
       guid: 'guid-2',
       pubDate: '2026-01-02',
       categories: [],
-      contentSnippet: 'Too short.', // < 100 words → REJECTED
-      content: 'Too short.',
+      contentSnippet: 'Hi.', // < 5 words → REJECTED
+      content: 'Hi.',
     },
   ],
 };
