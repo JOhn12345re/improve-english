@@ -29,6 +29,7 @@ import { validate } from './config/config.validation';
     VocabularyModule,
     SubscriptionsModule,
     IntegrationsModule,
+    AiModule,
   ],
 })
 export class AppModule {}
