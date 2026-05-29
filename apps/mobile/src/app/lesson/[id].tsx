@@ -103,7 +103,7 @@ export default function LessonScreen() {
 
   function handleNext() {
     if (isLast) {
-      const xpEarned = Math.round((score / lesson.exercises.length) * lesson.xpReward);
+      const xpEarned = Math.round((score / (lesson?.exercises?.length ?? 1)) * (lesson?.xpReward ?? 0));
       addXp(xpEarned);
       setFinished(true);
     } else {
