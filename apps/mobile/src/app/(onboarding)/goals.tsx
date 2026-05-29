@@ -64,7 +64,7 @@ export default function GoalsScreen() {
             title: t('notifications.dailyReminder.title'),
             body: t('notifications.dailyReminder.body'),
           },
-          trigger: { hour: 9, minute: 0, repeats: true },
+          trigger: { type: 'daily', hour: 9, minute: 0 } as any,
         });
       }
     } catch {
