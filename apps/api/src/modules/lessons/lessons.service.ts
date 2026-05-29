@@ -9,8 +9,14 @@ const LEVEL_ORDER: CefrLevel[] = [
 ];
 
 @Injectable()
-export class LessonsService {
+export class LessonsService implements OnApplicationBootstrap {
   constructor(private readonly prisma: PrismaService) {}
+
+  async onApplicationBootstrap() {
+    await seedLessons(this.prisma).catch((e) =>
+      console.error('Seed error (non-fatal):', e),
+    );
+  }
 
   /**
    * Filtre les lecons selon le niveau utilisateur.
