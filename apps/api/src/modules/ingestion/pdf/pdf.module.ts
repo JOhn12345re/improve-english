@@ -13,6 +13,6 @@ import { PdfIngesterService } from './pdf-ingester.service';
     GutenbergFetcherService,
     PdfIngesterService,
   ],
-  exports: [PdfIngesterService],
+  exports: [PdfIngesterService, PdfExtractorService],
 })
 export class PdfModule {}
