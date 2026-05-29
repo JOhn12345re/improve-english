@@ -66,10 +66,17 @@ export class VoaIngesterService {
     const metrics: JobMetrics = { found: 0, imported: 0, skipped: 0, failed: 0, errors: [] };
 
     try {
-      const feed = await this.parser.parseURL(feedUrl);
-      metrics.found = feed.items.length;
+      // Paginate through all pages for this zone
+      const allItems: RssParser.Item[] = [];
+      for (let page = 1; page <= feedConfig.pages; page++) {
+        const feedUrl = buildVoaFeedUrl(feedConfig.zoneId, page);
+        const feed = await this.parser.parseURL(feedUrl);
+        allItems.push(...feed.items);
+        if (feed.items.length === 0) break;
+      }
+      metrics.found = allItems.length;
 
-      for (const item of feed.items) {
+      for (const item of allItems) {
         try {
           await this.processItem(item, prismaSource, metrics);
         } catch (err) {
