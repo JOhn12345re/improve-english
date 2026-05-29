@@ -33,6 +33,8 @@ export default function LessonScreen() {
   const [translationInput, setTranslationInput] = useState('');
   const [finished, setFinished] = useState(false);
   const [showFr, setShowFr] = useState(false);
+  const [aiExplanation, setAiExplanation] = useState<string | null>(null);
+  const [aiLoading, setAiLoading] = useState(false);
 
   if (isLoading) return <View style={{flex: 1, justifyContent: 'center'}}><ActivityIndicator size='large' /></View>;
   if (!lesson || !lesson.exercises) {
