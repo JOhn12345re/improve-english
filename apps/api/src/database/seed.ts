@@ -2795,16 +2795,3 @@ export async function seedLessons(client: PrismaClient) {
   console.log(`Seeded ${lessons.length} lessons successfully.`);
 }
 
-async function main() {
-  await seedLessons(prisma);
-}
-
-main()
-  .catch((e) => {
-    console.error('Seed failed:', e);
-    process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-    process.exit(0);
-  });
