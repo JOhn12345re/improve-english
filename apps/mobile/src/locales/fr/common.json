@@ -131,7 +131,21 @@
     "toReview": "À réviser",
     "learned": "Appris",
     "mastery": "Maîtrise",
-    "startReview": "Commencer la révision"
+    "startReview": "Commencer la révision",
+    "allDone": "Tout est revu !",
+    "allDoneDesc": "Revenez plus tard pour de nouvelles révisions.",
+    "sessionDone": "Session terminée !",
+    "reviewedCount": "{{count}} mot(s) révisé(s)",
+    "reviewAgain": "Nouvelle session",
+    "remaining": "{{count}} mot(s) restant(s)",
+    "tapToFlip": "Touchez pour retourner",
+    "english": "Anglais",
+    "translation": "Traduction",
+    "howWell": "Connaissiez-vous ce mot ?",
+    "rating1": "Oublié",
+    "rating2": "Difficile",
+    "rating3": "Bien",
+    "rating4": "Facile"
   },
   "profile": {
     "title": "Profil",
