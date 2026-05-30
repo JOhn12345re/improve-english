@@ -1,5 +1,6 @@
-﻿import { router, useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   ActivityIndicator,
   KeyboardAvoidingView,
@@ -23,6 +24,7 @@ type AnswerState = 'idle' | 'correct' | 'wrong';
 
 export default function LessonScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
+  const { t } = useTranslation();
   const { data: lesson, isLoading } = useLesson(id ?? '');
   const addXp = useProfileStore((s) => s.addXp);
 
@@ -40,7 +42,7 @@ export default function LessonScreen() {
   if (!lesson || !lesson.exercises) {
     return (
       <SafeAreaView style={styles.safe}>
-        <Text style={styles.errorText}>LeÃ§on introuvable.</Text>
+        <Text style={styles.errorText}>{t('lesson.notFound')}</Text>
       </SafeAreaView>
     );
   }
@@ -72,14 +74,12 @@ export default function LessonScreen() {
     const ex = exercise as Extract<Exercise, { type: 'translation' }>;
     const normalize = (s: string) => s.toLowerCase().trim().replace(/[.!?,]/g, '');
 
-    // Quick local check first
     if (normalize(translationInput) === normalize(ex.targetEn)) {
       setAnswerState('correct');
       setScore((s) => s + 1);
       return;
     }
 
-    // AI soft check for near-correct answers
     try {
       const result = await api.post<{ correct: boolean; explanation: string }>(
         '/ai/translation-check',
@@ -96,7 +96,6 @@ export default function LessonScreen() {
         setAiExplanation(result.explanation);
       }
     } catch {
-      // Fallback to strict check if AI unavailable
       setAnswerState('wrong');
     }
   }
@@ -149,7 +148,7 @@ export default function LessonScreen() {
       });
       setAiExplanation(result.explanation);
     } catch {
-      setAiExplanation("Désolé, l'explication IA n'est pas disponible pour le moment.");
+      setAiExplanation(t('lesson.aiUnavailable'));
     } finally {
       setAiLoading(false);
     }
@@ -161,20 +160,20 @@ export default function LessonScreen() {
     return (
       <SafeAreaView style={styles.safe}>
         <View style={styles.resultContainer}>
-          <Text style={styles.resultEmoji}>{pct >= 80 ? 'ðŸ†' : pct >= 50 ? 'ðŸ‘' : 'ðŸ’ª'}</Text>
-          <Text style={styles.resultTitle}>LeÃ§on terminÃ©e !</Text>
+          <Text style={styles.resultEmoji}>{pct >= 80 ? '\u{1F3C6}' : pct >= 50 ? '\u{1F44D}' : '\u{1F4AA}'}</Text>
+          <Text style={styles.resultTitle}>{t('lesson.completed')}</Text>
           <View style={styles.resultScoreBox}>
             <Text style={styles.resultScoreText}>{score}/{lesson.exercises.length}</Text>
             <Text style={styles.resultPctText}>{pct}%</Text>
           </View>
-          <Text style={styles.resultXp}>+{xpEarned} XP gagnÃ©s â­</Text>
+          <Text style={styles.resultXp}>+{xpEarned} {t('lesson.xpEarned')}</Text>
           {pct < 60 && (
             <View style={styles.retryBanner}>
-              <Text style={styles.retryText}>ðŸ’¡ Score bas ? Rejoue cette leÃ§on pour mÃ©moriser.</Text>
+              <Text style={styles.retryText}>{t('lesson.retryHint')}</Text>
             </View>
           )}
           <Button
-            label="Retour aux leÃ§ons"
+            label={t('lesson.backToLessons')}
             variant="primary"
             size="lg"
             fullWidth
@@ -191,13 +190,13 @@ export default function LessonScreen() {
       <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => router.back()} style={styles.backBtn} accessibilityLabel="Retour">
-            <Text style={styles.backText}>âœ•</Text>
+          <TouchableOpacity onPress={() => router.back()} style={styles.backBtn} accessibilityLabel={t('common.back')}>
+            <Text style={styles.backText}>{'\u2715'}</Text>
           </TouchableOpacity>
           <View style={styles.progressWrap}>
             <ProgressBar progress={progress} />
           </View>
-          <Text style={styles.scoreLabel}>{score} âœ“</Text>
+          <Text style={styles.scoreLabel}>{score} {'\u2714'}</Text>
         </View>
 
         <ScrollView
@@ -208,9 +207,9 @@ export default function LessonScreen() {
           <Text style={styles.lessonTitle}>{lesson.title}</Text>
 
           {/* Toggle FR */}
-          <TouchableOpacity style={styles.frToggle} onPress={() => setShowFr((v) => !v)} accessibilityLabel="Basculer la traduction française">
+          <TouchableOpacity style={styles.frToggle} onPress={() => setShowFr((v) => !v)} accessibilityLabel={t('lesson.toggleTranslation')}>
             <Text style={[styles.frToggleText, showFr && styles.frToggleActive]}>
-              ðŸ‡«ðŸ‡· {showFr ? 'Masquer le franÃ§ais' : 'Voir en franÃ§ais'}
+              {showFr ? t('lesson.hideNative') : t('lesson.showNative')}
             </Text>
           </TouchableOpacity>
 
@@ -253,10 +252,10 @@ export default function LessonScreen() {
         {answerState !== 'idle' && (
           <View style={[styles.feedback, answerState === 'correct' ? styles.feedbackCorrect : styles.feedbackWrong]}>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
-              <Text style={styles.feedbackEmoji}>{answerState === 'correct' ? 'âœ…' : 'âŒ'}</Text>
+              <Text style={styles.feedbackEmoji}>{answerState === 'correct' ? '\u2705' : '\u274C'}</Text>
               <View style={{ flex: 1 }}>
               <Text style={styles.feedbackTitle}>
-                {answerState === 'correct' ? 'Correct !' : 'Pas tout Ã  faitâ€¦'}
+                {answerState === 'correct' ? t('lesson.correct') : t('lesson.incorrect')}
               </Text>
               {exercise.type === 'mcq' && (showFr ? exercise.explanationFr : exercise.explanation) && (
                 <Text style={styles.feedbackExplanation}>
@@ -265,31 +264,31 @@ export default function LessonScreen() {
               )}
               {exercise.type === 'translation' && answerState === 'wrong' && (
                 <Text style={styles.feedbackExplanation}>
-                  RÃ©ponse : {(exercise as Extract<Exercise, { type: 'translation' }>).targetEn}
+                  {t('lesson.correctAnswer')} : {(exercise as Extract<Exercise, { type: 'translation' }>).targetEn}
                 </Text>
               )}
               {exercise.type === 'fill' && answerState === 'wrong' && (
                 <Text style={styles.feedbackExplanation}>
-                  RÃ©ponse : {(exercise as Extract<Exercise, { type: 'fill' }>).answer}
+                  {t('lesson.correctAnswer')} : {(exercise as Extract<Exercise, { type: 'fill' }>).answer}
                 </Text>
               )}
               </View>
-              <TouchableOpacity style={styles.nextBtn} onPress={handleNext} accessibilityLabel="Question suivante">
-              <Text style={styles.nextBtnText}>{isLast ? 'Terminer' : 'Suivant â†’'}</Text>
+              <TouchableOpacity style={styles.nextBtn} onPress={handleNext} accessibilityLabel={t('lesson.next')}>
+              <Text style={styles.nextBtnText}>{isLast ? t('lesson.finish') : t('lesson.next')}</Text>
             </TouchableOpacity>
             </View>
             {answerState === 'wrong' && (
               <View style={{ marginTop: 10 }}>
                 {aiExplanation ? (
                   <View style={styles.aiBox}>
-                    <Text style={styles.aiLabel}>🤖 Explication IA</Text>
+                    <Text style={styles.aiLabel}>{t('lesson.aiExplanation')}</Text>
                     <Text style={styles.aiText}>{aiExplanation}</Text>
                   </View>
                 ) : (
-                  <TouchableOpacity style={styles.aiBtn} onPress={handleAskAi} disabled={aiLoading} accessibilityLabel="Demander une explication à l'IA">
+                  <TouchableOpacity style={styles.aiBtn} onPress={handleAskAi} disabled={aiLoading} accessibilityLabel={t('lesson.askAi')}>
                     {aiLoading
                       ? <ActivityIndicator size="small" color="#4F46E5" />
-                      : <Text style={styles.aiBtnText}>🤖 Explique-moi</Text>
+                      : <Text style={styles.aiBtnText}>{t('lesson.askAi')}</Text>
                     }
                   </TouchableOpacity>
                 )}
@@ -302,7 +301,7 @@ export default function LessonScreen() {
   );
 }
 
-// â”€â”€ Sous-composants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -- Sous-composants --
 
 function MCQView({
   exercise,
@@ -317,9 +316,10 @@ function MCQView({
   showFr: boolean;
   onSelect: (i: number) => void;
 }) {
+  const { t } = useTranslation();
   return (
     <View style={styles.exerciseWrap}>
-      <Text style={styles.instruction}>Choose the correct answer</Text>
+      <Text style={styles.instruction}>{t('lesson.chooseCorrect')}</Text>
       <Text style={styles.question}>{exercise.question}</Text>
       {showFr && exercise.questionFr && (
         <Text style={styles.questionFr}>({exercise.questionFr})</Text>
@@ -364,9 +364,10 @@ function FillView({
   showFr: boolean;
   onSelect: (i: number, answer: string) => void;
 }) {
+  const { t } = useTranslation();
   return (
     <View style={styles.exerciseWrap}>
-      <Text style={styles.instruction}>Complete the sentence</Text>
+      <Text style={styles.instruction}>{t('lesson.completeSentence')}</Text>
       <Text style={styles.question}>{exercise.sentence}</Text>
       {showFr && exercise.sentenceFr && (
         <Text style={styles.questionFr}>({exercise.sentenceFr})</Text>
@@ -412,16 +413,17 @@ function TranslationView({
   onChangeText: (t: string) => void;
   onCheck: () => void;
 }) {
+  const { t } = useTranslation();
   return (
     <View style={styles.exerciseWrap}>
       <Text style={styles.instruction}>
-        {exercise.instructionEn ?? 'Translate into English'}
-        {showFr && exercise.instructionFr ? `  â€¢  ${exercise.instructionFr}` : ''}
+        {exercise.instructionEn ?? t('lesson.translateToEnglish')}
+        {showFr && exercise.instructionFr ? `  \u2022  ${exercise.instructionFr}` : ''}
       </Text>
       <View style={styles.sourceBubble}>
         <Text style={styles.sourceText}>{exercise.sourceFr}</Text>
       </View>
-      {exercise.hint && <Text style={styles.hint}>ðŸ’¡ Indice : {exercise.hint}</Text>}
+      {exercise.hint && <Text style={styles.hint}>{t('lesson.hint')} : {exercise.hint}</Text>}
       <TextInput
         style={[
           styles.translationInput,
@@ -430,7 +432,7 @@ function TranslationView({
         ]}
         value={input}
         onChangeText={onChangeText}
-        placeholder="Votre traduction en anglaisâ€¦"
+        placeholder={t('lesson.translationPlaceholder')}
         editable={answerState === 'idle'}
         autoCapitalize="none"
         returnKeyType="done"
@@ -438,7 +440,7 @@ function TranslationView({
       />
       {answerState === 'idle' && (
         <Button
-          label="VÃ©rifier"
+          label={t('lesson.check')}
           variant="primary"
           size="md"
           fullWidth
@@ -569,4 +571,3 @@ const styles = StyleSheet.create({
   frToggleActive: { color: '#4F46E5' },
   questionFr: { fontSize: 15, color: '#9CA3AF', fontStyle: 'italic', marginTop: -8 },
 });
-
