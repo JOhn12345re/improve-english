@@ -1,4 +1,4 @@
-﻿import { router } from 'expo-router';
+import { router } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -16,7 +16,7 @@ export default function DashboardScreen() {
   const { profile } = useProfileStore();
   const userLevel = profile?.level ?? CefrLevel.A1;
   const { data: lessons = [], isLoading } = useLessons();
-  
+
   const nextLesson = lessons[0];
   const levelColor = LEVEL_COLORS[userLevel];
 
@@ -28,46 +28,46 @@ export default function DashboardScreen() {
         <View style={styles.header}>
           <View>
             <Text style={styles.greeting}>
-              Bonjour, {profile?.firstName ?? ''} 👋
+              {t('dashboard.greeting')} {profile?.firstName ?? ''}
             </Text>
             <View style={styles.levelRow}>
               <View style={[styles.levelBadge, { backgroundColor: levelColor + '20' }]}>
                 <Text style={[styles.levelBadgeText, { color: levelColor }]}>{userLevel}</Text>
               </View>
-              <Text style={styles.levelLabel}>Niveau actuel</Text>
+              <Text style={styles.levelLabel}>{t('dashboard.currentLevel')}</Text>
             </View>
           </View>
           <View style={styles.streakBox}>
-            <Text style={styles.streakFlame}>🔥</Text>
+            <Text style={styles.streakFlame}>{'\uD83D\uDD25'}</Text>
             <Text style={styles.streakCount}>{profile?.streak ?? 0}</Text>
-            <Text style={styles.streakLabel}>jours</Text>
+            <Text style={styles.streakLabel}>{t('dashboard.days')}</Text>
           </View>
         </View>
 
         {/* Stats */}
         <View style={styles.statsRow}>
           <View style={styles.statCard}>
-            <Text style={styles.statValue}>⭐ {profile?.xp ?? 0}</Text>
-            <Text style={styles.statLabel}>XP total</Text>
+            <Text style={styles.statValue}>{profile?.xp ?? 0}</Text>
+            <Text style={styles.statLabel}>{t('dashboard.totalXp')}</Text>
           </View>
           <View style={styles.statCard}>
             {isLoading ? <ActivityIndicator size="small" /> : (
-              <Text style={styles.statValue}>📚 {lessons.length}</Text>
+              <Text style={styles.statValue}>{lessons.length}</Text>
             )}
-            <Text style={styles.statLabel}>Leçons dispo</Text>
+            <Text style={styles.statLabel}>{t('dashboard.availableLessons')}</Text>
           </View>
           <View style={styles.statCard}>
-            <Text style={styles.statValue}>🎯 {profile?.dailyGoal ?? 10}</Text>
-            <Text style={styles.statLabel}>min/jour</Text>
+            <Text style={styles.statValue}>{profile?.dailyGoal ?? 10}</Text>
+            <Text style={styles.statLabel}>{t('dashboard.minPerDay')}</Text>
           </View>
         </View>
 
-        {/* Prochaine leçon */}
+        {/* Next lesson */}
         {isLoading ? (
           <ActivityIndicator style={{ marginTop: 20 }} />
         ) : nextLesson && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Commencer maintenant</Text>
+            <Text style={styles.sectionTitle}>{t('dashboard.startNow')}</Text>
             <TouchableOpacity
               style={styles.featuredCard}
               activeOpacity={0.85}
@@ -78,24 +78,24 @@ export default function DashboardScreen() {
                 <Text style={styles.featuredTitle}>{nextLesson.title}</Text>
                 <Text style={styles.featuredDesc} numberOfLines={2}>{nextLesson.description}</Text>
                 <View style={styles.featuredMeta}>
-                  <Text style={styles.metaChip}>⏱ {nextLesson.duration} min</Text>
-                  <Text style={styles.metaChip}>⭐ +{nextLesson.xpReward} XP</Text>
+                  <Text style={styles.metaChip}>{nextLesson.duration} min</Text>
+                  <Text style={styles.metaChip}>+{nextLesson.xpReward} XP</Text>
                 </View>
               </View>
               <View style={styles.playBtn}>
-                <Text style={styles.playBtnText}>▶</Text>
+                <Text style={styles.playBtnText}>{'\u25B6'}</Text>
               </View>
             </TouchableOpacity>
           </View>
         )}
 
-        {/* Autres leçons */}
+        {/* Other lessons */}
         {!isLoading && lessons.length > 1 && (
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
-              <Text style={styles.sectionTitle}>Toutes les leçons</Text>
+              <Text style={styles.sectionTitle}>{t('dashboard.allLessons')}</Text>
               <TouchableOpacity onPress={() => router.push('/(tabs)/lessons')}>
-                <Text style={styles.seeAll}>Voir tout →</Text>
+                <Text style={styles.seeAll}>{t('dashboard.seeAll')}</Text>
               </TouchableOpacity>
             </View>
             {lessons.slice(1, 4).map((lesson) => {
@@ -112,9 +112,9 @@ export default function DashboardScreen() {
                   </View>
                   <View style={{ flex: 1 }}>
                     <Text style={styles.miniTitle}>{lesson.title}</Text>
-                    <Text style={styles.miniMeta}>{lesson.level} • {lesson.duration} min • ⭐ {lesson.xpReward} XP</Text>
+                    <Text style={styles.miniMeta}>{lesson.level} {'\u2022'} {lesson.duration} min {'\u2022'} {lesson.xpReward} XP</Text>
                   </View>
-                  <Text style={styles.miniArrow}>›</Text>
+                  <Text style={styles.miniArrow}>{'\u203A'}</Text>
                 </TouchableOpacity>
               );
             })}
