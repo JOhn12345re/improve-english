@@ -22,13 +22,15 @@ interface BackendLesson {
   content_json: {
     title?: Record<string, string>;
     description?: Record<string, string>;
+    emoji?: string;
+    duration?: number;
+    xpReward?: number;
     exercises?: any[];
   };
 }
 
 function mapLesson(backendLesson: BackendLesson): Lesson {
-  // simple fallback
-  const lang = i18n?.language || 'fr'; 
+  const lang = i18n?.language || 'fr';
   const c = backendLesson.content_json || {};
   return {
     id: backendLesson.id,
@@ -36,9 +38,9 @@ function mapLesson(backendLesson: BackendLesson): Lesson {
     orderIndex: backendLesson.order,
     title: c.title?.[lang] || c.title?.['en'] || backendLesson.theme,
     description: c.description?.[lang] || c.description?.['en'] || '',
-    emoji: '📝',
-    duration: 5,
-    xpReward: 20,
+    emoji: c.emoji || '\uD83D\uDCDD',
+    duration: c.duration || 8,
+    xpReward: c.xpReward || 20,
     exercises: c.exercises || [],
   };
 }
