@@ -87,7 +87,15 @@
     "lessons": "Lektionen",
     "continueLesson": "Weiterlernen",
     "sampleLesson": "Begrüßungen & Vorstellungen",
-    "sampleLessonDesc": "Lerne, dich auf Englisch vorzustellen"
+    "sampleLessonDesc": "Lerne, dich auf Englisch vorzustellen",
+    "currentLevel": "Aktuelles Niveau",
+    "days": "Tage",
+    "totalXp": "Gesamt-XP",
+    "availableLessons": "Verfügbar",
+    "minPerDay": "Min/Tag",
+    "startNow": "Jetzt starten",
+    "allLessons": "Alle Lektionen",
+    "seeAll": "Alle anzeigen"
   },
   "lessons": {
     "title": "Lektionen",

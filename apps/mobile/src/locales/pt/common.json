@@ -87,7 +87,15 @@
     "lessons": "lições",
     "continueLesson": "Continuar aprendendo",
     "sampleLesson": "Saudações e Apresentações",
-    "sampleLessonDesc": "Aprenda a se apresentar em inglês"
+    "sampleLessonDesc": "Aprenda a se apresentar em inglês",
+    "currentLevel": "Nível atual",
+    "days": "dias",
+    "totalXp": "XP total",
+    "availableLessons": "Disponíveis",
+    "minPerDay": "min/dia",
+    "startNow": "Começar agora",
+    "allLessons": "Todas as lições",
+    "seeAll": "Ver tudo"
   },
   "lessons": {
     "title": "Lições",
