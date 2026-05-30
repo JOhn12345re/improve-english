@@ -131,7 +131,21 @@
     "toReview": "Da ripassare",
     "learned": "Appreso",
     "mastery": "Padronanza",
-    "startReview": "Inizia il ripasso"
+    "startReview": "Inizia il ripasso",
+    "allDone": "Tutto aggiornato!",
+    "allDoneDesc": "Torna più tardi per nuove revisioni.",
+    "sessionDone": "Sessione completata!",
+    "reviewedCount": "{{count}} parola/e rivista/e",
+    "reviewAgain": "Nuova sessione",
+    "remaining": "{{count}} parola/e rimanente/i",
+    "tapToFlip": "Tocca per girare",
+    "english": "Inglese",
+    "translation": "Traduzione",
+    "howWell": "Conoscevi questa parola?",
+    "rating1": "Ancora",
+    "rating2": "Difficile",
+    "rating3": "Bene",
+    "rating4": "Facile"
   },
   "profile": {
     "title": "Profilo",
