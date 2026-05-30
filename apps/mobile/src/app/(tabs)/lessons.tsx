@@ -49,7 +49,7 @@ export default function LessonsScreen() {
       <View style={styles.header}>
         <Text style={styles.title}>{t('lessons.title')}</Text>
         <Text style={styles.subtitle}>
-          {isLoading ? 'Chargement...' : `${lessons.length} leçon${lessons.length > 1 ? 's' : ''} disponible${lessons.length > 1 ? 's' : ''} • Niveau ${userLevel}`}
+          {isLoading ? t('common.loading') : t('lessons.subtitle', { level: userLevel })}
         </Text>
       </View>
       {isLoading ? (
