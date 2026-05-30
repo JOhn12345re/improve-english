@@ -87,7 +87,15 @@
     "lessons": "دروس",
     "continueLesson": "متابعة التعلم",
     "sampleLesson": "التحيات والتعريفات",
-    "sampleLessonDesc": "تعلّم كيف تُعرِّف عن نفسك بالإنجليزية"
+    "sampleLessonDesc": "تعلّم كيف تُعرِّف عن نفسك بالإنجليزية",
+    "currentLevel": "المستوى الحالي",
+    "days": "أيام",
+    "totalXp": "XP الإجمالي",
+    "availableLessons": "متاحة",
+    "minPerDay": "دقيقة/يوم",
+    "startNow": "ابدأ الآن",
+    "allLessons": "جميع الدروس",
+    "seeAll": "عرض الكل"
   },
   "lessons": {
     "title": "الدروس",
