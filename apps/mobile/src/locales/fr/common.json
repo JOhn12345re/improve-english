@@ -87,7 +87,15 @@
     "lessons": "leçons",
     "continueLesson": "Continuer votre apprentissage",
     "sampleLesson": "Salutations & Présentations",
-    "sampleLessonDesc": "Apprenez à vous présenter en anglais"
+    "sampleLessonDesc": "Apprenez à vous présenter en anglais",
+    "currentLevel": "Niveau actuel",
+    "days": "jours",
+    "totalXp": "XP total",
+    "availableLessons": "Leçons dispo",
+    "minPerDay": "min/jour",
+    "startNow": "Commencer maintenant",
+    "allLessons": "Toutes les leçons",
+    "seeAll": "Voir tout"
   },
   "lessons": {
     "title": "Leçons",
