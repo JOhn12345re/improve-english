@@ -143,7 +143,8 @@
     },
     "exportData": "Esporta i miei dati (GDPR)",
     "privacyPolicy": "Informativa sulla privacy",
-    "deleteAccount": "Elimina il mio account"
+    "deleteAccount": "Elimina il mio account",
+    "credits": "Fonti e crediti"
   },
   "notifications": {
     "dailyReminder": {
