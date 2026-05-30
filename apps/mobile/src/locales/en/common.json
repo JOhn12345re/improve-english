@@ -87,7 +87,15 @@
     "lessons": "lessons",
     "continueLesson": "Continue learning",
     "sampleLesson": "Greetings & Introductions",
-    "sampleLessonDesc": "Learn to introduce yourself in English"
+    "sampleLessonDesc": "Learn to introduce yourself in English",
+    "currentLevel": "Current level",
+    "days": "days",
+    "totalXp": "Total XP",
+    "availableLessons": "Available",
+    "minPerDay": "min/day",
+    "startNow": "Start now",
+    "allLessons": "All lessons",
+    "seeAll": "See all"
   },
   "lessons": {
     "title": "Lessons",
