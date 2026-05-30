@@ -131,7 +131,21 @@
     "toReview": "للمراجعة",
     "learned": "تمّ تعلّمه",
     "mastery": "الإتقان",
-    "startReview": "بدء المراجعة"
+    "startReview": "بدء المراجعة",
+    "allDone": "تمت المراجعة!",
+    "allDoneDesc": "عد لاحقاً لمراجعات جديدة.",
+    "sessionDone": "اكتملت الجلسة!",
+    "reviewedCount": "تمت مراجعة {{count}} كلمة(كلمات)",
+    "reviewAgain": "جلسة جديدة",
+    "remaining": "{{count}} كلمة(كلمات) متبقية",
+    "tapToFlip": "اضغط للقلب",
+    "english": "الإنجليزية",
+    "translation": "الترجمة",
+    "howWell": "هل كنت تعرف هذه الكلمة؟",
+    "rating1": "مرة أخرى",
+    "rating2": "صعب",
+    "rating3": "جيد",
+    "rating4": "سهل"
   },
   "profile": {
     "title": "الملف الشخصي",
