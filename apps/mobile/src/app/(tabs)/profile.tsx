@@ -51,7 +51,7 @@ export default function ProfileScreen() {
             onPress={() => router.push('/credits')}
             accessibilityLabel="View content sources and credits"
           >
-            <Text style={styles.menuItemText}>Sources & Credits</Text>
+            <Text style={styles.menuItemText}>{t('profile.credits')}</Text>
             <Text style={styles.menuItemArrow}>→</Text>
           </TouchableOpacity>
         </View>
