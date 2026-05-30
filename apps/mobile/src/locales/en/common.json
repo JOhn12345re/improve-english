@@ -131,7 +131,21 @@
     "toReview": "To review",
     "learned": "Learned",
     "mastery": "Mastery",
-    "startReview": "Start review"
+    "startReview": "Start review",
+    "allDone": "All caught up!",
+    "allDoneDesc": "Come back later for new reviews.",
+    "sessionDone": "Session complete!",
+    "reviewedCount": "{{count}} word(s) reviewed",
+    "reviewAgain": "New session",
+    "remaining": "{{count}} word(s) remaining",
+    "tapToFlip": "Tap to flip",
+    "english": "English",
+    "translation": "Translation",
+    "howWell": "How well did you know this?",
+    "rating1": "Again",
+    "rating2": "Hard",
+    "rating3": "Good",
+    "rating4": "Easy"
   },
   "profile": {
     "title": "Profile",
