@@ -1,7 +1,5 @@
 import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
-
 const lessons = [
   // ══════════════════════════════════════════════════════════════════
   // A1 — Beginner (15 lessons, order 1–15)
