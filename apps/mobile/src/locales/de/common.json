@@ -131,7 +131,21 @@
     "toReview": "Zu wiederholen",
     "learned": "Gelernt",
     "mastery": "Beherrschung",
-    "startReview": "Wiederholung starten"
+    "startReview": "Wiederholung starten",
+    "allDone": "Alles erledigt!",
+    "allDoneDesc": "Komm später für neue Wiederholungen zurück.",
+    "sessionDone": "Sitzung abgeschlossen!",
+    "reviewedCount": "{{count}} Wort/Wörter wiederholt",
+    "reviewAgain": "Neue Sitzung",
+    "remaining": "{{count}} Wort/Wörter übrig",
+    "tapToFlip": "Tippe zum Umdrehen",
+    "english": "Englisch",
+    "translation": "Übersetzung",
+    "howWell": "Wie gut kanntest du dieses Wort?",
+    "rating1": "Nochmal",
+    "rating2": "Schwer",
+    "rating3": "Gut",
+    "rating4": "Leicht"
   },
   "profile": {
     "title": "Profil",
