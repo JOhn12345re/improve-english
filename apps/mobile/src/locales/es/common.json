@@ -131,7 +131,21 @@
     "toReview": "Para repasar",
     "learned": "Aprendido",
     "mastery": "Dominio",
-    "startReview": "Iniciar repaso"
+    "startReview": "Iniciar repaso",
+    "allDone": "¡Todo al día!",
+    "allDoneDesc": "Vuelve más tarde para nuevas revisiones.",
+    "sessionDone": "¡Sesión completada!",
+    "reviewedCount": "{{count}} palabra(s) revisada(s)",
+    "reviewAgain": "Nueva sesión",
+    "remaining": "{{count}} palabra(s) restante(s)",
+    "tapToFlip": "Toca para voltear",
+    "english": "Inglés",
+    "translation": "Traducción",
+    "howWell": "¿Cómo conocías esta palabra?",
+    "rating1": "Otra vez",
+    "rating2": "Difícil",
+    "rating3": "Bien",
+    "rating4": "Fácil"
   },
   "profile": {
     "title": "Perfil",
