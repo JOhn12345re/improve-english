@@ -125,7 +125,11 @@ export class VoaIngesterService {
 
   async ingestAll(): Promise<void> {
     for (const source of Object.keys(VOA_FEEDS) as VoaSource[]) {
-      await this.ingestFeed(source);
+      try {
+        await this.ingestFeed(source);
+      } catch (err) {
+        this.logger.error(`Failed to ingest ${source}, continuing: ${(err as Error).message}`);
+      }
     }
   }
 
