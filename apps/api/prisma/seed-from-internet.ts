@@ -80,49 +80,108 @@ async function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-// ── Fetch content from Simple Wikipedia ────────────────────────────────────
+// ── Fetch content from Wikipedia (full extracts) ───────────────────────────
 
 async function fetchWikipediaArticle(title: string): Promise<{ text: string; url: string } | null> {
   try {
-    const apiUrl = `https://simple.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`;
+    // Use MediaWiki API with full extract (not just summary)
+    const params = new URLSearchParams({
+      action: 'query',
+      titles: title,
+      prop: 'extracts',
+      exintro: '0',        // Get full article, not just intro
+      explaintext: '1',    // Plain text, no HTML
+      exsectionformat: 'plain',
+      format: 'json',
+    });
+    const apiUrl = `https://simple.wikipedia.org/w/api.php?${params}`;
     const res = await fetch(apiUrl, {
-      headers: { 'User-Agent': 'EnglishFlow-Bot/1.0' },
+      headers: { 'User-Agent': 'EnglishFlow-Bot/1.0 (educational app)' },
+      signal: AbortSignal.timeout(10_000),
     });
     if (!res.ok) return null;
 
     const data = await res.json() as any;
-    const extract = data.extract as string;
-    if (!extract || extract.length < 100) return null;
+    const pages = data.query?.pages ?? {};
+    const page = Object.values(pages)[0] as any;
+    if (!page || page.missing !== undefined) return null;
 
-    // Also fetch longer content from the full article
-    const fullUrl = `https://simple.wikipedia.org/api/rest_v1/page/mobile-text/${encodeURIComponent(title)}`;
-    const fullRes = await fetch(fullUrl, {
-      headers: { 'User-Agent': 'EnglishFlow-Bot/1.0' },
-    }).catch(() => null);
-
-    let fullText = extract;
-    if (fullRes?.ok) {
-      const fullData = await fullRes.json() as any;
-      // Extract text sections
-      const sections = fullData.sections ?? [];
-      const texts: string[] = [extract];
-      for (const section of sections) {
-        if (section.text) {
-          const clean = section.text
-            .replace(/<[^>]*>/g, ' ')
-            .replace(/\s+/g, ' ')
-            .trim();
-          if (clean.length > 50) texts.push(clean);
-        }
-      }
-      fullText = texts.join('\n\n').slice(0, 3000);
-    }
+    const text = (page.extract ?? '').trim();
+    if (text.length < 200) return null;
 
     return {
-      text: fullText,
+      text: text.slice(0, 4000),
       url: `https://simple.wikipedia.org/wiki/${encodeURIComponent(title)}`,
     };
   } catch {
+    return null;
+  }
+}
+
+// ── Generate content directly with Groq (for levels lacking content) ───────
+
+interface GeneratedContent {
+  title: string;
+  text: string;
+  level: CefrLevel;
+  theme: string;
+}
+
+const CONTENT_PROMPTS: Array<{ theme: string; level: CefrLevel; topic: string }> = [
+  { theme: 'daily-life', level: CefrLevel.A1, topic: 'A simple story about going to the supermarket' },
+  { theme: 'hobbies', level: CefrLevel.A1, topic: 'A child talking about their favorite hobby' },
+  { theme: 'family', level: CefrLevel.A2, topic: 'Describing a family gathering during a holiday' },
+  { theme: 'travel', level: CefrLevel.A2, topic: 'A tourist asking for directions in a city' },
+  { theme: 'jobs', level: CefrLevel.A2, topic: 'Different jobs and what people do at work' },
+  { theme: 'social-media', level: CefrLevel.B1, topic: 'The effects of social media on teenagers' },
+  { theme: 'sports', level: CefrLevel.B1, topic: 'The history and rules of a popular sport' },
+  { theme: 'culture', level: CefrLevel.B1, topic: 'Cultural differences between countries' },
+  { theme: 'science', level: CefrLevel.B2, topic: 'How vaccines work and their importance in public health' },
+  { theme: 'society', level: CefrLevel.B2, topic: 'The impact of remote work on urban planning' },
+  { theme: 'philosophy', level: CefrLevel.C1, topic: 'The ethics of artificial intelligence in healthcare decisions' },
+  { theme: 'economics', level: CefrLevel.C1, topic: 'The debate between universal basic income supporters and critics' },
+];
+
+async function generateContentFromGroq(prompt: { theme: string; level: CefrLevel; topic: string }): Promise<GeneratedContent | null> {
+  const levelDescriptions: Record<string, string> = {
+    A1: 'very simple vocabulary, short sentences (5-8 words), present tense only, basic topics',
+    A2: 'simple vocabulary, short sentences (8-12 words), present and past tense, everyday topics',
+    B1: 'intermediate vocabulary, moderate sentences (12-18 words), various tenses, general topics',
+    B2: 'upper-intermediate vocabulary, complex sentences (15-25 words), all tenses, abstract topics',
+    C1: 'advanced vocabulary, sophisticated sentences (20-30 words), nuanced grammar, academic topics',
+    C2: 'near-native vocabulary, complex academic prose, specialized terminology, philosophical/scientific topics',
+  };
+
+  const contentPrompt = `
+Write a short English text (200-350 words) at CEFR level ${prompt.level} about: ${prompt.topic}
+
+Language requirements for ${prompt.level}: ${levelDescriptions[prompt.level]}
+
+The text should be:
+- Educational and informative
+- Natural-sounding English
+- Appropriate for French-speaking learners at this level
+- About a real-world topic that is interesting and useful
+
+Return ONLY the text, no title or metadata.
+`.trim();
+
+  try {
+    const text = await callGroq([
+      { role: 'system', content: 'You are a professional English content writer creating educational material for language learners.' },
+      { role: 'user', content: contentPrompt },
+    ], 600);
+
+    if (!text || text.length < 150) return null;
+
+    return {
+      title: prompt.topic,
+      text,
+      level: prompt.level,
+      theme: prompt.theme,
+    };
+  } catch (err) {
+    console.warn(`  Failed to generate content: ${(err as Error).message}`);
     return null;
   }
 }
