@@ -2,8 +2,14 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
+console.log('[BOOT] Starting NestJS application...');
+console.log('[BOOT] NODE_ENV:', process.env.NODE_ENV ?? 'not set');
+console.log('[BOOT] DATABASE_URL set:', !!process.env.DATABASE_URL);
+
 async function bootstrap() {
+  console.log('[BOOT] Creating NestFactory...');
   const app = await NestFactory.create(AppModule);
+  console.log('[BOOT] NestFactory created successfully');
 
   app.useGlobalPipes(
     new ValidationPipe({
