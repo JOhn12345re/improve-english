@@ -74,7 +74,7 @@ export class VoaIngesterService {
       const allItems: RssParser.Item[] = [];
       for (let page = 1; page <= feedConfig.pages; page++) {
         const feedUrl = buildVoaFeedUrl(feedConfig.zoneId, page);
-        const feed = await this.parser.parseURL(feedUrl);
+        const feed = await this.fetchAndParseFeed(feedUrl);
         allItems.push(...feed.items);
         if (feed.items.length === 0) break;
       }
