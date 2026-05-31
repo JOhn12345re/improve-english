@@ -28,6 +28,10 @@ interface JobMetrics {
 export class VoaIngesterService {
   private readonly logger = new Logger(VoaIngesterService.name);
   private readonly parser = new RssParser({
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (compatible; EnglishFlowBot/1.0; +https://englishflow.app)',
+      Accept: 'application/rss+xml, application/xml, text/xml',
+    },
     customFields: {
       item: [
         ['content:encoded', 'contentEncoded'],
