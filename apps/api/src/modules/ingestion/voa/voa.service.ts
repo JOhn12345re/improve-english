@@ -135,6 +135,25 @@ export class VoaIngesterService {
 
   // ── Private ────────────────────────────────────────────────────────────────
 
+  private async fetchAndParseFeed(feedUrl: string) {
+    try {
+      return await this.parser.parseURL(feedUrl);
+    } catch (err) {
+      // Fallback: fetch manually with User-Agent then parse the XML string
+      this.logger.warn(`parseURL failed for ${feedUrl}, retrying with manual fetch: ${(err as Error).message}`);
+      const res = await fetch(feedUrl, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (compatible; EnglishFlowBot/1.0; +https://englishflow.app)',
+          Accept: 'application/rss+xml, application/xml, text/xml',
+        },
+        signal: AbortSignal.timeout(30_000),
+      });
+      if (!res.ok) throw new Error(`Status code ${res.status}`);
+      const xml = await res.text();
+      return await this.parser.parseString(xml);
+    }
+  }
+
   private async processItem(
     item: RssParser.Item & { contentEncoded?: string; enclosure?: { url?: string } },
     source: ContentSource,
