@@ -43,4 +43,4 @@ COPY apps/api/package.json ./apps/api/
 WORKDIR /app/apps/api
 EXPOSE 3000
 
-CMD ["sh", "-c", "npx prisma db push --accept-data-loss || true; node dist/main"]
+CMD ["sh", "-c", "npx prisma db push --accept-data-loss --skip-generate 2>/dev/null || true; node dist/main"]
