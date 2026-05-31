@@ -4,19 +4,19 @@ import { ContentSource } from '@prisma/client';
  * VOA Learning English RSS feeds — podcast format.
  * Format: https://learningenglish.voanews.com/podcast/?zoneId={id}&format=RSS
  *
- * Only zone 1689 (Learning English Podcast) reliably returns items with
- * audio MP3 enclosures. The podcast RSS provides short descriptions (~20 words)
- * plus a real MP3 audio URL per episode.
- *
- * For full-text content we rely on Gutenberg / Archive.org ingestion instead.
+ * Zone IDs (verified May 2026):
+ *  - 1579: Beginning Level (Let's Learn English, daily news)
+ *  - 1581: Intermediate Level (grammar, everyday English)
+ *  - 3521: News Words (advanced vocabulary in context)
+ *  - 1689: Learning English Podcast (mixed levels, audio-focused)
  */
 export const VOA_FEEDS: Record<
   'VOA_BEGINNING' | 'VOA_INTERMEDIATE' | 'VOA_ADVANCED',
   { zoneId: string; pages: number }
 > = {
-  VOA_BEGINNING:    { zoneId: '1689', pages: 1 }, // Learning English Podcast — all levels
-  VOA_INTERMEDIATE: { zoneId: '1689', pages: 1 }, // same feed, deduplicated via source_url
-  VOA_ADVANCED:     { zoneId: '1689', pages: 1 }, // same feed, deduplicated via source_url
+  VOA_BEGINNING:    { zoneId: '1579', pages: 1 }, // Beginning Level
+  VOA_INTERMEDIATE: { zoneId: '1581', pages: 1 }, // Intermediate Level
+  VOA_ADVANCED:     { zoneId: '3521', pages: 1 }, // News Words (advanced vocabulary)
 };
 
 export const VOA_RSS_BASE = 'https://learningenglish.voanews.com/podcast/';
