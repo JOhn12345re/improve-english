@@ -11,6 +11,12 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   console.log('[BOOT] NestFactory created successfully');
 
+  // Healthcheck route via httpAdapter (backup for Railway)
+  const httpAdapter = app.getHttpAdapter();
+  httpAdapter.get('/health', (_req: any, res: any) => {
+    res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
+  });
+
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
@@ -19,7 +25,6 @@ async function bootstrap() {
     }),
   );
 
-  // No global prefix — mobile app calls /lessons, /users, etc. directly
   app.enableCors({ origin: process.env.ALLOWED_ORIGINS?.split(',') ?? '*' });
 
   const port = process.env.PORT ?? 3000;
