@@ -10,7 +10,8 @@
     "lint": "eslint src --ext .ts",
     "typecheck": "tsc --noEmit",
     "seed": "ts-node prisma/seed.ts",
-    "seed:internet": "ts-node prisma/seed-from-internet.ts"
+    "seed:internet": "ts-node prisma/seed-from-internet.ts",
+    "seed:extra": "ts-node prisma/seed-lessons-extra.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",
