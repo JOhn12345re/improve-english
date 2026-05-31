@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "seed": "ts-node prisma/seed.ts",
     "seed:internet": "ts-node prisma/seed-from-internet.ts",
-    "seed:extra": "ts-node prisma/seed-lessons-extra.ts"
+    "seed:extra": "ts-node prisma/seed-lessons-extra.ts",
+    "seed:b2c2": "ts-node prisma/seed-lessons-b2-c2.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",
