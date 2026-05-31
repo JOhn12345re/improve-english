@@ -48,7 +48,7 @@ export default function ProfileScreen() {
           <TouchableOpacity
             style={styles.menuItem}
             activeOpacity={0.7}
-            onPress={() => router.push('/credits')}
+            onPress={() => router.push('/credits' as any)}
             accessibilityLabel="View content sources and credits"
           >
             <Text style={styles.menuItemText}>{t('profile.credits')}</Text>
