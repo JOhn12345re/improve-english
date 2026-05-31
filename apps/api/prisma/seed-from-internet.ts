@@ -532,16 +532,85 @@ async function main() {
     }
   }
 
+  // ── 3. Groq-generated content for under-represented levels ────────────────
+  console.log('\n--- Generating original content via Groq ---');
+  for (const contentPrompt of CONTENT_PROMPTS) {
+    try {
+      const sourceUrl = `groq://generated/${contentPrompt.theme}-${contentPrompt.level}-${Date.now()}`;
+
+      console.log(`Generating ${contentPrompt.level} content: ${contentPrompt.topic}...`);
+      const content = await generateContentFromGroq(contentPrompt);
+      if (!content) {
+        console.log(`  Skipped (generation failed)`);
+        continue;
+      }
+
+      const wordCount = content.text.split(/\s+/).length;
+      console.log(`  ${wordCount} words generated`);
+
+      // Save RawContent
+      const raw = await prisma.rawContent.create({
+        data: {
+          source: ContentSource.MANUAL_UPLOAD,
+          source_url: sourceUrl,
+          source_meta: { generatedBy: 'groq', topic: contentPrompt.topic, theme: contentPrompt.theme },
+          title: content.title,
+          text: content.text,
+          word_count: wordCount,
+          detected_level: content.level,
+          topics: [contentPrompt.theme],
+          status: IngestionStatus.CLASSIFIED,
+          processed_at: new Date(),
+        },
+      });
+
+      // Generate lesson exercises
+      console.log(`  Generating exercises...`);
+      const lesson = await generateLesson(
+        content.text,
+        content.level,
+        content.title,
+        sourceUrl,
+        'Groq Generated',
+      );
+
+      if (lesson) {
+        const maxOrder = await prisma.lesson.aggregate({
+          where: { level: content.level },
+          _max: { order: true },
+        });
+        const order = (maxOrder._max.order ?? 0) + 1;
+
+        await prisma.lesson.create({
+          data: {
+            level: content.level,
+            theme: contentPrompt.theme,
+            order,
+            is_premium: false,
+            raw_content_id: raw.id,
+            content_json: lesson,
+          },
+        });
+
+        totalCreated++;
+        console.log(`  Lesson created! (${content.level} #${order})`);
+      }
+
+      await sleep(3000); // Rate limit
+    } catch (err) {
+      console.error(`  Error: ${(err as Error).message}`);
+    }
+  }
+
   console.log(`\n=== Done! Created ${totalCreated} lessons ===`);
 
   // Print summary
   const stats = await prisma.lesson.groupBy({
     by: ['level'],
     _count: true,
-    where: { raw_content_id: { not: null } },
   });
-  console.log('\nGenerated lessons by level:');
-  for (const s of stats) {
+  console.log('\nTotal lessons by level:');
+  for (const s of stats.sort((a, b) => a.level.localeCompare(b.level))) {
     console.log(`  ${s.level}: ${s._count} lessons`);
   }
 }
