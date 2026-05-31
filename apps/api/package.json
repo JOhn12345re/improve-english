@@ -9,7 +9,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "lint": "eslint src --ext .ts",
     "typecheck": "tsc --noEmit",
-    "seed": "ts-node prisma/seed.ts"
+    "seed": "ts-node prisma/seed.ts",
+    "seed:internet": "ts-node prisma/seed-from-internet.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",
