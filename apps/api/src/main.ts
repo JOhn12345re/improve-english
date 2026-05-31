@@ -30,7 +30,6 @@ process.on('unhandledRejection', (reason) => {
   process.exit(1);
 });
 
-applySchema();
 bootstrap().catch((err) => {
   console.error('[FATAL] bootstrap failed:', err);
   process.exit(1);
