@@ -28,8 +28,10 @@ export default function LessonScreen() {
   const { t } = useTranslation();
   const { data: lesson, isLoading } = useLesson(id ?? '');
   const addXp = useProfileStore((s) => s.addXp);
+  const addWordsMutation = useAddVocabularyWords();
 
   const [index, setIndex] = useState(0);
+  const [vocabExtracted, setVocabExtracted] = useState(false);
   const [score, setScore] = useState(0);
   const [answerState, setAnswerState] = useState<AnswerState>('idle');
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
