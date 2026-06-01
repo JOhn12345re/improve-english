@@ -536,6 +536,15 @@ async function main() {
   console.log('\n--- Generating original content via Groq ---');
   for (const contentPrompt of CONTENT_PROMPTS) {
     try {
+      // Skip if a lesson with this theme+level already exists
+      const existing = await prisma.lesson.findFirst({
+        where: { level: contentPrompt.level, theme: contentPrompt.theme },
+      });
+      if (existing) {
+        console.log(`Skipping ${contentPrompt.level}/${contentPrompt.theme} (already exists)`);
+        continue;
+      }
+
       const sourceUrl = `groq://generated/${contentPrompt.theme}-${contentPrompt.level}-${Date.now()}`;
 
       console.log(`Generating ${contentPrompt.level} content: ${contentPrompt.topic}...`);
