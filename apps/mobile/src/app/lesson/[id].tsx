@@ -331,6 +331,30 @@ export default function LessonScreen() {
                   {t('lesson.correctAnswer')} : {(exercise as Extract<Exercise, { type: 'fill' }>).answer}
                 </Text>
               )}
+              {exercise.type === 'fill' && (exercise as any).explanation && (
+                <Text style={styles.feedbackExplanation}>
+                  {showFr ? ((exercise as any).explanationFr ?? (exercise as any).explanation) : (exercise as any).explanation}
+                </Text>
+              )}
+              {exercise.type === 'translation' && (exercise as any).explanation && (
+                <Text style={styles.feedbackExplanation}>
+                  {showFr ? ((exercise as any).explanationFr ?? (exercise as any).explanation) : (exercise as any).explanation}
+                </Text>
+              )}
+              {exercise.type === 'sentence_build' && (
+                <>
+                  {answerState === 'wrong' && (
+                    <Text style={styles.feedbackExplanation}>
+                      {t('lesson.correctAnswer')} : {(exercise as SentenceBuildExercise).targetSentence}
+                    </Text>
+                  )}
+                  {(exercise as SentenceBuildExercise).explanation && (
+                    <Text style={styles.feedbackExplanation}>
+                      {showFr ? ((exercise as SentenceBuildExercise).explanationFr ?? (exercise as SentenceBuildExercise).explanation) : (exercise as SentenceBuildExercise).explanation}
+                    </Text>
+                  )}
+                </>
+              )}
               </View>
               <TouchableOpacity style={styles.nextBtn} onPress={handleNext} accessibilityLabel={t('lesson.next')}>
               <Text style={styles.nextBtnText}>{isLast ? t('lesson.finish') : t('lesson.next')}</Text>
