@@ -123,7 +123,9 @@
     "translateToEnglish": "Traduza para o inglês",
     "hint": "Dica",
     "translationPlaceholder": "Sua tradução em inglês...",
-    "check": "Verificar"
+    "check": "Verificar",
+    "tapWordsToOrder": "Toque nas palavras em ordem...",
+    "buildSentence": "Monte a frase"
   },
   "vocabulary": {
     "title": "Vocabulário",
