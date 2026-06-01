@@ -543,6 +543,125 @@ function TranslationView({
   );
 }
 
+function SentenceBuildView({
+  exercise,
+  selectedWords,
+  answerState,
+  showFr,
+  onSelectWord,
+  onCheck,
+}: {
+  exercise: SentenceBuildExercise;
+  selectedWords: number[];
+  answerState: AnswerState;
+  showFr: boolean;
+  onSelectWord: (i: number) => void;
+  onCheck: () => void;
+}) {
+  const { t } = useTranslation();
+  const builtSentence = selectedWords.map((i) => exercise.words[i]).join(' ');
+
+  return (
+    <View style={styles.exerciseWrap}>
+      <Text style={styles.instruction}>
+        {exercise.instruction}
+        {showFr && exercise.instructionFr ? `  \u2022  ${exercise.instructionFr}` : ''}
+      </Text>
+      {showFr && exercise.targetFr && (
+        <Text style={styles.questionFr}>({exercise.targetFr})</Text>
+      )}
+
+      {/* Built sentence area */}
+      <View style={sbStyles.sentenceArea}>
+        {selectedWords.length > 0 ? (
+          <Text style={sbStyles.builtText}>{builtSentence}</Text>
+        ) : (
+          <Text style={sbStyles.placeholder}>{t('lesson.tapWordsToOrder') ?? 'Tap words in order...'}</Text>
+        )}
+      </View>
+
+      {/* Word chips */}
+      <View style={sbStyles.wordChips}>
+        {exercise.words.map((word, i) => {
+          const isSelected = selectedWords.includes(i);
+          let chipBg = isSelected ? '#4F46E5' : '#F3F4F6';
+          let textColor = isSelected ? '#fff' : '#1F2937';
+
+          if (answerState !== 'idle') {
+            const correctPos = exercise.correctOrder.indexOf(i);
+            const userPos = selectedWords.indexOf(i);
+            if (correctPos === userPos && userPos !== -1) {
+              chipBg = '#10B981';
+              textColor = '#fff';
+            } else if (isSelected) {
+              chipBg = '#EF4444';
+              textColor = '#fff';
+            }
+          }
+
+          return (
+            <TouchableOpacity
+              key={i}
+              style={[sbStyles.chip, { backgroundColor: chipBg }]}
+              onPress={() => onSelectWord(i)}
+              activeOpacity={answerState !== 'idle' ? 1 : 0.7}
+            >
+              <Text style={[sbStyles.chipText, { color: textColor }]}>{word}</Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+
+      {answerState === 'idle' && selectedWords.length === exercise.words.length && (
+        <Button
+          label={t('lesson.check')}
+          variant="primary"
+          size="md"
+          fullWidth
+          onPress={onCheck}
+          style={{ marginTop: 8 }}
+        />
+      )}
+    </View>
+  );
+}
+
+const sbStyles = StyleSheet.create({
+  sentenceArea: {
+    backgroundColor: '#EEF2FF',
+    borderRadius: 14,
+    padding: 18,
+    minHeight: 60,
+    justifyContent: 'center',
+  },
+  builtText: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#1E1B4B',
+    lineHeight: 28,
+  },
+  placeholder: {
+    fontSize: 16,
+    color: '#9CA3AF',
+    fontStyle: 'italic',
+  },
+  wordChips: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 10,
+    marginTop: 4,
+  },
+  chip: {
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderRadius: 12,
+  },
+  chipText: {
+    fontSize: 16,
+    fontWeight: '700',
+  },
+});
+
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: '#fff' },
   errorText: { textAlign: 'center', marginTop: 100, color: '#EF4444', fontSize: 16 },
