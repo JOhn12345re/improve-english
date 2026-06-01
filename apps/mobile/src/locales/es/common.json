@@ -159,7 +159,11 @@
     },
     "exportData": "Exportar mis datos (RGPD)",
     "privacyPolicy": "Política de privacidad",
-    "deleteAccount": "Eliminar mi cuenta",
+    "deleteAccount": "Eliminar mis datos",
+    "deleteConfirm": {
+      "title": "¿Eliminar todos los datos?",
+      "message": "Esto borrará permanentemente todo tu progreso, vocabulario y configuración. Esta acción no se puede deshacer."
+    },
     "credits": "Fuentes y créditos"
   },
   "notifications": {
