@@ -1,0 +1,125 @@
+{
+  "greetings": [
+    { "word": "hello", "ipa": "/həˈloʊ/", "pos": "interjection", "fr": "bonjour", "example_en": "Hello, how are you?", "example_fr": "Bonjour, comment allez-vous ?" },
+    { "word": "goodbye", "ipa": "/ɡʊdˈbaɪ/", "pos": "interjection", "fr": "au revoir", "example_en": "Goodbye, see you tomorrow.", "example_fr": "Au revoir, à demain." },
+    { "word": "good morning", "ipa": "/ɡʊd ˈmɔːrnɪŋ/", "pos": "interjection", "fr": "bonjour (matin)", "example_en": "Good morning! Did you sleep well?", "example_fr": "Bonjour ! As-tu bien dormi ?" },
+    { "word": "good night", "ipa": "/ɡʊd naɪt/", "pos": "interjection", "fr": "bonne nuit", "example_en": "Good night, sleep well.", "example_fr": "Bonne nuit, dors bien." },
+    { "word": "hi", "ipa": "/haɪ/", "pos": "interjection", "fr": "salut", "example_en": "Hi! Nice to meet you.", "example_fr": "Salut ! Enchanté." },
+    { "word": "bye", "ipa": "/baɪ/", "pos": "interjection", "fr": "salut (au revoir)", "example_en": "Bye! See you later.", "example_fr": "Salut ! À plus tard." },
+    { "word": "welcome", "ipa": "/ˈwɛlkəm/", "pos": "interjection", "fr": "bienvenue", "example_en": "Welcome to our home.", "example_fr": "Bienvenue chez nous." }
+  ],
+  "politeness": [
+    { "word": "please", "ipa": "/pliːz/", "pos": "adverb", "fr": "s'il vous plaît", "example_en": "Can I have water, please?", "example_fr": "Puis-je avoir de l'eau, s'il vous plaît ?" },
+    { "word": "thank you", "ipa": "/θæŋk juː/", "pos": "interjection", "fr": "merci", "example_en": "Thank you for your help.", "example_fr": "Merci pour votre aide." },
+    { "word": "sorry", "ipa": "/ˈsɑːri/", "pos": "adjective", "fr": "désolé", "example_en": "Sorry, I don't understand.", "example_fr": "Désolé, je ne comprends pas." },
+    { "word": "excuse me", "ipa": "/ɪkˈskjuːz miː/", "pos": "interjection", "fr": "excusez-moi", "example_en": "Excuse me, where is the station?", "example_fr": "Excusez-moi, où est la gare ?" },
+    { "word": "you're welcome", "ipa": "/jʊr ˈwɛlkəm/", "pos": "interjection", "fr": "de rien", "example_en": "You're welcome!", "example_fr": "De rien !" }
+  ],
+  "pronouns": [
+    { "word": "I", "ipa": "/aɪ/", "pos": "pronoun", "fr": "je", "example_en": "I am a student.", "example_fr": "Je suis étudiant." },
+    { "word": "you", "ipa": "/juː/", "pos": "pronoun", "fr": "tu / vous", "example_en": "You are my friend.", "example_fr": "Tu es mon ami." },
+    { "word": "he", "ipa": "/hiː/", "pos": "pronoun", "fr": "il", "example_en": "He is a teacher.", "example_fr": "Il est professeur." },
+    { "word": "she", "ipa": "/ʃiː/", "pos": "pronoun", "fr": "elle", "example_en": "She is my sister.", "example_fr": "Elle est ma sœur." },
+    { "word": "it", "ipa": "/ɪt/", "pos": "pronoun", "fr": "il / elle (chose)", "example_en": "It is a cat.", "example_fr": "C'est un chat." },
+    { "word": "we", "ipa": "/wiː/", "pos": "pronoun", "fr": "nous", "example_en": "We are happy.", "example_fr": "Nous sommes heureux." },
+    { "word": "they", "ipa": "/ðeɪ/", "pos": "pronoun", "fr": "ils / elles", "example_en": "They are at school.", "example_fr": "Ils sont à l'école." },
+    { "word": "my", "ipa": "/maɪ/", "pos": "pronoun", "fr": "mon / ma", "example_en": "This is my book.", "example_fr": "C'est mon livre." },
+    { "word": "your", "ipa": "/jʊr/", "pos": "pronoun", "fr": "ton / votre", "example_en": "What is your name?", "example_fr": "Quel est ton nom ?" }
+  ],
+  "basics": [
+    { "word": "yes", "ipa": "/jɛs/", "pos": "adverb", "fr": "oui", "example_en": "Yes, I understand.", "example_fr": "Oui, je comprends." },
+    { "word": "no", "ipa": "/noʊ/", "pos": "adverb", "fr": "non", "example_en": "No, thank you.", "example_fr": "Non, merci." },
+    { "word": "okay", "ipa": "/oʊˈkeɪ/", "pos": "adverb", "fr": "d'accord", "example_en": "Okay, let's go.", "example_fr": "D'accord, allons-y." },
+    { "word": "name", "ipa": "/neɪm/", "pos": "noun", "fr": "nom", "example_en": "My name is Alex.", "example_fr": "Mon nom est Alex." },
+    { "word": "man", "ipa": "/mæn/", "pos": "noun", "fr": "homme", "example_en": "The man is tall.", "example_fr": "L'homme est grand." },
+    { "word": "woman", "ipa": "/ˈwʊmən/", "pos": "noun", "fr": "femme", "example_en": "The woman is kind.", "example_fr": "La femme est gentille." },
+    { "word": "child", "ipa": "/tʃaɪld/", "pos": "noun", "fr": "enfant", "example_en": "The child is playing.", "example_fr": "L'enfant joue." },
+    { "word": "friend", "ipa": "/frɛnd/", "pos": "noun", "fr": "ami", "example_en": "She is my friend.", "example_fr": "Elle est mon amie." }
+  ],
+  "question_words": [
+    { "word": "what", "ipa": "/wɒt/", "pos": "pronoun", "fr": "quoi / que", "example_en": "What is this?", "example_fr": "Qu'est-ce que c'est ?" },
+    { "word": "where", "ipa": "/wɛr/", "pos": "adverb", "fr": "où", "example_en": "Where do you live?", "example_fr": "Où habites-tu ?" },
+    { "word": "when", "ipa": "/wɛn/", "pos": "adverb", "fr": "quand", "example_en": "When is the meeting?", "example_fr": "Quand est la réunion ?" },
+    { "word": "who", "ipa": "/huː/", "pos": "pronoun", "fr": "qui", "example_en": "Who is she?", "example_fr": "Qui est-elle ?" },
+    { "word": "why", "ipa": "/waɪ/", "pos": "adverb", "fr": "pourquoi", "example_en": "Why are you sad?", "example_fr": "Pourquoi es-tu triste ?" },
+    { "word": "how", "ipa": "/haʊ/", "pos": "adverb", "fr": "comment", "example_en": "How are you?", "example_fr": "Comment vas-tu ?" },
+    { "word": "how much", "ipa": "/haʊ mʌtʃ/", "pos": "adverb", "fr": "combien", "example_en": "How much is this?", "example_fr": "Combien ça coûte ?" },
+    { "word": "how many", "ipa": "/haʊ ˈmɛni/", "pos": "adverb", "fr": "combien (dénombrable)", "example_en": "How many people are there?", "example_fr": "Combien de personnes y a-t-il ?" }
+  ],
+  "verbs": [
+    { "word": "be", "ipa": "/biː/", "pos": "verb", "fr": "être", "example_en": "I am happy.", "example_fr": "Je suis heureux." },
+    { "word": "have", "ipa": "/hæv/", "pos": "verb", "fr": "avoir", "example_en": "I have a cat.", "example_fr": "J'ai un chat." },
+    { "word": "do", "ipa": "/duː/", "pos": "verb", "fr": "faire", "example_en": "What do you do?", "example_fr": "Que fais-tu ?" },
+    { "word": "go", "ipa": "/ɡoʊ/", "pos": "verb", "fr": "aller", "example_en": "I go to school.", "example_fr": "Je vais à l'école." },
+    { "word": "come", "ipa": "/kʌm/", "pos": "verb", "fr": "venir", "example_en": "Come here, please.", "example_fr": "Viens ici, s'il te plaît." },
+    { "word": "want", "ipa": "/wɒnt/", "pos": "verb", "fr": "vouloir", "example_en": "I want water.", "example_fr": "Je veux de l'eau." },
+    { "word": "need", "ipa": "/niːd/", "pos": "verb", "fr": "avoir besoin", "example_en": "I need help.", "example_fr": "J'ai besoin d'aide." },
+    { "word": "like", "ipa": "/laɪk/", "pos": "verb", "fr": "aimer", "example_en": "I like music.", "example_fr": "J'aime la musique." },
+    { "word": "know", "ipa": "/noʊ/", "pos": "verb", "fr": "savoir / connaître", "example_en": "I know the answer.", "example_fr": "Je connais la réponse." },
+    { "word": "think", "ipa": "/θɪŋk/", "pos": "verb", "fr": "penser", "example_en": "I think it's good.", "example_fr": "Je pense que c'est bien." },
+    { "word": "see", "ipa": "/siː/", "pos": "verb", "fr": "voir", "example_en": "I can see the mountain.", "example_fr": "Je peux voir la montagne." },
+    { "word": "eat", "ipa": "/iːt/", "pos": "verb", "fr": "manger", "example_en": "I eat breakfast at 8.", "example_fr": "Je mange le petit-déjeuner à 8h." },
+    { "word": "drink", "ipa": "/drɪŋk/", "pos": "verb", "fr": "boire", "example_en": "I drink coffee.", "example_fr": "Je bois du café." },
+    { "word": "speak", "ipa": "/spiːk/", "pos": "verb", "fr": "parler", "example_en": "Do you speak English?", "example_fr": "Parlez-vous anglais ?" },
+    { "word": "understand", "ipa": "/ˌʌndərˈstænd/", "pos": "verb", "fr": "comprendre", "example_en": "I understand French.", "example_fr": "Je comprends le français." },
+    { "word": "work", "ipa": "/wɜːrk/", "pos": "verb", "fr": "travailler", "example_en": "I work in a hospital.", "example_fr": "Je travaille dans un hôpital." },
+    { "word": "live", "ipa": "/lɪv/", "pos": "verb", "fr": "vivre / habiter", "example_en": "I live in Paris.", "example_fr": "J'habite à Paris." },
+    { "word": "can", "ipa": "/kæn/", "pos": "verb", "fr": "pouvoir", "example_en": "I can swim.", "example_fr": "Je sais nager." },
+    { "word": "make", "ipa": "/meɪk/", "pos": "verb", "fr": "faire / fabriquer", "example_en": "I make coffee every morning.", "example_fr": "Je fais du café chaque matin." },
+    { "word": "take", "ipa": "/teɪk/", "pos": "verb", "fr": "prendre", "example_en": "Take this book.", "example_fr": "Prends ce livre." },
+    { "word": "give", "ipa": "/ɡɪv/", "pos": "verb", "fr": "donner", "example_en": "Give me the pen, please.", "example_fr": "Donne-moi le stylo, s'il te plaît." }
+  ],
+  "time": [
+    { "word": "today", "ipa": "/təˈdeɪ/", "pos": "adverb", "fr": "aujourd'hui", "example_en": "Today is Monday.", "example_fr": "Aujourd'hui c'est lundi." },
+    { "word": "tomorrow", "ipa": "/təˈmɒroʊ/", "pos": "adverb", "fr": "demain", "example_en": "See you tomorrow.", "example_fr": "À demain." },
+    { "word": "yesterday", "ipa": "/ˈjɛstərdeɪ/", "pos": "adverb", "fr": "hier", "example_en": "Yesterday was sunny.", "example_fr": "Hier il faisait beau." },
+    { "word": "now", "ipa": "/naʊ/", "pos": "adverb", "fr": "maintenant", "example_en": "I am eating now.", "example_fr": "Je mange maintenant." },
+    { "word": "always", "ipa": "/ˈɔːlweɪz/", "pos": "adverb", "fr": "toujours", "example_en": "I always wake up early.", "example_fr": "Je me réveille toujours tôt." },
+    { "word": "never", "ipa": "/ˈnɛvər/", "pos": "adverb", "fr": "jamais", "example_en": "I never eat meat.", "example_fr": "Je ne mange jamais de viande." },
+    { "word": "sometimes", "ipa": "/ˈsʌmtaɪmz/", "pos": "adverb", "fr": "parfois", "example_en": "I sometimes go to the park.", "example_fr": "Je vais parfois au parc." },
+    { "word": "morning", "ipa": "/ˈmɔːrnɪŋ/", "pos": "noun", "fr": "matin", "example_en": "I run in the morning.", "example_fr": "Je cours le matin." },
+    { "word": "night", "ipa": "/naɪt/", "pos": "noun", "fr": "nuit", "example_en": "The night is quiet.", "example_fr": "La nuit est calme." },
+    { "word": "day", "ipa": "/deɪ/", "pos": "noun", "fr": "jour", "example_en": "It is a beautiful day.", "example_fr": "C'est une belle journée." }
+  ],
+  "adjectives": [
+    { "word": "good", "ipa": "/ɡʊd/", "pos": "adjective", "fr": "bon / bien", "example_en": "This is good food.", "example_fr": "C'est de la bonne nourriture." },
+    { "word": "bad", "ipa": "/bæd/", "pos": "adjective", "fr": "mauvais", "example_en": "This is a bad idea.", "example_fr": "C'est une mauvaise idée." },
+    { "word": "big", "ipa": "/bɪɡ/", "pos": "adjective", "fr": "grand", "example_en": "The house is big.", "example_fr": "La maison est grande." },
+    { "word": "small", "ipa": "/smɔːl/", "pos": "adjective", "fr": "petit", "example_en": "The cat is small.", "example_fr": "Le chat est petit." },
+    { "word": "new", "ipa": "/njuː/", "pos": "adjective", "fr": "nouveau", "example_en": "I have a new phone.", "example_fr": "J'ai un nouveau téléphone." },
+    { "word": "old", "ipa": "/oʊld/", "pos": "adjective", "fr": "vieux / ancien", "example_en": "The building is old.", "example_fr": "Le bâtiment est ancien." },
+    { "word": "happy", "ipa": "/ˈhæpi/", "pos": "adjective", "fr": "heureux", "example_en": "I am very happy.", "example_fr": "Je suis très heureux." },
+    { "word": "tired", "ipa": "/taɪərd/", "pos": "adjective", "fr": "fatigué", "example_en": "I am tired today.", "example_fr": "Je suis fatigué aujourd'hui." },
+    { "word": "hot", "ipa": "/hɒt/", "pos": "adjective", "fr": "chaud", "example_en": "The coffee is hot.", "example_fr": "Le café est chaud." },
+    { "word": "cold", "ipa": "/koʊld/", "pos": "adjective", "fr": "froid", "example_en": "The water is cold.", "example_fr": "L'eau est froide." }
+  ],
+  "intensifiers": [
+    { "word": "very", "ipa": "/ˈvɛri/", "pos": "adverb", "fr": "très", "example_en": "It is very good.", "example_fr": "C'est très bien." },
+    { "word": "not", "ipa": "/nɒt/", "pos": "adverb", "fr": "ne...pas", "example_en": "I am not tired.", "example_fr": "Je ne suis pas fatigué." },
+    { "word": "too", "ipa": "/tuː/", "pos": "adverb", "fr": "trop", "example_en": "It is too hot.", "example_fr": "C'est trop chaud." }
+  ],
+  "quantifiers": [
+    { "word": "a lot", "ipa": "/ə lɒt/", "pos": "adverb", "fr": "beaucoup", "example_en": "I like it a lot.", "example_fr": "Je l'aime beaucoup." },
+    { "word": "some", "ipa": "/sʌm/", "pos": "determiner", "fr": "quelques / du", "example_en": "I want some water.", "example_fr": "Je veux de l'eau." },
+    { "word": "all", "ipa": "/ɔːl/", "pos": "determiner", "fr": "tout / tous", "example_en": "All the students are here.", "example_fr": "Tous les étudiants sont ici." },
+    { "word": "many", "ipa": "/ˈmɛni/", "pos": "determiner", "fr": "beaucoup de", "example_en": "There are many people.", "example_fr": "Il y a beaucoup de gens." }
+  ],
+  "connectors": [
+    { "word": "and", "ipa": "/ænd/", "pos": "conjunction", "fr": "et", "example_en": "I like tea and coffee.", "example_fr": "J'aime le thé et le café." },
+    { "word": "but", "ipa": "/bʌt/", "pos": "conjunction", "fr": "mais", "example_en": "I am tired but happy.", "example_fr": "Je suis fatigué mais heureux." },
+    { "word": "or", "ipa": "/ɔːr/", "pos": "conjunction", "fr": "ou", "example_en": "Tea or coffee?", "example_fr": "Thé ou café ?" },
+    { "word": "because", "ipa": "/bɪˈkɒz/", "pos": "conjunction", "fr": "parce que", "example_en": "I am happy because it is sunny.", "example_fr": "Je suis heureux parce qu'il fait beau." },
+    { "word": "so", "ipa": "/soʊ/", "pos": "conjunction", "fr": "donc / alors", "example_en": "I am tired, so I sleep.", "example_fr": "Je suis fatigué, donc je dors." },
+    { "word": "with", "ipa": "/wɪð/", "pos": "preposition", "fr": "avec", "example_en": "I go with my friend.", "example_fr": "Je vais avec mon ami." },
+    { "word": "without", "ipa": "/wɪðˈaʊt/", "pos": "preposition", "fr": "sans", "example_en": "Coffee without sugar.", "example_fr": "Café sans sucre." }
+  ],
+  "place": [
+    { "word": "here", "ipa": "/hɪr/", "pos": "adverb", "fr": "ici", "example_en": "Come here.", "example_fr": "Viens ici." },
+    { "word": "there", "ipa": "/ðɛr/", "pos": "adverb", "fr": "là-bas", "example_en": "The school is there.", "example_fr": "L'école est là-bas." },
+    { "word": "in", "ipa": "/ɪn/", "pos": "preposition", "fr": "dans", "example_en": "I am in the house.", "example_fr": "Je suis dans la maison." },
+    { "word": "on", "ipa": "/ɒn/", "pos": "preposition", "fr": "sur", "example_en": "The book is on the table.", "example_fr": "Le livre est sur la table." },
+    { "word": "at", "ipa": "/æt/", "pos": "preposition", "fr": "à", "example_en": "I am at home.", "example_fr": "Je suis à la maison." },
+    { "word": "to", "ipa": "/tuː/", "pos": "preposition", "fr": "à / vers", "example_en": "I go to school.", "example_fr": "Je vais à l'école." },
+    { "word": "from", "ipa": "/frɒm/", "pos": "preposition", "fr": "de / depuis", "example_en": "I am from France.", "example_fr": "Je viens de France." }
+  ]
+}
