@@ -159,7 +159,11 @@
     },
     "exportData": "Esporta i miei dati (GDPR)",
     "privacyPolicy": "Informativa sulla privacy",
-    "deleteAccount": "Elimina il mio account",
+    "deleteAccount": "Elimina i miei dati",
+    "deleteConfirm": {
+      "title": "Eliminare tutti i dati?",
+      "message": "Questo cancellerà definitivamente tutti i tuoi progressi, il vocabolario e le impostazioni. Questa azione non può essere annullata."
+    },
     "credits": "Fonti e crediti"
   },
   "notifications": {
