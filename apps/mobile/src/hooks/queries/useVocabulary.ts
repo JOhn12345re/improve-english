@@ -7,6 +7,15 @@ export interface VocabularyItem {
   translation: string;
   level: string;
   partOfSpeech: string;
+  masteryLevel?: number;
+  reps?: number;
+}
+
+export interface VocabularyStats {
+  total: number;
+  due: number;
+  mastered: number;
+  masteryPercent: number;
 }
 
 export function useDueVocabulary() {
@@ -16,15 +25,38 @@ export function useDueVocabulary() {
   });
 }
 
+export function useVocabularyStats() {
+  return useQuery({
+    queryKey: ['vocabulary', 'stats'],
+    queryFn: () => api.get<VocabularyStats>('/vocabulary/stats'),
+  });
+}
+
 export function useReviewVocabulary() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (data: { vocabularyId: string; quality: number }) => 
-      api.post('/vocabulary/review', data),
+    mutationFn: (data: { vocabularyId: string; quality: number }) =>
+      api.post('/vocabulary/review', {
+        word_id: data.vocabularyId,
+        rating: data.quality,
+      }),
     onSuccess: () => {
-      // Invalidate due vocabulary after a review to fetch the updated list
       queryClient.invalidateQueries({ queryKey: ['vocabulary', 'due'] });
+      queryClient.invalidateQueries({ queryKey: ['vocabulary', 'stats'] });
+    },
+  });
+}
+
+export function useAddVocabularyWords() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (words: Array<{ word: string; translation: string; level: string }>) =>
+      api.post('/vocabulary/add-words', { words }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['vocabulary', 'due'] });
+      queryClient.invalidateQueries({ queryKey: ['vocabulary', 'stats'] });
     },
   });
 }
