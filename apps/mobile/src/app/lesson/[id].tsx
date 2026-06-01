@@ -108,6 +108,31 @@ export default function LessonScreen() {
       const xpEarned = Math.round((score / (lesson?.exercises?.length ?? 1)) * (lesson?.xpReward ?? 0));
       addXp(xpEarned);
       setFinished(true);
+
+      // Extract vocabulary words from exercises and add to review queue
+      if (!vocabExtracted && lesson?.exercises) {
+        setVocabExtracted(true);
+        const words: Array<{ word: string; translation: string; level: string }> = [];
+        for (const ex of lesson.exercises) {
+          if (ex.type === 'mcq' && ex.options && ex.correctIndex !== undefined) {
+            const answer = ex.options[ex.correctIndex];
+            const questionFr = (ex as any).questionFr ?? '';
+            if (answer && answer.length > 2 && answer.length < 40) {
+              words.push({ word: answer, translation: questionFr, level: lesson.level ?? 'A1' });
+            }
+          }
+          if (ex.type === 'fill' && ex.answer) {
+            const sentenceFr = (ex as any).sentenceFr ?? '';
+            words.push({ word: ex.answer, translation: sentenceFr, level: lesson.level ?? 'A1' });
+          }
+          if (ex.type === 'translation' && ex.targetEn) {
+            words.push({ word: ex.targetEn, translation: (ex as any).sourceFr ?? '', level: lesson.level ?? 'A1' });
+          }
+        }
+        if (words.length > 0) {
+          addWordsMutation.mutate(words.slice(0, 10));
+        }
+      }
     } else {
       setIndex((i) => i + 1);
       setAnswerState('idle');
