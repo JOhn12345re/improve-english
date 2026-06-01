@@ -27,6 +27,24 @@ export default function ProfileScreen() {
     ]);
   }
 
+  async function handleDeleteData() {
+    Alert.alert(
+      t('profile.deleteConfirm.title'),
+      t('profile.deleteConfirm.message'),
+      [
+        { text: t('common.cancel'), style: 'cancel' },
+        {
+          text: t('profile.deleteAccount'),
+          style: 'destructive',
+          onPress: async () => {
+            await AsyncStorage.clear();
+            router.replace('/(onboarding)/welcome');
+          },
+        },
+      ],
+    );
+  }
+
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
       <View style={styles.container}>
@@ -41,18 +59,29 @@ export default function ProfileScreen() {
         <Text style={styles.xp}>{profile?.xp ?? 0} XP {'\u2022'} {profile?.streak ?? 0} {t('dashboard.days')}</Text>
 
         <View style={styles.menu}>
-          <TouchableOpacity style={styles.menuItem} activeOpacity={0.7}>
+          <TouchableOpacity
+            style={styles.menuItem}
+            activeOpacity={0.7}
+            onPress={() => router.push('/privacy' as any)}
+          >
             <Text style={styles.menuItemText}>{t('profile.privacyPolicy')}</Text>
-            <Text style={styles.menuItemArrow}>→</Text>
+            <Text style={styles.menuItemArrow}>{'\u203A'}</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.menuItem}
             activeOpacity={0.7}
             onPress={() => router.push('/credits' as any)}
-            accessibilityLabel="View content sources and credits"
           >
             <Text style={styles.menuItemText}>{t('profile.credits')}</Text>
-            <Text style={styles.menuItemArrow}>→</Text>
+            <Text style={styles.menuItemArrow}>{'\u203A'}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.menuItem}
+            activeOpacity={0.7}
+            onPress={handleDeleteData}
+          >
+            <Text style={[styles.menuItemText, styles.destructiveText]}>{t('profile.deleteAccount')}</Text>
+            <Text style={[styles.menuItemArrow, styles.destructiveText]}>{'\u203A'}</Text>
           </TouchableOpacity>
         </View>
 
