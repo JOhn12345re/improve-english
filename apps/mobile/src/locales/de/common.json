@@ -159,7 +159,11 @@
     },
     "exportData": "Meine Daten exportieren (DSGVO)",
     "privacyPolicy": "Datenschutzrichtlinie",
-    "deleteAccount": "Mein Konto löschen",
+    "deleteAccount": "Meine Daten löschen",
+    "deleteConfirm": {
+      "title": "Alle Daten löschen?",
+      "message": "Dadurch werden alle deine Fortschritte, dein Vokabular und deine Einstellungen dauerhaft gelöscht. Diese Aktion kann nicht rückgängig gemacht werden."
+    },
     "credits": "Quellen & Credits"
   },
   "notifications": {
