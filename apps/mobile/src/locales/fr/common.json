@@ -159,7 +159,11 @@
     },
     "exportData": "Exporter mes données (RGPD)",
     "privacyPolicy": "Politique de confidentialité",
-    "deleteAccount": "Supprimer mon compte",
+    "deleteAccount": "Supprimer mes données",
+    "deleteConfirm": {
+      "title": "Supprimer toutes les données ?",
+      "message": "Cela effacera définitivement votre progression, vocabulaire et paramètres. Cette action est irréversible."
+    },
     "credits": "Sources & Crédits"
   },
   "notifications": {
