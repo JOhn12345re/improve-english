@@ -159,7 +159,11 @@
     },
     "exportData": "Export my data (GDPR)",
     "privacyPolicy": "Privacy Policy",
-    "deleteAccount": "Delete my account",
+    "deleteAccount": "Delete my data",
+    "deleteConfirm": {
+      "title": "Delete all data?",
+      "message": "This will permanently erase all your progress, vocabulary, and settings. This action cannot be undone."
+    },
     "credits": "Sources & Credits"
   },
   "notifications": {
