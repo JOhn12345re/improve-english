@@ -123,7 +123,9 @@
     "translateToEnglish": "Translate into English",
     "hint": "Hint",
     "translationPlaceholder": "Your English translation...",
-    "check": "Check"
+    "check": "Check",
+    "tapWordsToOrder": "Tap words in order...",
+    "buildSentence": "Build the sentence"
   },
   "vocabulary": {
     "title": "Vocabulary",
