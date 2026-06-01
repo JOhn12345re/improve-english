@@ -1,5 +1,4 @@
 import { Controller, Get, Param, Req } from '@nestjs/common';
-import { CefrLevel } from '@englishflow/shared-types';
 import { LessonsService } from './lessons.service';
 
 @Controller('lessons')
@@ -8,18 +7,14 @@ export class LessonsController {
 
   @Get()
   async findAll(
-    @Req() req: { user?: { level: CefrLevel; isPremium: boolean } },
+    @Req() req: { user?: { isPremium: boolean } },
   ) {
-    const level = req.user?.level ?? CefrLevel.A1;
     const isPremium = req.user?.isPremium ?? false;
-    return this.lessonsService.findByLevel(level, isPremium);
+    return this.lessonsService.findAll(isPremium);
   }
 
   @Get(':id')
-  async findOne(
-    @Param('id') id: string,
-    @Req() req: { user?: { level: CefrLevel } },
-  ) {
-    return this.lessonsService.findById(id, req.user?.level ?? CefrLevel.C2);
+  async findOne(@Param('id') id: string) {
+    return this.lessonsService.findById(id);
   }
 }
