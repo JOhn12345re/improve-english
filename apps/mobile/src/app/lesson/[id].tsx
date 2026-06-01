@@ -38,6 +38,7 @@ export default function LessonScreen() {
   const [answerState, setAnswerState] = useState<AnswerState>('idle');
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [translationInput, setTranslationInput] = useState('');
+  const [selectedWords, setSelectedWords] = useState<number[]>([]);
   const [finished, setFinished] = useState(false);
   const [showFr, setShowFr] = useState(false);
   const [aiExplanation, setAiExplanation] = useState<string | null>(null);
