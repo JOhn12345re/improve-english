@@ -18,6 +18,7 @@ import { Exercise } from '@/data/lessons';
 import ProgressBar from '@/components/ui/ProgressBar';
 import Button from '@/components/ui/Button';
 import { useProfileStore } from '@/stores/profile.store';
+import { useAddVocabularyWords } from '@/hooks/queries/useVocabulary';
 import { api } from '@/services/api';
 
 type AnswerState = 'idle' | 'correct' | 'wrong';
