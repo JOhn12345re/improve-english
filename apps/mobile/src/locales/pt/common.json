@@ -159,7 +159,11 @@
     },
     "exportData": "Exportar meus dados (LGPD)",
     "privacyPolicy": "Política de privacidade",
-    "deleteAccount": "Excluir minha conta",
+    "deleteAccount": "Excluir meus dados",
+    "deleteConfirm": {
+      "title": "Excluir todos os dados?",
+      "message": "Isso apagará permanentemente todo o seu progresso, vocabulário e configurações. Esta ação não pode ser desfeita."
+    },
     "credits": "Fontes e créditos"
   },
   "notifications": {
