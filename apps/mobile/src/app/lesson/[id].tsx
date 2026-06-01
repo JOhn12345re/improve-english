@@ -106,6 +106,14 @@ export default function LessonScreen() {
     }
   }
 
+  function handleSentenceBuildCheck() {
+    if (answerState !== 'idle') return;
+    const ex = exercise as SentenceBuildExercise;
+    const correct = JSON.stringify(selectedWords) === JSON.stringify(ex.correctOrder);
+    setAnswerState(correct ? 'correct' : 'wrong');
+    if (correct) setScore((s) => s + 1);
+  }
+
   function handleNext() {
     if (isLast) {
       const xpEarned = Math.round((score / (lesson?.exercises?.length ?? 1)) * (lesson?.xpReward ?? 0));
