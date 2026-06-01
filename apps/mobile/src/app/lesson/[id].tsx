@@ -139,6 +139,10 @@ export default function LessonScreen() {
           if (ex.type === 'translation' && ex.targetEn) {
             words.push({ word: ex.targetEn, translation: (ex as any).sourceFr ?? '', level: lesson.level ?? 'A1' });
           }
+          if (ex.type === 'sentence_build') {
+            const sbEx = ex as SentenceBuildExercise;
+            words.push({ word: sbEx.targetSentence, translation: sbEx.targetFr ?? '', level: lesson.level ?? 'A1' });
+          }
         }
         if (words.length > 0) {
           addWordsMutation.mutate(words.slice(0, 10));
