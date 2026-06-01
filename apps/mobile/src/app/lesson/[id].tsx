@@ -21,6 +21,8 @@ import { useProfileStore } from '@/stores/profile.store';
 import { useAddVocabularyWords } from '@/hooks/queries/useVocabulary';
 import { api } from '@/services/api';
 
+import type { SentenceBuildExercise } from '@/data/lessons';
+
 type AnswerState = 'idle' | 'correct' | 'wrong';
 
 export default function LessonScreen() {
