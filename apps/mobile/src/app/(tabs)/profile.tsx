@@ -126,5 +126,6 @@ const styles = StyleSheet.create({
   },
   menuItemText: { fontSize: 15, color: '#374151' },
   menuItemArrow: { fontSize: 16, color: '#9CA3AF' },
+  destructiveText: { color: '#EF4444' },
   logoutButton: { marginTop: 'auto', marginBottom: 16 },
 });
