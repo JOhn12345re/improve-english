@@ -149,6 +149,7 @@ export default function LessonScreen() {
       setAnswerState('idle');
       setSelectedOption(null);
       setTranslationInput('');
+      setSelectedWords([]);
       setShowFr(false);
       setAiExplanation(null);
     }
