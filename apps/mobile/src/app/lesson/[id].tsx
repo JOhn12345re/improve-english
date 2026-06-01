@@ -171,6 +171,9 @@ export default function LessonScreen() {
       } else if (ex.type === 'translation') {
         question = ex.sourceFr;
         correctAnswer = ex.targetEn;
+      } else if (ex.type === 'sentence_build') {
+        question = (ex as SentenceBuildExercise).targetFr;
+        correctAnswer = (ex as SentenceBuildExercise).targetSentence;
       }
       const result = await api.post<{ explanation: string }>('/ai/feedback', {
         exerciseType: ex.type,
