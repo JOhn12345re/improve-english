@@ -286,6 +286,25 @@ export default function LessonScreen() {
               onCheck={handleTranslationCheck}
             />
           )}
+
+          {/* Exercice Sentence Build */}
+          {exercise.type === 'sentence_build' && (
+            <SentenceBuildView
+              exercise={exercise as SentenceBuildExercise}
+              selectedWords={selectedWords}
+              answerState={answerState}
+              showFr={showFr}
+              onSelectWord={(i) => {
+                if (answerState !== 'idle') return;
+                if (selectedWords.includes(i)) {
+                  setSelectedWords(selectedWords.filter((w) => w !== i));
+                } else {
+                  setSelectedWords([...selectedWords, i]);
+                }
+              }}
+              onCheck={handleSentenceBuildCheck}
+            />
+          )}
         </ScrollView>
 
         {/* Feedback + bouton suivant */}
