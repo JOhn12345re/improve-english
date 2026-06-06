@@ -1,5 +1,5 @@
 import { router, useLocalSearchParams } from 'expo-router';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   ActivityIndicator,
@@ -21,7 +21,7 @@ import { useProfileStore } from '@/stores/profile.store';
 import { useAddVocabularyWords } from '@/hooks/queries/useVocabulary';
 import { api } from '@/services/api';
 
-import type { SentenceBuildExercise } from '@/data/lessons';
+import type { SentenceBuildExercise, ListenTypeExercise, WordOrderExercise, MatchPairsExercise } from '@/data/lessons';
 
 type AnswerState = 'idle' | 'correct' | 'wrong';
 
@@ -39,6 +39,10 @@ export default function LessonScreen() {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [translationInput, setTranslationInput] = useState('');
   const [selectedWords, setSelectedWords] = useState<number[]>([]);
+  const [listenInput, setListenInput] = useState('');
+  const [wordOrderSelected, setWordOrderSelected] = useState<number[]>([]);
+  const [matchLeft, setMatchLeft] = useState<number | null>(null);
+  const [matchPaired, setMatchPaired] = useState<Map<number, number>>(new Map());
   const [finished, setFinished] = useState(false);
   const [showFr, setShowFr] = useState(false);
   const [aiExplanation, setAiExplanation] = useState<string | null>(null);
@@ -114,6 +118,54 @@ export default function LessonScreen() {
     if (correct) setScore((s) => s + 1);
   }
 
+  function handleListenTypeCheck() {
+    if (answerState !== 'idle') return;
+    const ex = exercise as ListenTypeExercise;
+    const normalize = (s: string) => s.toLowerCase().trim().replace(/[.!?,]/g, '');
+    const correct = normalize(listenInput) === normalize(ex.word);
+    setAnswerState(correct ? 'correct' : 'wrong');
+    if (correct) setScore((s) => s + 1);
+  }
+
+  function handleFillTypeCheck() {
+    if (answerState !== 'idle') return;
+    const ex = exercise as Extract<Exercise, { type: 'fill' }>;
+    const normalize = (s: string) => s.toLowerCase().trim().replace(/[.!?,]/g, '');
+    const correct = normalize(translationInput) === normalize(ex.answer);
+    setAnswerState(correct ? 'correct' : 'wrong');
+    if (correct) setScore((s) => s + 1);
+  }
+
+  function handleWordOrderCheck() {
+    if (answerState !== 'idle') return;
+    const ex = exercise as WordOrderExercise;
+    const userSentence = wordOrderSelected.map((i) => ex.shuffledWords[i]).join(' ');
+    const correct = userSentence === ex.correctOrder.join(' ');
+    setAnswerState(correct ? 'correct' : 'wrong');
+    if (correct) setScore((s) => s + 1);
+  }
+
+  function handleMatchSelect(side: 'left' | 'right', index: number) {
+    if (answerState !== 'idle') return;
+    const ex = exercise as MatchPairsExercise;
+    if (side === 'left') {
+      setMatchLeft(index);
+    } else if (matchLeft !== null) {
+      const newPaired = new Map(matchPaired);
+      newPaired.set(matchLeft, index);
+      setMatchPaired(newPaired);
+      setMatchLeft(null);
+      // Auto-check when all pairs are matched
+      if (newPaired.size === ex.pairs.length) {
+        const allCorrect = Array.from(newPaired.entries()).every(
+          ([l, r]) => l === r,
+        );
+        setAnswerState(allCorrect ? 'correct' : 'wrong');
+        if (allCorrect) setScore((s) => s + 1);
+      }
+    }
+  }
+
   function handleNext() {
     if (isLast) {
       const xpEarned = Math.round((score / (lesson?.exercises?.length ?? 1)) * (lesson?.xpReward ?? 0));
@@ -143,6 +195,20 @@ export default function LessonScreen() {
             const sbEx = ex as SentenceBuildExercise;
             words.push({ word: sbEx.targetSentence, translation: sbEx.targetFr ?? '', level: lesson.level ?? 'A1' });
           }
+          if (ex.type === 'listen_type') {
+            const ltEx = ex as ListenTypeExercise;
+            words.push({ word: ltEx.word, translation: ltEx.instructionFr ?? '', level: lesson.level ?? 'A1' });
+          }
+          if (ex.type === 'word_order') {
+            const woEx = ex as WordOrderExercise;
+            words.push({ word: woEx.correctOrder.join(' '), translation: woEx.translationFr ?? '', level: lesson.level ?? 'A1' });
+          }
+          if (ex.type === 'match_pairs') {
+            const mpEx = ex as MatchPairsExercise;
+            for (const pair of mpEx.pairs) {
+              words.push({ word: pair.en, translation: pair.fr, level: lesson.level ?? 'A1' });
+            }
+          }
         }
         if (words.length > 0) {
           addWordsMutation.mutate(words.slice(0, 10));
@@ -154,6 +220,10 @@ export default function LessonScreen() {
       setSelectedOption(null);
       setTranslationInput('');
       setSelectedWords([]);
+      setListenInput('');
+      setWordOrderSelected([]);
+      setMatchLeft(null);
+      setMatchPaired(new Map());
       setShowFr(false);
       setAiExplanation(null);
     }
@@ -178,14 +248,25 @@ export default function LessonScreen() {
       } else if (ex.type === 'sentence_build') {
         question = (ex as SentenceBuildExercise).targetFr;
         correctAnswer = (ex as SentenceBuildExercise).targetSentence;
+      } else if (ex.type === 'listen_type') {
+        question = (ex as ListenTypeExercise).instruction;
+        correctAnswer = (ex as ListenTypeExercise).word;
+      } else if (ex.type === 'word_order') {
+        question = (ex as WordOrderExercise).translationFr;
+        correctAnswer = (ex as WordOrderExercise).correctOrder.join(' ');
+      } else if (ex.type === 'match_pairs') {
+        question = (ex as MatchPairsExercise).instruction;
+        correctAnswer = (ex as MatchPairsExercise).pairs.map((p) => `${p.en}=${p.fr}`).join(', ');
       }
       const result = await api.post<{ explanation: string }>('/ai/feedback', {
         exerciseType: ex.type,
         question,
         correctAnswer,
         userAnswer:
-          ex.type === 'translation'
+          ex.type === 'translation' || (ex.type === 'fill' && (!ex.options || ex.options.length === 0))
             ? translationInput
+            : ex.type === 'listen_type'
+            ? listenInput
             : selectedOption !== null && ex.type === 'mcq'
             ? ex.options[selectedOption]
             : selectedOption !== null && ex.type === 'fill'
@@ -271,14 +352,24 @@ export default function LessonScreen() {
             />
           )}
 
-          {/* Exercice Fill */}
-          {exercise.type === 'fill' && (
+          {/* Exercice Fill (with options or free typing) */}
+          {exercise.type === 'fill' && exercise.options && exercise.options.length > 0 && (
             <FillView
               exercise={exercise}
               selectedOption={selectedOption}
               answerState={answerState}
               showFr={showFr}
               onSelect={handleFill}
+            />
+          )}
+          {exercise.type === 'fill' && (!exercise.options || exercise.options.length === 0) && (
+            <FillTypeView
+              exercise={exercise}
+              input={translationInput}
+              answerState={answerState}
+              showFr={showFr}
+              onChangeText={setTranslationInput}
+              onCheck={handleFillTypeCheck}
             />
           )}
 
@@ -310,6 +401,47 @@ export default function LessonScreen() {
                 }
               }}
               onCheck={handleSentenceBuildCheck}
+            />
+          )}
+
+          {/* Exercice Listen & Type */}
+          {exercise.type === 'listen_type' && (
+            <ListenTypeView
+              exercise={exercise as ListenTypeExercise}
+              input={listenInput}
+              answerState={answerState}
+              onChangeText={setListenInput}
+              onCheck={handleListenTypeCheck}
+            />
+          )}
+
+          {/* Exercice Word Order */}
+          {exercise.type === 'word_order' && (
+            <WordOrderView
+              exercise={exercise as WordOrderExercise}
+              selectedWords={wordOrderSelected}
+              answerState={answerState}
+              showFr={showFr}
+              onSelectWord={(i) => {
+                if (answerState !== 'idle') return;
+                if (wordOrderSelected.includes(i)) {
+                  setWordOrderSelected(wordOrderSelected.filter((w) => w !== i));
+                } else {
+                  setWordOrderSelected([...wordOrderSelected, i]);
+                }
+              }}
+              onCheck={handleWordOrderCheck}
+            />
+          )}
+
+          {/* Exercice Match Pairs */}
+          {exercise.type === 'match_pairs' && (
+            <MatchPairsView
+              exercise={exercise as MatchPairsExercise}
+              matchLeft={matchLeft}
+              matchPaired={matchPaired}
+              answerState={answerState}
+              onSelect={handleMatchSelect}
             />
           )}
         </ScrollView>
@@ -361,6 +493,21 @@ export default function LessonScreen() {
                     </Text>
                   )}
                 </>
+              )}
+              {exercise.type === 'listen_type' && answerState === 'wrong' && (
+                <Text style={styles.feedbackExplanation}>
+                  {t('lesson.correctAnswer')} : {(exercise as ListenTypeExercise).word}
+                </Text>
+              )}
+              {exercise.type === 'word_order' && answerState === 'wrong' && (
+                <Text style={styles.feedbackExplanation}>
+                  {t('lesson.correctAnswer')} : {(exercise as WordOrderExercise).correctOrder.join(' ')}
+                </Text>
+              )}
+              {exercise.type === 'match_pairs' && answerState === 'wrong' && (
+                <Text style={styles.feedbackExplanation}>
+                  {(exercise as MatchPairsExercise).pairs.map((p) => `${p.en} = ${p.fr}`).join(', ')}
+                </Text>
               )}
               </View>
               <TouchableOpacity style={styles.nextBtn} onPress={handleNext} accessibilityLabel={t('lesson.next')}>
@@ -625,6 +772,301 @@ function SentenceBuildView({
     </View>
   );
 }
+
+function FillTypeView({
+  exercise,
+  input,
+  answerState,
+  showFr,
+  onChangeText,
+  onCheck,
+}: {
+  exercise: Extract<Exercise, { type: 'fill' }>;
+  input: string;
+  answerState: AnswerState;
+  showFr: boolean;
+  onChangeText: (t: string) => void;
+  onCheck: () => void;
+}) {
+  const { t } = useTranslation();
+  return (
+    <View style={styles.exerciseWrap}>
+      <Text style={styles.instruction}>{t('lesson.completeSentence')}</Text>
+      <Text style={styles.question}>{exercise.sentence}</Text>
+      {showFr && exercise.sentenceFr && (
+        <Text style={styles.questionFr}>({exercise.sentenceFr})</Text>
+      )}
+      <TextInput
+        style={[
+          styles.translationInput,
+          answerState === 'correct' && styles.inputCorrect,
+          answerState === 'wrong' && styles.inputWrong,
+        ]}
+        value={input}
+        onChangeText={onChangeText}
+        placeholder={t('lesson.translationPlaceholder')}
+        editable={answerState === 'idle'}
+        autoCapitalize="none"
+        returnKeyType="done"
+        onSubmitEditing={answerState === 'idle' ? onCheck : undefined}
+      />
+      {answerState === 'idle' && (
+        <Button
+          label={t('lesson.check')}
+          variant="primary"
+          size="md"
+          fullWidth
+          disabled={input.trim().length === 0}
+          onPress={onCheck}
+          style={{ marginTop: 8 }}
+        />
+      )}
+    </View>
+  );
+}
+
+function ListenTypeView({
+  exercise,
+  input,
+  answerState,
+  onChangeText,
+  onCheck,
+}: {
+  exercise: ListenTypeExercise;
+  input: string;
+  answerState: AnswerState;
+  onChangeText: (t: string) => void;
+  onCheck: () => void;
+}) {
+  const { t } = useTranslation();
+  return (
+    <View style={styles.exerciseWrap}>
+      <Text style={styles.instruction}>{exercise.instruction}</Text>
+      <View style={styles.sourceBubble}>
+        <Text style={styles.sourceText}>{'\uD83D\uDD0A'} {exercise.word}</Text>
+      </View>
+      <Text style={styles.hint}>{exercise.instructionFr}</Text>
+      <TextInput
+        style={[
+          styles.translationInput,
+          answerState === 'correct' && styles.inputCorrect,
+          answerState === 'wrong' && styles.inputWrong,
+        ]}
+        value={input}
+        onChangeText={onChangeText}
+        placeholder="Type the word..."
+        editable={answerState === 'idle'}
+        autoCapitalize="none"
+        returnKeyType="done"
+        onSubmitEditing={answerState === 'idle' ? onCheck : undefined}
+      />
+      {answerState === 'idle' && (
+        <Button
+          label={t('lesson.check')}
+          variant="primary"
+          size="md"
+          fullWidth
+          disabled={input.trim().length === 0}
+          onPress={onCheck}
+          style={{ marginTop: 8 }}
+        />
+      )}
+    </View>
+  );
+}
+
+function WordOrderView({
+  exercise,
+  selectedWords,
+  answerState,
+  showFr,
+  onSelectWord,
+  onCheck,
+}: {
+  exercise: WordOrderExercise;
+  selectedWords: number[];
+  answerState: AnswerState;
+  showFr: boolean;
+  onSelectWord: (i: number) => void;
+  onCheck: () => void;
+}) {
+  const { t } = useTranslation();
+  const builtSentence = selectedWords.map((i) => exercise.shuffledWords[i]).join(' ');
+
+  return (
+    <View style={styles.exerciseWrap}>
+      <Text style={styles.instruction}>{exercise.instruction}</Text>
+      {showFr && exercise.translationFr && (
+        <Text style={styles.questionFr}>({exercise.translationFr})</Text>
+      )}
+      <View style={sbStyles.sentenceArea}>
+        {selectedWords.length > 0 ? (
+          <Text style={sbStyles.builtText}>{builtSentence}</Text>
+        ) : (
+          <Text style={sbStyles.placeholder}>{t('lesson.tapWordsToOrder') ?? 'Tap words in order...'}</Text>
+        )}
+      </View>
+      <View style={sbStyles.wordChips}>
+        {exercise.shuffledWords.map((word, i) => {
+          const isSelected = selectedWords.includes(i);
+          let chipBg = isSelected ? '#4F46E5' : '#F3F4F6';
+          let textColor = isSelected ? '#fff' : '#1F2937';
+
+          if (answerState !== 'idle') {
+            const userWord = selectedWords.indexOf(i) !== -1
+              ? exercise.shuffledWords[i]
+              : null;
+            const correctAtPos = exercise.correctOrder[selectedWords.indexOf(i)];
+            if (userWord && userWord === correctAtPos) {
+              chipBg = '#10B981';
+              textColor = '#fff';
+            } else if (isSelected) {
+              chipBg = '#EF4444';
+              textColor = '#fff';
+            }
+          }
+
+          return (
+            <TouchableOpacity
+              key={i}
+              style={[sbStyles.chip, { backgroundColor: chipBg }]}
+              onPress={() => onSelectWord(i)}
+              activeOpacity={answerState !== 'idle' ? 1 : 0.7}
+            >
+              <Text style={[sbStyles.chipText, { color: textColor }]}>{word}</Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+      {answerState === 'idle' && selectedWords.length === exercise.shuffledWords.length && (
+        <Button
+          label={t('lesson.check')}
+          variant="primary"
+          size="md"
+          fullWidth
+          onPress={onCheck}
+          style={{ marginTop: 8 }}
+        />
+      )}
+    </View>
+  );
+}
+
+function MatchPairsView({
+  exercise,
+  matchLeft,
+  matchPaired,
+  answerState,
+  onSelect,
+}: {
+  exercise: MatchPairsExercise;
+  matchLeft: number | null;
+  matchPaired: Map<number, number>;
+  answerState: AnswerState;
+  onSelect: (side: 'left' | 'right', index: number) => void;
+}) {
+  const { t } = useTranslation();
+  // Shuffle right side once using useMemo
+  const rightOrder = useMemo(() => {
+    const arr = exercise.pairs.map((_, i) => i);
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }, [exercise.pairs]);
+
+  const pairedLeft = new Set(matchPaired.keys());
+  const pairedRight = new Set(matchPaired.values());
+
+  return (
+    <View style={styles.exerciseWrap}>
+      <Text style={styles.instruction}>{exercise.instruction}</Text>
+      <View style={matchStyles.container}>
+        {/* Left column - English */}
+        <View style={matchStyles.column}>
+          {exercise.pairs.map((pair, i) => {
+            const isPaired = pairedLeft.has(i);
+            const isActive = matchLeft === i;
+            let bg = '#F9FAFB';
+            let border = 'transparent';
+            if (answerState !== 'idle') {
+              const pairedWith = matchPaired.get(i);
+              bg = pairedWith === i ? '#D1FAE5' : '#FEE2E2';
+              border = pairedWith === i ? '#10B981' : '#EF4444';
+            } else if (isActive) {
+              bg = '#EEF2FF';
+              border = '#4F46E5';
+            } else if (isPaired) {
+              bg = '#D1FAE5';
+              border = '#10B981';
+            }
+            return (
+              <TouchableOpacity
+                key={i}
+                style={[matchStyles.item, { backgroundColor: bg, borderColor: border }]}
+                onPress={() => onSelect('left', i)}
+                activeOpacity={answerState !== 'idle' ? 1 : 0.7}
+              >
+                <Text style={matchStyles.itemText}>{pair.en}</Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+        {/* Right column - French */}
+        <View style={matchStyles.column}>
+          {rightOrder.map((origIdx) => {
+            const pair = exercise.pairs[origIdx];
+            const isPaired = pairedRight.has(origIdx);
+            let bg = '#F9FAFB';
+            let border = 'transparent';
+            if (answerState !== 'idle') {
+              const matchEntry = Array.from(matchPaired.entries()).find(([, r]) => r === origIdx);
+              bg = matchEntry && matchEntry[0] === origIdx ? '#D1FAE5' : '#FEE2E2';
+              border = matchEntry && matchEntry[0] === origIdx ? '#10B981' : '#EF4444';
+            } else if (isPaired) {
+              bg = '#D1FAE5';
+              border = '#10B981';
+            }
+            return (
+              <TouchableOpacity
+                key={origIdx}
+                style={[matchStyles.item, { backgroundColor: bg, borderColor: border }]}
+                onPress={() => onSelect('right', origIdx)}
+                activeOpacity={answerState !== 'idle' ? 1 : 0.7}
+              >
+                <Text style={matchStyles.itemText}>{pair.fr}</Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+      </View>
+    </View>
+  );
+}
+
+const matchStyles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    gap: 12,
+  },
+  column: {
+    flex: 1,
+    gap: 8,
+  },
+  item: {
+    padding: 14,
+    borderRadius: 12,
+    borderWidth: 2,
+    alignItems: 'center',
+  },
+  itemText: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#1F2937',
+    textAlign: 'center',
+  },
+});
 
 const sbStyles = StyleSheet.create({
   sentenceArea: {

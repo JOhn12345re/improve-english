@@ -149,6 +149,12 @@ export default function VocabularyScreen() {
             onPress={handleRestart}
             style={{ marginTop: 24 }}
           />
+          <TouchableOpacity
+            style={{ backgroundColor: '#EEF2FF', borderRadius: 12, paddingVertical: 14, paddingHorizontal: 24, marginTop: 12, alignItems: 'center', width: '100%' }}
+            onPress={() => router.push('/essentials' as any)}
+          >
+            <Text style={{ color: '#4F46E5', fontSize: 16, fontWeight: '600' }}>Essential 500 Words</Text>
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
     );
@@ -164,9 +170,17 @@ export default function VocabularyScreen() {
         {/* Header */}
         <View style={styles.header}>
           <Text style={styles.title}>{t('vocabulary.title')}</Text>
-          <Text style={styles.counter}>
-            {currentIndex + 1}/{dueWords.length}
-          </Text>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+            <TouchableOpacity
+              style={{ backgroundColor: '#EEF2FF', borderRadius: 10, paddingVertical: 6, paddingHorizontal: 12 }}
+              onPress={() => router.push('/essentials' as any)}
+            >
+              <Text style={{ color: '#4F46E5', fontSize: 12, fontWeight: '700' }}>500 mots</Text>
+            </TouchableOpacity>
+            <Text style={styles.counter}>
+              {currentIndex + 1}/{dueWords.length}
+            </Text>
+          </View>
         </View>
 
         <Text style={styles.remainingText}>

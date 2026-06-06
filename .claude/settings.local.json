@@ -20,7 +20,8 @@
       "Bash(node -e \"require\\(''ts-jest''\\)\")",
       "Bash(node -e \"require\\(''@nestjs/testing''\\)\")",
       "Bash(node:*)",
-      "Bash(npx prisma:*)"
+      "Bash(npx prisma:*)",
+      "Bash(npx tsc:*)"
     ]
   }
 }

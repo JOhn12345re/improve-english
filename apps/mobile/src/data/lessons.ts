@@ -1,6 +1,6 @@
 import { CefrLevel } from '@englishflow/shared-types';
 
-export type ExerciseType = 'mcq' | 'translation' | 'fill' | 'sentence_build';
+export type ExerciseType = 'mcq' | 'translation' | 'fill' | 'sentence_build' | 'listen_type' | 'word_order' | 'match_pairs';
 
 export interface MCQExercise {
   type: 'mcq';
@@ -45,7 +45,31 @@ export interface SentenceBuildExercise {
   explanationFr?: string;
 }
 
-export type Exercise = MCQExercise | TranslationExercise | FillExercise | SentenceBuildExercise;
+export interface ListenTypeExercise {
+  type: 'listen_type';
+  instruction: string;
+  instructionFr: string;
+  word: string;
+  audioUrl?: string;
+}
+
+export interface WordOrderExercise {
+  type: 'word_order';
+  instruction: string;
+  instructionFr: string;
+  shuffledWords: string[];
+  correctOrder: string[];
+  translationFr: string;
+}
+
+export interface MatchPairsExercise {
+  type: 'match_pairs';
+  instruction: string;
+  instructionFr: string;
+  pairs: Array<{ en: string; fr: string }>;
+}
+
+export type Exercise = MCQExercise | TranslationExercise | FillExercise | SentenceBuildExercise | ListenTypeExercise | WordOrderExercise | MatchPairsExercise;
 
 export interface Lesson {
   id: string;
