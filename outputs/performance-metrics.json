@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-06",
+  "backend": {
+    "build_time_seconds": 5,
+    "startup_time_seconds": 2,
+    "health_latency_ms": 5,
+    "test_suite_duration_seconds": 60.23
+  },
+  "integrations": {
+    "dictionary_latency_ms": 147,
+    "datamuse_latency_ms": 246,
+    "languagetool_latency_ms": 1546,
+    "mymemory_translation_latency_ms": 465,
+    "groq_llm_latency_ms": 143
+  },
+  "database": {
+    "lesson_count": 84,
+    "vocabulary_count": 530,
+    "query_latency_estimate_ms": 50
+  },
+  "test_coverage": {
+    "backend_lines_percent": 34.15,
+    "backend_functions_percent": 33.23,
+    "backend_tests_total": 97,
+    "backend_tests_passed": 97,
+    "mobile_tests_total": 0
+  }
+}

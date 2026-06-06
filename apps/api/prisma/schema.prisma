@@ -137,11 +137,19 @@ model VocabularyWord {
   translations_json Json
   level             CefrLevel
   audio_url         String?
+  ipa               String?
+  part_of_speech    String?
+  frequency         String?        // essential, high, medium, low
+  importance        Int?
+  examples_json     Json?          // [{ en, fr, audioUrl? }]
+  topics            String[]       // theme tags
+  pack              String?        // e.g. "essentials-500"
   created_at        DateTime       @default(now())
 
   user_vocabulary   UserVocabulary[]
 
   @@index([level])
+  @@index([pack])
 }
 
 model UserVocabulary {

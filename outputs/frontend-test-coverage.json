@@ -1,0 +1,27 @@
+{
+  "date": "2026-06-06",
+  "summary": {
+    "total_suites": 0,
+    "total_tests": 0,
+    "test_files_found": 0,
+    "coverage_percent": 0,
+    "status": "NO TESTS EXIST"
+  },
+  "screens_audited": {
+    "dashboard": {"has_tests": false, "code_issues": ["missing bottom padding", "missing accessibility labels"]},
+    "lessons": {"has_tests": false, "code_issues": ["FlatList not optimized", "insufficient bottom padding", "missing accessibility labels"]},
+    "vocabulary": {"has_tests": false, "code_issues": ["hardcoded maxHeight", "missing accessibility labels on rating buttons"]},
+    "profile": {"has_tests": false, "code_issues": ["logout button overlap risk", "missing accessibility labels"]},
+    "lesson_detail": {"has_tests": false, "code_issues": ["no error UI for API failures", "missing accessibility labels on options"]},
+    "essentials": {"has_tests": false, "code_issues": ["well optimized FlatList"]},
+    "onboarding_welcome": {"has_tests": false, "code_issues": []},
+    "onboarding_name": {"has_tests": false, "code_issues": []},
+    "onboarding_native_language": {"has_tests": false, "code_issues": []},
+    "onboarding_level_assessment": {"has_tests": false, "code_issues": ["fontSize overflow risk"]},
+    "onboarding_goals": {"has_tests": false, "code_issues": ["missing accessibility labels"]}
+  },
+  "e2e_tests": {
+    "detox_configured": false,
+    "test_files": 0
+  }
+}

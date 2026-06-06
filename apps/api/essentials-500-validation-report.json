@@ -1,0 +1,140 @@
+{
+  "timestamp": "2026-06-04T15:07:41.038Z",
+  "summary": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0,
+    "warnings": 0
+  },
+  "checks": [
+    {
+      "name": "Word count = 500",
+      "status": "PASS",
+      "details": "Found 500 words",
+      "count": 500
+    },
+    {
+      "name": "Essential words have importance >= 90",
+      "status": "PASS",
+      "details": "All essential words have importance >= 90",
+      "count": 0
+    },
+    {
+      "name": "A1 words have examples",
+      "status": "PASS",
+      "details": "All A1 words have examples",
+      "count": 0
+    },
+    {
+      "name": "All POS are valid",
+      "status": "PASS",
+      "details": "All POS are valid",
+      "count": 0
+    },
+    {
+      "name": "Level distribution",
+      "status": "PASS",
+      "details": "{\"A1\":163,\"A2\":133,\"B1\":107,\"B2\":97}"
+    },
+    {
+      "name": "No duplicate words",
+      "status": "PASS",
+      "details": "Duplicates (may be valid for multi-POS): open(2)",
+      "count": 1
+    },
+    {
+      "name": "All words have IPA",
+      "status": "PASS",
+      "details": "All words have IPA",
+      "count": 0
+    },
+    {
+      "name": "Importance decreases by level (A1>A2>B1>B2)",
+      "status": "PASS",
+      "details": "Average importance: {\"A1\":\"96.4\",\"A2\":\"88.3\",\"B1\":\"79.4\",\"B2\":\"71.9\"}"
+    },
+    {
+      "name": "Database has essential words",
+      "status": "PASS",
+      "details": "499 words in database with pack=essentials-500",
+      "count": 499
+    },
+    {
+      "name": "Essential lessons exist (target: 40+)",
+      "status": "PASS",
+      "details": "40 essential lessons in database",
+      "count": 40
+    },
+    {
+      "name": "Exercises generated (target: 500+)",
+      "status": "PASS",
+      "details": "400 exercises across 40 lessons. 0 lessons with < 8 exercises.",
+      "count": 400
+    },
+    {
+      "name": "Theme diversity",
+      "status": "PASS",
+      "details": "40 unique themes: greetings, politeness, pronouns, basics, verbs_basic, verbs_action, questions, people, places, food, objects, time, adjectives, connectors, place, numbers, verbs_common, travel, nature, communication, work, entertainment, description, colors, opinions, progress, rules, daily_life, abstract, education, health, politics, shopping, culture, technology, connectors_advanced, success, society, connectors_formal, skills",
+      "count": 40
+    }
+  ],
+  "metrics": {
+    "vocabEntry": 500,
+    "lessonsCreated": 40,
+    "exercisesGenerated": 400,
+    "coverageByLevel": {
+      "A1": 163,
+      "A2": 133,
+      "B1": 107,
+      "B2": 97
+    },
+    "avgImportanceByLevel": {
+      "A1": 96.4,
+      "A2": 88.3,
+      "B1": 79.4,
+      "B2": 71.9
+    },
+    "themes": [
+      "greetings",
+      "politeness",
+      "pronouns",
+      "basics",
+      "verbs_basic",
+      "verbs_action",
+      "questions",
+      "people",
+      "places",
+      "food",
+      "objects",
+      "time",
+      "adjectives",
+      "connectors",
+      "place",
+      "numbers",
+      "verbs_common",
+      "travel",
+      "nature",
+      "communication",
+      "work",
+      "entertainment",
+      "description",
+      "colors",
+      "opinions",
+      "progress",
+      "rules",
+      "daily_life",
+      "abstract",
+      "education",
+      "health",
+      "politics",
+      "shopping",
+      "culture",
+      "technology",
+      "connectors_advanced",
+      "success",
+      "society",
+      "connectors_formal",
+      "skills"
+    ]
+  }
+}

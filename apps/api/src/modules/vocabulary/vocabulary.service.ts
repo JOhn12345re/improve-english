@@ -27,6 +27,14 @@ export class VocabularyService {
     private readonly fsrs: FsrsService,
   ) {}
 
+  async getWordsByPack(pack?: string) {
+    const where = pack ? { pack } : {};
+    return this.prisma.vocabularyWord.findMany({
+      where,
+      orderBy: [{ level: 'asc' }, { importance: 'desc' }],
+    });
+  }
+
   async getDueWords(userId: string) {
     const records = await this.prisma.userVocabulary.findMany({
       where: {

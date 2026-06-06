@@ -1,0 +1,802 @@
+[
+  {
+    "level": "A1",
+    "theme": "Greetings & Politeness",
+    "words": [
+      {"word": "hello", "translation_fr": "bonjour", "pos": "interjection", "phrase": "Hello, how are you today?", "phrase_fr": "Bonjour, comment allez-vous aujourd'hui ?", "importance": 95, "frequency": "essential"},
+      {"word": "goodbye", "translation_fr": "au revoir", "pos": "interjection", "phrase": "Goodbye, see you tomorrow.", "phrase_fr": "Au revoir, à demain.", "importance": 95, "frequency": "essential"},
+      {"word": "thank you", "translation_fr": "merci", "pos": "phrase", "phrase": "Thank you for your help.", "phrase_fr": "Merci de votre aide.", "importance": 95, "frequency": "essential"},
+      {"word": "please", "translation_fr": "s'il vous plait", "pos": "adverb", "phrase": "Can you help me, please?", "phrase_fr": "Pouvez-vous m'aider, s'il vous plait ?", "importance": 95, "frequency": "essential"},
+      {"word": "sorry", "translation_fr": "desole", "pos": "adjective", "phrase": "I'm sorry, I don't understand.", "phrase_fr": "Desole, je ne comprends pas.", "importance": 90, "frequency": "essential"},
+      {"word": "excuse me", "translation_fr": "excusez-moi", "pos": "phrase", "phrase": "Excuse me, where is the bathroom?", "phrase_fr": "Excusez-moi, ou sont les toilettes ?", "importance": 90, "frequency": "essential"},
+      {"word": "nice to meet you", "translation_fr": "enchante", "pos": "phrase", "phrase": "Nice to meet you, I'm John.", "phrase_fr": "Enchante de vous rencontrer, je m'appelle John.", "importance": 85, "frequency": "very_high"},
+      {"word": "you're welcome", "translation_fr": "de rien", "pos": "phrase", "phrase": "You're welcome! Have a great day.", "phrase_fr": "De rien ! Bonne journee.", "importance": 85, "frequency": "very_high"},
+      {"word": "how are you", "translation_fr": "comment allez-vous", "pos": "phrase", "phrase": "How are you doing today?", "phrase_fr": "Comment allez-vous aujourd'hui ?", "importance": 90, "frequency": "essential"},
+      {"word": "I'm fine", "translation_fr": "je vais bien", "pos": "phrase", "phrase": "I'm fine, thank you. And you?", "phrase_fr": "Je vais bien, merci. Et vous ?", "importance": 90, "frequency": "essential"}
+    ]
+  },
+  {
+    "level": "A1",
+    "theme": "Pronouns & Basic Verbs (1)",
+    "words": [
+      {"word": "I", "translation_fr": "je", "pos": "pronoun", "phrase": "I am a student.", "phrase_fr": "Je suis etudiant.", "importance": 100, "frequency": "essential"},
+      {"word": "you", "translation_fr": "tu / vous", "pos": "pronoun", "phrase": "You are very kind.", "phrase_fr": "Vous etes tres gentil.", "importance": 100, "frequency": "essential"},
+      {"word": "he", "translation_fr": "il", "pos": "pronoun", "phrase": "He is my brother.", "phrase_fr": "C'est mon frere.", "importance": 100, "frequency": "essential"},
+      {"word": "she", "translation_fr": "elle", "pos": "pronoun", "phrase": "She is a doctor.", "phrase_fr": "Elle est medecin.", "importance": 100, "frequency": "essential"},
+      {"word": "it", "translation_fr": "il / elle (objet)", "pos": "pronoun", "phrase": "It is on the table.", "phrase_fr": "C'est sur la table.", "importance": 95, "frequency": "essential"},
+      {"word": "we", "translation_fr": "nous", "pos": "pronoun", "phrase": "We are friends.", "phrase_fr": "Nous sommes amis.", "importance": 95, "frequency": "essential"},
+      {"word": "they", "translation_fr": "ils / elles", "pos": "pronoun", "phrase": "They live in Paris.", "phrase_fr": "Ils habitent a Paris.", "importance": 95, "frequency": "essential"},
+      {"word": "be", "translation_fr": "etre", "pos": "verb", "phrase": "I am happy.", "phrase_fr": "Je suis heureux.", "importance": 100, "frequency": "essential"},
+      {"word": "have", "translation_fr": "avoir", "pos": "verb", "phrase": "I have a question.", "phrase_fr": "J'ai une question.", "importance": 100, "frequency": "essential"},
+      {"word": "do", "translation_fr": "faire", "pos": "verb", "phrase": "What do you do for work?", "phrase_fr": "Que faites-vous comme travail ?", "importance": 98, "frequency": "essential"}
+    ]
+  },
+  {
+    "level": "A1",
+    "theme": "Pronouns & Basic Verbs (2)",
+    "words": [
+      {"word": "my", "translation_fr": "mon / ma", "pos": "determiner", "phrase": "This is my book.", "phrase_fr": "C'est mon livre.", "importance": 95, "frequency": "essential"},
+      {"word": "your", "translation_fr": "ton / votre", "pos": "determiner", "phrase": "What is your name?", "phrase_fr": "Quel est votre nom ?", "importance": 95, "frequency": "essential"},
+      {"word": "his", "translation_fr": "son (a lui)", "pos": "determiner", "phrase": "His name is John.", "phrase_fr": "Son nom est John.", "importance": 90, "frequency": "essential"},
+      {"word": "her", "translation_fr": "son (a elle)", "pos": "determiner", "phrase": "Her house is big.", "phrase_fr": "Sa maison est grande.", "importance": 90, "frequency": "essential"},
+      {"word": "our", "translation_fr": "notre", "pos": "determiner", "phrase": "Our school is near.", "phrase_fr": "Notre ecole est proche.", "importance": 90, "frequency": "essential"},
+      {"word": "their", "translation_fr": "leur", "pos": "determiner", "phrase": "Their children are happy.", "phrase_fr": "Leurs enfants sont heureux.", "importance": 90, "frequency": "essential"},
+      {"word": "this", "translation_fr": "ce / ceci", "pos": "determiner", "phrase": "This is my house.", "phrase_fr": "C'est ma maison.", "importance": 95, "frequency": "essential"},
+      {"word": "that", "translation_fr": "ce / cela", "pos": "determiner", "phrase": "That is a good idea.", "phrase_fr": "C'est une bonne idee.", "importance": 95, "frequency": "essential"},
+      {"word": "can", "translation_fr": "pouvoir", "pos": "verb", "phrase": "I can help you.", "phrase_fr": "Je peux vous aider.", "importance": 95, "frequency": "essential"},
+      {"word": "must", "translation_fr": "devoir", "pos": "verb", "phrase": "You must study.", "phrase_fr": "Tu dois etudier.", "importance": 90, "frequency": "essential"}
+    ]
+  },
+  {
+    "level": "A1",
+    "theme": "Common Verbs - Action",
+    "words": [
+      {"word": "go", "translation_fr": "aller", "pos": "verb", "phrase": "I go to work every day.", "phrase_fr": "Je vais au travail tous les jours.", "importance": 95, "frequency": "essential"},
+      {"word": "come", "translation_fr": "venir", "pos": "verb", "phrase": "Come with me.", "phrase_fr": "Viens avec moi.", "importance": 90, "frequency": "very_high"},
+      {"word": "want", "translation_fr": "vouloir", "pos": "verb", "phrase": "I want water.", "phrase_fr": "Je veux de l'eau.", "importance": 95, "frequency": "essential"},
+      {"word": "need", "translation_fr": "avoir besoin", "pos": "verb", "phrase": "I need help.", "phrase_fr": "J'ai besoin d'aide.", "importance": 95, "frequency": "essential"},
+      {"word": "like", "translation_fr": "aimer", "pos": "verb", "phrase": "I like coffee.", "phrase_fr": "J'aime le cafe.", "importance": 90, "frequency": "very_high"},
+      {"word": "love", "translation_fr": "aimer (amour)", "pos": "verb", "phrase": "I love my family.", "phrase_fr": "J'aime ma famille.", "importance": 85, "frequency": "very_high"},
+      {"word": "eat", "translation_fr": "manger", "pos": "verb", "phrase": "Let's eat together.", "phrase_fr": "Mangeons ensemble.", "importance": 90, "frequency": "very_high"},
+      {"word": "drink", "translation_fr": "boire", "pos": "verb", "phrase": "I drink tea every morning.", "phrase_fr": "Je bois du the chaque matin.", "importance": 90, "frequency": "very_high"},
+      {"word": "sleep", "translation_fr": "dormir", "pos": "verb", "phrase": "I sleep 8 hours a night.", "phrase_fr": "Je dors 8 heures par nuit.", "importance": 85, "frequency": "very_high"},
+      {"word": "work", "translation_fr": "travailler", "pos": "verb", "phrase": "I work in Paris.", "phrase_fr": "Je travaille a Paris.", "importance": 95, "frequency": "essential"},
+      {"word": "play", "translation_fr": "jouer", "pos": "verb", "phrase": "Let's play football.", "phrase_fr": "Jouons au football.", "importance": 85, "frequency": "very_high"},
+      {"word": "speak", "translation_fr": "parler", "pos": "verb", "phrase": "Do you speak English?", "phrase_fr": "Parlez-vous anglais ?", "importance": 95, "frequency": "essential"},
+      {"word": "understand", "translation_fr": "comprendre", "pos": "verb", "phrase": "I understand you.", "phrase_fr": "Je te comprends.", "importance": 90, "frequency": "essential"},
+      {"word": "know", "translation_fr": "savoir / connaitre", "pos": "verb", "phrase": "I don't know.", "phrase_fr": "Je ne sais pas.", "importance": 95, "frequency": "essential"},
+      {"word": "see", "translation_fr": "voir", "pos": "verb", "phrase": "I see you tomorrow.", "phrase_fr": "Je te vois demain.", "importance": 90, "frequency": "very_high"}
+    ]
+  },
+  {
+    "level": "A1",
+    "theme": "Questions & Basics",
+    "words": [
+      {"word": "what", "translation_fr": "quoi / quel", "pos": "pronoun", "phrase": "What is your name?", "phrase_fr": "Quel est votre nom ?", "importance": 98, "frequency": "essential"},
+      {"word": "who", "translation_fr": "qui", "pos": "pronoun", "phrase": "Who is she?", "phrase_fr": "Qui est-elle ?", "importance": 95, "frequency": "essential"},
+      {"word": "where", "translation_fr": "ou", "pos": "adverb", "phrase": "Where do you live?", "phrase_fr": "Ou habites-tu ?", "importance": 95, "frequency": "essential"},
+      {"word": "when", "translation_fr": "quand", "pos": "adverb", "phrase": "When is the meeting?", "phrase_fr": "Quand est la reunion ?", "importance": 90, "frequency": "essential"},
+      {"word": "why", "translation_fr": "pourquoi", "pos": "adverb", "phrase": "Why are you late?", "phrase_fr": "Pourquoi es-tu en retard ?", "importance": 90, "frequency": "essential"},
+      {"word": "how", "translation_fr": "comment", "pos": "adverb", "phrase": "How are you?", "phrase_fr": "Comment allez-vous ?", "importance": 95, "frequency": "essential"},
+      {"word": "yes", "translation_fr": "oui", "pos": "adverb", "phrase": "Yes, I agree.", "phrase_fr": "Oui, je suis d'accord.", "importance": 100, "frequency": "essential"},
+      {"word": "no", "translation_fr": "non", "pos": "adverb", "phrase": "No, I don't want it.", "phrase_fr": "Non, je n'en veux pas.", "importance": 100, "frequency": "essential"},
+      {"word": "maybe", "translation_fr": "peut-etre", "pos": "adverb", "phrase": "Maybe I'll come tomorrow.", "phrase_fr": "Peut-etre que je viendrai demain.", "importance": 85, "frequency": "very_high"},
+      {"word": "not", "translation_fr": "ne...pas", "pos": "adverb", "phrase": "I am not tired.", "phrase_fr": "Je ne suis pas fatigue.", "importance": 100, "frequency": "essential"}
+    ]
+  },
+  {
+    "level": "A1",
+    "theme": "Common Nouns (1)",
+    "words": [
+      {"word": "man", "translation_fr": "homme", "pos": "noun", "phrase": "The man is tall.", "phrase_fr": "L'homme est grand.", "importance": 90, "frequency": "very_high"},
+      {"word": "woman", "translation_fr": "femme", "pos": "noun", "phrase": "The woman is smart.", "phrase_fr": "La femme est intelligente.", "importance": 90, "frequency": "very_high"},
+      {"word": "child", "translation_fr": "enfant", "pos": "noun", "phrase": "The child is playing.", "phrase_fr": "L'enfant joue.", "importance": 85, "frequency": "very_high"},
+      {"word": "family", "translation_fr": "famille", "pos": "noun", "phrase": "My family is big.", "phrase_fr": "Ma famille est grande.", "importance": 90, "frequency": "very_high"},
+      {"word": "friend", "translation_fr": "ami", "pos": "noun", "phrase": "He is my best friend.", "phrase_fr": "C'est mon meilleur ami.", "importance": 90, "frequency": "very_high"},
+      {"word": "home", "translation_fr": "maison / chez soi", "pos": "noun", "phrase": "I'm going home.", "phrase_fr": "Je rentre a la maison.", "importance": 95, "frequency": "essential"},
+      {"word": "name", "translation_fr": "nom", "pos": "noun", "phrase": "My name is John.", "phrase_fr": "Je m'appelle John.", "importance": 95, "frequency": "essential"},
+      {"word": "water", "translation_fr": "eau", "pos": "noun", "phrase": "A glass of water, please.", "phrase_fr": "Un verre d'eau, s'il vous plait.", "importance": 90, "frequency": "very_high"},
+      {"word": "food", "translation_fr": "nourriture", "pos": "noun", "phrase": "The food is delicious.", "phrase_fr": "La nourriture est delicieuse.", "importance": 85, "frequency": "very_high"},
+      {"word": "time", "translation_fr": "temps / heure", "pos": "noun", "phrase": "What time is it?", "phrase_fr": "Quelle heure est-il ?", "importance": 95, "frequency": "essential"}
+    ]
+  },
+  {
+    "level": "A1",
+    "theme": "Common Nouns (2)",
+    "words": [
+      {"word": "day", "translation_fr": "jour", "pos": "noun", "phrase": "Have a nice day.", "phrase_fr": "Bonne journee.", "importance": 90, "frequency": "very_high"},
+      {"word": "night", "translation_fr": "nuit", "pos": "noun", "phrase": "Good night, sleep well.", "phrase_fr": "Bonne nuit, dors bien.", "importance": 90, "frequency": "very_high"},
+      {"word": "money", "translation_fr": "argent", "pos": "noun", "phrase": "I need money.", "phrase_fr": "J'ai besoin d'argent.", "importance": 85, "frequency": "very_high"},
+      {"word": "place", "translation_fr": "lieu / endroit", "pos": "noun", "phrase": "This is a nice place.", "phrase_fr": "C'est un endroit sympa.", "importance": 85, "frequency": "very_high"},
+      {"word": "school", "translation_fr": "ecole", "pos": "noun", "phrase": "I go to school.", "phrase_fr": "Je vais a l'ecole.", "importance": 90, "frequency": "very_high"},
+      {"word": "book", "translation_fr": "livre", "pos": "noun", "phrase": "I read a book.", "phrase_fr": "Je lis un livre.", "importance": 85, "frequency": "very_high"},
+      {"word": "phone", "translation_fr": "telephone", "pos": "noun", "phrase": "Where is my phone?", "phrase_fr": "Ou est mon telephone ?", "importance": 90, "frequency": "very_high"},
+      {"word": "car", "translation_fr": "voiture", "pos": "noun", "phrase": "I have a red car.", "phrase_fr": "J'ai une voiture rouge.", "importance": 85, "frequency": "very_high"},
+      {"word": "door", "translation_fr": "porte", "pos": "noun", "phrase": "Open the door.", "phrase_fr": "Ouvre la porte.", "importance": 85, "frequency": "very_high"},
+      {"word": "table", "translation_fr": "table", "pos": "noun", "phrase": "The book is on the table.", "phrase_fr": "Le livre est sur la table.", "importance": 85, "frequency": "very_high"}
+    ]
+  },
+  {
+    "level": "A1",
+    "theme": "More Verbs",
+    "words": [
+      {"word": "say", "translation_fr": "dire", "pos": "verb", "phrase": "What did you say?", "phrase_fr": "Qu'as-tu dit ?", "importance": 95, "frequency": "essential"},
+      {"word": "tell", "translation_fr": "raconter / dire", "pos": "verb", "phrase": "Tell me your name.", "phrase_fr": "Dis-moi ton nom.", "importance": 90, "frequency": "very_high"},
+      {"word": "get", "translation_fr": "obtenir / recevoir", "pos": "verb", "phrase": "I get up at seven.", "phrase_fr": "Je me leve a sept heures.", "importance": 95, "frequency": "essential"},
+      {"word": "make", "translation_fr": "faire / fabriquer", "pos": "verb", "phrase": "I make coffee every morning.", "phrase_fr": "Je fais du cafe chaque matin.", "importance": 90, "frequency": "essential"},
+      {"word": "take", "translation_fr": "prendre", "pos": "verb", "phrase": "Take this book.", "phrase_fr": "Prends ce livre.", "importance": 90, "frequency": "essential"},
+      {"word": "give", "translation_fr": "donner", "pos": "verb", "phrase": "Give me the pen, please.", "phrase_fr": "Donne-moi le stylo, s'il te plait.", "importance": 90, "frequency": "very_high"},
+      {"word": "put", "translation_fr": "mettre / poser", "pos": "verb", "phrase": "Put the book on the table.", "phrase_fr": "Mets le livre sur la table.", "importance": 85, "frequency": "very_high"},
+      {"word": "look", "translation_fr": "regarder", "pos": "verb", "phrase": "Look at this picture.", "phrase_fr": "Regarde cette image.", "importance": 90, "frequency": "very_high"},
+      {"word": "listen", "translation_fr": "ecouter", "pos": "verb", "phrase": "Listen to the music.", "phrase_fr": "Ecoute la musique.", "importance": 85, "frequency": "very_high"},
+      {"word": "read", "translation_fr": "lire", "pos": "verb", "phrase": "I read a book every day.", "phrase_fr": "Je lis un livre chaque jour.", "importance": 85, "frequency": "very_high"}
+    ]
+  },
+  {
+    "level": "A1-A2",
+    "theme": "Adjectives",
+    "words": [
+      {"word": "good", "translation_fr": "bon / bien", "pos": "adjective", "phrase": "That's a good idea.", "phrase_fr": "C'est une bonne idee.", "importance": 95, "frequency": "essential"},
+      {"word": "bad", "translation_fr": "mauvais", "pos": "adjective", "phrase": "The weather is bad today.", "phrase_fr": "Le temps est mauvais aujourd'hui.", "importance": 90, "frequency": "very_high"},
+      {"word": "big", "translation_fr": "grand", "pos": "adjective", "phrase": "It's a big city.", "phrase_fr": "C'est une grande ville.", "importance": 85, "frequency": "very_high"},
+      {"word": "small", "translation_fr": "petit", "pos": "adjective", "phrase": "I have a small dog.", "phrase_fr": "J'ai un petit chien.", "importance": 85, "frequency": "very_high"},
+      {"word": "new", "translation_fr": "nouveau", "pos": "adjective", "phrase": "I have a new job.", "phrase_fr": "J'ai un nouveau travail.", "importance": 85, "frequency": "very_high"},
+      {"word": "old", "translation_fr": "vieux / age", "pos": "adjective", "phrase": "How old are you?", "phrase_fr": "Quel age as-tu ?", "importance": 90, "frequency": "very_high"},
+      {"word": "hot", "translation_fr": "chaud", "pos": "adjective", "phrase": "It's very hot today.", "phrase_fr": "Il fait tres chaud aujourd'hui.", "importance": 85, "frequency": "very_high"},
+      {"word": "cold", "translation_fr": "froid", "pos": "adjective", "phrase": "It's cold outside.", "phrase_fr": "Il fait froid dehors.", "importance": 85, "frequency": "very_high"},
+      {"word": "easy", "translation_fr": "facile", "pos": "adjective", "phrase": "This is easy.", "phrase_fr": "C'est facile.", "importance": 85, "frequency": "very_high"},
+      {"word": "difficult", "translation_fr": "difficile", "pos": "adjective", "phrase": "English is difficult.", "phrase_fr": "L'anglais est difficile.", "importance": 85, "frequency": "very_high"},
+      {"word": "happy", "translation_fr": "heureux", "pos": "adjective", "phrase": "I'm happy today.", "phrase_fr": "Je suis heureux aujourd'hui.", "importance": 85, "frequency": "very_high"},
+      {"word": "sad", "translation_fr": "triste", "pos": "adjective", "phrase": "He looks sad.", "phrase_fr": "Il a l'air triste.", "importance": 80, "frequency": "high"},
+      {"word": "tired", "translation_fr": "fatigue", "pos": "adjective", "phrase": "I'm tired today.", "phrase_fr": "Je suis fatigue aujourd'hui.", "importance": 80, "frequency": "high"},
+      {"word": "nice", "translation_fr": "agreable / gentil", "pos": "adjective", "phrase": "She is very nice.", "phrase_fr": "Elle est tres gentille.", "importance": 85, "frequency": "very_high"},
+      {"word": "beautiful", "translation_fr": "beau", "pos": "adjective", "phrase": "It's a beautiful day.", "phrase_fr": "C'est une belle journee.", "importance": 80, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "A1-A2",
+    "theme": "Connectors & Prepositions",
+    "words": [
+      {"word": "and", "translation_fr": "et", "pos": "conjunction", "phrase": "I like tea and coffee.", "phrase_fr": "J'aime le the et le cafe.", "importance": 100, "frequency": "essential"},
+      {"word": "but", "translation_fr": "mais", "pos": "conjunction", "phrase": "I am tired but happy.", "phrase_fr": "Je suis fatigue mais heureux.", "importance": 95, "frequency": "essential"},
+      {"word": "or", "translation_fr": "ou", "pos": "conjunction", "phrase": "Tea or coffee?", "phrase_fr": "The ou cafe ?", "importance": 95, "frequency": "essential"},
+      {"word": "so", "translation_fr": "donc / alors", "pos": "conjunction", "phrase": "I am tired, so I sleep.", "phrase_fr": "Je suis fatigue, donc je dors.", "importance": 90, "frequency": "essential"},
+      {"word": "very", "translation_fr": "tres", "pos": "adverb", "phrase": "It is very good.", "phrase_fr": "C'est tres bien.", "importance": 95, "frequency": "essential"},
+      {"word": "too", "translation_fr": "trop / aussi", "pos": "adverb", "phrase": "It is too hot.", "phrase_fr": "C'est trop chaud.", "importance": 90, "frequency": "essential"},
+      {"word": "in", "translation_fr": "dans", "pos": "preposition", "phrase": "I am in the house.", "phrase_fr": "Je suis dans la maison.", "importance": 100, "frequency": "essential"},
+      {"word": "on", "translation_fr": "sur", "pos": "preposition", "phrase": "The book is on the table.", "phrase_fr": "Le livre est sur la table.", "importance": 95, "frequency": "essential"},
+      {"word": "at", "translation_fr": "a", "pos": "preposition", "phrase": "I am at home.", "phrase_fr": "Je suis a la maison.", "importance": 95, "frequency": "essential"},
+      {"word": "with", "translation_fr": "avec", "pos": "preposition", "phrase": "I go with my friend.", "phrase_fr": "Je vais avec mon ami.", "importance": 95, "frequency": "essential"},
+      {"word": "to", "translation_fr": "a / vers", "pos": "preposition", "phrase": "I go to school.", "phrase_fr": "Je vais a l'ecole.", "importance": 100, "frequency": "essential"},
+      {"word": "from", "translation_fr": "de / depuis", "pos": "preposition", "phrase": "I am from France.", "phrase_fr": "Je viens de France.", "importance": 90, "frequency": "essential"},
+      {"word": "here", "translation_fr": "ici", "pos": "adverb", "phrase": "Come here.", "phrase_fr": "Viens ici.", "importance": 90, "frequency": "essential"},
+      {"word": "there", "translation_fr": "la-bas", "pos": "adverb", "phrase": "The school is there.", "phrase_fr": "L'ecole est la-bas.", "importance": 90, "frequency": "essential"}
+    ]
+  },
+  {
+    "level": "A2",
+    "theme": "Time & Numbers",
+    "words": [
+      {"word": "today", "translation_fr": "aujourd'hui", "pos": "adverb", "phrase": "Today is Monday.", "phrase_fr": "Aujourd'hui c'est lundi.", "importance": 95, "frequency": "essential"},
+      {"word": "tomorrow", "translation_fr": "demain", "pos": "adverb", "phrase": "See you tomorrow.", "phrase_fr": "A demain.", "importance": 95, "frequency": "essential"},
+      {"word": "yesterday", "translation_fr": "hier", "pos": "adverb", "phrase": "Yesterday was great.", "phrase_fr": "Hier etait super.", "importance": 90, "frequency": "very_high"},
+      {"word": "morning", "translation_fr": "matin", "pos": "noun", "phrase": "Good morning!", "phrase_fr": "Bonjour ! (le matin)", "importance": 90, "frequency": "very_high"},
+      {"word": "afternoon", "translation_fr": "apres-midi", "pos": "noun", "phrase": "Good afternoon.", "phrase_fr": "Bonjour. (l'apres-midi)", "importance": 85, "frequency": "very_high"},
+      {"word": "evening", "translation_fr": "soir", "pos": "noun", "phrase": "Good evening.", "phrase_fr": "Bonsoir.", "importance": 85, "frequency": "very_high"},
+      {"word": "week", "translation_fr": "semaine", "pos": "noun", "phrase": "Next week I'm free.", "phrase_fr": "La semaine prochaine je suis libre.", "importance": 85, "frequency": "very_high"},
+      {"word": "month", "translation_fr": "mois", "pos": "noun", "phrase": "It costs 50 euros a month.", "phrase_fr": "Ca coute 50 euros par mois.", "importance": 85, "frequency": "very_high"},
+      {"word": "year", "translation_fr": "annee / an", "pos": "noun", "phrase": "I'm 25 years old.", "phrase_fr": "J'ai 25 ans.", "importance": 85, "frequency": "very_high"},
+      {"word": "now", "translation_fr": "maintenant", "pos": "adverb", "phrase": "I need it now.", "phrase_fr": "J'en ai besoin maintenant.", "importance": 95, "frequency": "essential"},
+      {"word": "always", "translation_fr": "toujours", "pos": "adverb", "phrase": "I always wake up early.", "phrase_fr": "Je me reveille toujours tot.", "importance": 90, "frequency": "essential"},
+      {"word": "never", "translation_fr": "jamais", "pos": "adverb", "phrase": "I never eat meat.", "phrase_fr": "Je ne mange jamais de viande.", "importance": 90, "frequency": "essential"},
+      {"word": "sometimes", "translation_fr": "parfois", "pos": "adverb", "phrase": "I sometimes go to the park.", "phrase_fr": "Je vais parfois au parc.", "importance": 85, "frequency": "very_high"},
+      {"word": "often", "translation_fr": "souvent", "pos": "adverb", "phrase": "I often read at night.", "phrase_fr": "Je lis souvent le soir.", "importance": 85, "frequency": "very_high"},
+      {"word": "soon", "translation_fr": "bientot", "pos": "adverb", "phrase": "I will come soon.", "phrase_fr": "Je viendrai bientot.", "importance": 85, "frequency": "very_high"}
+    ]
+  },
+  {
+    "level": "A2",
+    "theme": "Survival Phrases",
+    "words": [
+      {"word": "can I have", "translation_fr": "puis-je avoir", "pos": "phrase", "phrase": "Can I have the bill, please?", "phrase_fr": "Puis-je avoir l'addition, s'il vous plait ?", "importance": 90, "frequency": "very_high"},
+      {"word": "can you help me", "translation_fr": "peux-tu m'aider", "pos": "phrase", "phrase": "Can you help me with this?", "phrase_fr": "Peux-tu m'aider avec ca ?", "importance": 90, "frequency": "very_high"},
+      {"word": "I don't understand", "translation_fr": "je ne comprends pas", "pos": "phrase", "phrase": "I don't understand. Can you repeat?", "phrase_fr": "Je ne comprends pas. Peux-tu repeter ?", "importance": 95, "frequency": "essential"},
+      {"word": "what does it mean", "translation_fr": "qu'est-ce que ca veut dire", "pos": "phrase", "phrase": "What does that word mean?", "phrase_fr": "Qu'est-ce que ce mot veut dire ?", "importance": 90, "frequency": "very_high"},
+      {"word": "how much", "translation_fr": "combien / quel prix", "pos": "phrase", "phrase": "How much does it cost?", "phrase_fr": "Ca coute combien ?", "importance": 90, "frequency": "very_high"},
+      {"word": "where is the", "translation_fr": "ou est le", "pos": "phrase", "phrase": "Where is the bathroom?", "phrase_fr": "Ou sont les toilettes ?", "importance": 90, "frequency": "very_high"},
+      {"word": "I would like", "translation_fr": "j'aimerais", "pos": "phrase", "phrase": "I would like a coffee.", "phrase_fr": "J'aimerais un cafe.", "importance": 85, "frequency": "very_high"},
+      {"word": "do you speak English", "translation_fr": "parlez-vous anglais", "pos": "phrase", "phrase": "Do you speak English?", "phrase_fr": "Parlez-vous anglais ?", "importance": 85, "frequency": "very_high"},
+      {"word": "I'm sorry", "translation_fr": "desole", "pos": "phrase", "phrase": "I'm sorry I'm late.", "phrase_fr": "Desole d'etre en retard.", "importance": 85, "frequency": "very_high"},
+      {"word": "my name is", "translation_fr": "je m'appelle", "pos": "phrase", "phrase": "My name is John.", "phrase_fr": "Je m'appelle John.", "importance": 90, "frequency": "very_high"}
+    ]
+  },
+  {
+    "level": "A2",
+    "theme": "Common Verbs A2",
+    "words": [
+      {"word": "wait", "translation_fr": "attendre", "pos": "verb", "phrase": "Wait for me here.", "phrase_fr": "Attends-moi ici.", "importance": 90, "frequency": "very_high"},
+      {"word": "find", "translation_fr": "trouver", "pos": "verb", "phrase": "I can't find my keys.", "phrase_fr": "Je ne trouve pas mes cles.", "importance": 90, "frequency": "very_high"},
+      {"word": "try", "translation_fr": "essayer", "pos": "verb", "phrase": "Try this food.", "phrase_fr": "Essaie cette nourriture.", "importance": 85, "frequency": "very_high"},
+      {"word": "ask", "translation_fr": "demander", "pos": "verb", "phrase": "Can I ask a question?", "phrase_fr": "Puis-je poser une question ?", "importance": 90, "frequency": "very_high"},
+      {"word": "start", "translation_fr": "commencer", "pos": "verb", "phrase": "The class starts at nine.", "phrase_fr": "Le cours commence a neuf heures.", "importance": 85, "frequency": "very_high"},
+      {"word": "stop", "translation_fr": "arreter", "pos": "verb", "phrase": "Stop the car, please.", "phrase_fr": "Arrete la voiture, s'il te plait.", "importance": 85, "frequency": "very_high"},
+      {"word": "leave", "translation_fr": "partir / quitter", "pos": "verb", "phrase": "I leave at eight.", "phrase_fr": "Je pars a huit heures.", "importance": 85, "frequency": "very_high"},
+      {"word": "stay", "translation_fr": "rester", "pos": "verb", "phrase": "Stay here, please.", "phrase_fr": "Reste ici, s'il te plait.", "importance": 85, "frequency": "very_high"},
+      {"word": "buy", "translation_fr": "acheter", "pos": "verb", "phrase": "I buy food at the store.", "phrase_fr": "J'achete de la nourriture au magasin.", "importance": 85, "frequency": "very_high"},
+      {"word": "pay", "translation_fr": "payer", "pos": "verb", "phrase": "I want to pay now.", "phrase_fr": "Je veux payer maintenant.", "importance": 85, "frequency": "very_high"}
+    ]
+  },
+  {
+    "level": "A2",
+    "theme": "More Verbs A2",
+    "words": [
+      {"word": "call", "translation_fr": "appeler", "pos": "verb", "phrase": "Call me tomorrow.", "phrase_fr": "Appelle-moi demain.", "importance": 85, "frequency": "very_high"},
+      {"word": "send", "translation_fr": "envoyer", "pos": "verb", "phrase": "Send me a message.", "phrase_fr": "Envoie-moi un message.", "importance": 85, "frequency": "very_high"},
+      {"word": "remember", "translation_fr": "se souvenir", "pos": "verb", "phrase": "I remember your name.", "phrase_fr": "Je me souviens de ton nom.", "importance": 80, "frequency": "high"},
+      {"word": "forget", "translation_fr": "oublier", "pos": "verb", "phrase": "Don't forget your bag.", "phrase_fr": "N'oublie pas ton sac.", "importance": 80, "frequency": "high"},
+      {"word": "help", "translation_fr": "aider", "pos": "verb", "phrase": "Can you help me?", "phrase_fr": "Peux-tu m'aider ?", "importance": 90, "frequency": "very_high"},
+      {"word": "feel", "translation_fr": "sentir / ressentir", "pos": "verb", "phrase": "I feel good today.", "phrase_fr": "Je me sens bien aujourd'hui.", "importance": 85, "frequency": "very_high"},
+      {"word": "think", "translation_fr": "penser", "pos": "verb", "phrase": "I think it's a good idea.", "phrase_fr": "Je pense que c'est une bonne idee.", "importance": 90, "frequency": "essential"},
+      {"word": "learn", "translation_fr": "apprendre", "pos": "verb", "phrase": "I learn English at school.", "phrase_fr": "J'apprends l'anglais a l'ecole.", "importance": 90, "frequency": "very_high"},
+      {"word": "write", "translation_fr": "ecrire", "pos": "verb", "phrase": "Write your name here.", "phrase_fr": "Ecris ton nom ici.", "importance": 85, "frequency": "very_high"},
+      {"word": "open", "translation_fr": "ouvrir", "pos": "verb", "phrase": "Open the door.", "phrase_fr": "Ouvre la porte.", "importance": 85, "frequency": "very_high"}
+    ]
+  },
+  {
+    "level": "A2",
+    "theme": "Food & Drinks",
+    "words": [
+      {"word": "coffee", "translation_fr": "cafe", "pos": "noun", "phrase": "I drink coffee every morning.", "phrase_fr": "Je bois du cafe chaque matin.", "importance": 85, "frequency": "very_high"},
+      {"word": "tea", "translation_fr": "the", "pos": "noun", "phrase": "I prefer tea.", "phrase_fr": "Je prefere le the.", "importance": 85, "frequency": "very_high"},
+      {"word": "bread", "translation_fr": "pain", "pos": "noun", "phrase": "I buy bread every day.", "phrase_fr": "J'achete du pain chaque jour.", "importance": 80, "frequency": "high"},
+      {"word": "meat", "translation_fr": "viande", "pos": "noun", "phrase": "I don't eat meat.", "phrase_fr": "Je ne mange pas de viande.", "importance": 80, "frequency": "high"},
+      {"word": "fruit", "translation_fr": "fruit", "pos": "noun", "phrase": "I eat fruit every day.", "phrase_fr": "Je mange des fruits chaque jour.", "importance": 80, "frequency": "high"},
+      {"word": "milk", "translation_fr": "lait", "pos": "noun", "phrase": "I drink milk.", "phrase_fr": "Je bois du lait.", "importance": 80, "frequency": "high"},
+      {"word": "sugar", "translation_fr": "sucre", "pos": "noun", "phrase": "No sugar, please.", "phrase_fr": "Sans sucre, s'il te plait.", "importance": 75, "frequency": "high"},
+      {"word": "breakfast", "translation_fr": "petit-dejeuner", "pos": "noun", "phrase": "I eat breakfast at seven.", "phrase_fr": "Je prends le petit-dejeuner a sept heures.", "importance": 80, "frequency": "high"},
+      {"word": "lunch", "translation_fr": "dejeuner", "pos": "noun", "phrase": "Lunch is at twelve.", "phrase_fr": "Le dejeuner est a midi.", "importance": 80, "frequency": "high"},
+      {"word": "dinner", "translation_fr": "diner", "pos": "noun", "phrase": "We have dinner at seven.", "phrase_fr": "Nous dinons a sept heures.", "importance": 80, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "A2",
+    "theme": "Travel & Transport",
+    "words": [
+      {"word": "hotel", "translation_fr": "hotel", "pos": "noun", "phrase": "I stay at a hotel.", "phrase_fr": "Je reste a l'hotel.", "importance": 85, "frequency": "very_high"},
+      {"word": "station", "translation_fr": "gare / station", "pos": "noun", "phrase": "The train station is near.", "phrase_fr": "La gare est proche.", "importance": 85, "frequency": "very_high"},
+      {"word": "airport", "translation_fr": "aeroport", "pos": "noun", "phrase": "The airport is far.", "phrase_fr": "L'aeroport est loin.", "importance": 80, "frequency": "high"},
+      {"word": "ticket", "translation_fr": "billet", "pos": "noun", "phrase": "I need a ticket.", "phrase_fr": "J'ai besoin d'un billet.", "importance": 85, "frequency": "very_high"},
+      {"word": "bus", "translation_fr": "bus", "pos": "noun", "phrase": "I take the bus to work.", "phrase_fr": "Je prends le bus pour aller au travail.", "importance": 85, "frequency": "very_high"},
+      {"word": "train", "translation_fr": "train", "pos": "noun", "phrase": "The train is fast.", "phrase_fr": "Le train est rapide.", "importance": 85, "frequency": "very_high"},
+      {"word": "travel", "translation_fr": "voyager", "pos": "verb", "phrase": "I love to travel.", "phrase_fr": "J'adore voyager.", "importance": 85, "frequency": "very_high"},
+      {"word": "visit", "translation_fr": "visiter", "pos": "verb", "phrase": "I want to visit London.", "phrase_fr": "Je veux visiter Londres.", "importance": 80, "frequency": "high"},
+      {"word": "arrive", "translation_fr": "arriver", "pos": "verb", "phrase": "We arrive at ten.", "phrase_fr": "Nous arrivons a dix heures.", "importance": 80, "frequency": "high"},
+      {"word": "map", "translation_fr": "carte / plan", "pos": "noun", "phrase": "Do you have a map?", "phrase_fr": "As-tu une carte ?", "importance": 75, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "A2",
+    "theme": "People & Work",
+    "words": [
+      {"word": "mother", "translation_fr": "mere", "pos": "noun", "phrase": "My mother is a teacher.", "phrase_fr": "Ma mere est professeur.", "importance": 90, "frequency": "very_high"},
+      {"word": "father", "translation_fr": "pere", "pos": "noun", "phrase": "My father works here.", "phrase_fr": "Mon pere travaille ici.", "importance": 90, "frequency": "very_high"},
+      {"word": "brother", "translation_fr": "frere", "pos": "noun", "phrase": "My brother is ten years old.", "phrase_fr": "Mon frere a dix ans.", "importance": 85, "frequency": "very_high"},
+      {"word": "sister", "translation_fr": "soeur", "pos": "noun", "phrase": "My sister likes to read.", "phrase_fr": "Ma soeur aime lire.", "importance": 85, "frequency": "very_high"},
+      {"word": "teacher", "translation_fr": "professeur", "pos": "noun", "phrase": "The teacher is nice.", "phrase_fr": "Le professeur est gentil.", "importance": 85, "frequency": "very_high"},
+      {"word": "student", "translation_fr": "etudiant", "pos": "noun", "phrase": "I am a student.", "phrase_fr": "Je suis etudiant.", "importance": 85, "frequency": "very_high"},
+      {"word": "doctor", "translation_fr": "medecin", "pos": "noun", "phrase": "I need to see a doctor.", "phrase_fr": "J'ai besoin de voir un medecin.", "importance": 85, "frequency": "very_high"},
+      {"word": "job", "translation_fr": "emploi / travail", "pos": "noun", "phrase": "I have a new job.", "phrase_fr": "J'ai un nouvel emploi.", "importance": 85, "frequency": "very_high"},
+      {"word": "office", "translation_fr": "bureau", "pos": "noun", "phrase": "I work in an office.", "phrase_fr": "Je travaille dans un bureau.", "importance": 80, "frequency": "high"},
+      {"word": "people", "translation_fr": "les gens", "pos": "noun", "phrase": "Many people live here.", "phrase_fr": "Beaucoup de gens vivent ici.", "importance": 90, "frequency": "very_high"}
+    ]
+  },
+  {
+    "level": "A2",
+    "theme": "More Adjectives & Descriptions",
+    "words": [
+      {"word": "fast", "translation_fr": "rapide", "pos": "adjective", "phrase": "The car is very fast.", "phrase_fr": "La voiture est tres rapide.", "importance": 80, "frequency": "high"},
+      {"word": "slow", "translation_fr": "lent", "pos": "adjective", "phrase": "Please speak slow.", "phrase_fr": "Parle lentement, s'il te plait.", "importance": 80, "frequency": "high"},
+      {"word": "long", "translation_fr": "long", "pos": "adjective", "phrase": "The street is long.", "phrase_fr": "La rue est longue.", "importance": 80, "frequency": "high"},
+      {"word": "right", "translation_fr": "correct / droit", "pos": "adjective", "phrase": "You are right.", "phrase_fr": "Tu as raison.", "importance": 90, "frequency": "very_high"},
+      {"word": "wrong", "translation_fr": "faux", "pos": "adjective", "phrase": "This answer is wrong.", "phrase_fr": "Cette reponse est fausse.", "importance": 85, "frequency": "very_high"},
+      {"word": "ready", "translation_fr": "pret", "pos": "adjective", "phrase": "Are you ready?", "phrase_fr": "Es-tu pret ?", "importance": 85, "frequency": "very_high"},
+      {"word": "free", "translation_fr": "libre / gratuit", "pos": "adjective", "phrase": "Is this seat free?", "phrase_fr": "Ce siege est-il libre ?", "importance": 85, "frequency": "very_high"},
+      {"word": "near", "translation_fr": "proche", "pos": "adjective", "phrase": "The station is near.", "phrase_fr": "La gare est proche.", "importance": 80, "frequency": "high"},
+      {"word": "far", "translation_fr": "loin", "pos": "adjective", "phrase": "The airport is far.", "phrase_fr": "L'aeroport est loin.", "importance": 80, "frequency": "high"},
+      {"word": "sure", "translation_fr": "sur / certain", "pos": "adjective", "phrase": "I am sure about that.", "phrase_fr": "J'en suis sur.", "importance": 80, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "A2",
+    "theme": "Connectors & Determiners A2",
+    "words": [
+      {"word": "also", "translation_fr": "aussi", "pos": "adverb", "phrase": "I also like swimming.", "phrase_fr": "J'aime aussi nager.", "importance": 85, "frequency": "very_high"},
+      {"word": "already", "translation_fr": "deja", "pos": "adverb", "phrase": "I have already eaten.", "phrase_fr": "J'ai deja mange.", "importance": 85, "frequency": "very_high"},
+      {"word": "still", "translation_fr": "encore / toujours", "pos": "adverb", "phrase": "I am still waiting.", "phrase_fr": "J'attends encore.", "importance": 85, "frequency": "very_high"},
+      {"word": "just", "translation_fr": "juste / seulement", "pos": "adverb", "phrase": "I just want to help.", "phrase_fr": "Je veux juste aider.", "importance": 85, "frequency": "very_high"},
+      {"word": "really", "translation_fr": "vraiment", "pos": "adverb", "phrase": "I really like this city.", "phrase_fr": "J'aime vraiment cette ville.", "importance": 85, "frequency": "very_high"},
+      {"word": "only", "translation_fr": "seulement", "pos": "adverb", "phrase": "I only have five minutes.", "phrase_fr": "Je n'ai que cinq minutes.", "importance": 85, "frequency": "very_high"},
+      {"word": "every", "translation_fr": "chaque", "pos": "determiner", "phrase": "I run every morning.", "phrase_fr": "Je cours chaque matin.", "importance": 85, "frequency": "very_high"},
+      {"word": "more", "translation_fr": "plus", "pos": "adverb", "phrase": "I want more time.", "phrase_fr": "Je veux plus de temps.", "importance": 90, "frequency": "essential"},
+      {"word": "if", "translation_fr": "si", "pos": "conjunction", "phrase": "If you want, we can go.", "phrase_fr": "Si tu veux, nous pouvons y aller.", "importance": 90, "frequency": "essential"},
+      {"word": "about", "translation_fr": "a propos de / environ", "pos": "preposition", "phrase": "Tell me about your day.", "phrase_fr": "Parle-moi de ta journee.", "importance": 85, "frequency": "very_high"}
+    ]
+  },
+  {
+    "level": "A2",
+    "theme": "Nature & Weather",
+    "words": [
+      {"word": "weather", "translation_fr": "temps (meteo)", "pos": "noun", "phrase": "The weather is nice today.", "phrase_fr": "Le temps est beau aujourd'hui.", "importance": 80, "frequency": "high"},
+      {"word": "sun", "translation_fr": "soleil", "pos": "noun", "phrase": "The sun is hot.", "phrase_fr": "Le soleil est chaud.", "importance": 80, "frequency": "high"},
+      {"word": "rain", "translation_fr": "pluie", "pos": "noun", "phrase": "I don't like rain.", "phrase_fr": "Je n'aime pas la pluie.", "importance": 80, "frequency": "high"},
+      {"word": "city", "translation_fr": "ville", "pos": "noun", "phrase": "Paris is a big city.", "phrase_fr": "Paris est une grande ville.", "importance": 85, "frequency": "very_high"},
+      {"word": "country", "translation_fr": "pays", "pos": "noun", "phrase": "France is a beautiful country.", "phrase_fr": "La France est un beau pays.", "importance": 85, "frequency": "very_high"},
+      {"word": "street", "translation_fr": "rue", "pos": "noun", "phrase": "The street is long.", "phrase_fr": "La rue est longue.", "importance": 80, "frequency": "high"},
+      {"word": "room", "translation_fr": "chambre / piece", "pos": "noun", "phrase": "My room is small.", "phrase_fr": "Ma chambre est petite.", "importance": 80, "frequency": "high"},
+      {"word": "window", "translation_fr": "fenetre", "pos": "noun", "phrase": "Open the window.", "phrase_fr": "Ouvre la fenetre.", "importance": 75, "frequency": "high"},
+      {"word": "bed", "translation_fr": "lit", "pos": "noun", "phrase": "I go to bed at ten.", "phrase_fr": "Je me couche a dix heures.", "importance": 80, "frequency": "high"},
+      {"word": "store", "translation_fr": "magasin", "pos": "noun", "phrase": "The store is closed.", "phrase_fr": "Le magasin est ferme.", "importance": 80, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "B1",
+    "theme": "Opinions & Feelings",
+    "words": [
+      {"word": "I think", "translation_fr": "je pense", "pos": "phrase", "phrase": "I think it's a good idea.", "phrase_fr": "Je pense que c'est une bonne idee.", "importance": 85, "frequency": "very_high"},
+      {"word": "I believe", "translation_fr": "je crois", "pos": "phrase", "phrase": "I believe in hard work.", "phrase_fr": "Je crois au travail acharne.", "importance": 80, "frequency": "high"},
+      {"word": "in my opinion", "translation_fr": "a mon avis", "pos": "phrase", "phrase": "In my opinion, it's too expensive.", "phrase_fr": "A mon avis, c'est trop cher.", "importance": 80, "frequency": "high"},
+      {"word": "I prefer", "translation_fr": "je prefere", "pos": "phrase", "phrase": "I prefer tea to coffee.", "phrase_fr": "Je prefere le the au cafe.", "importance": 80, "frequency": "high"},
+      {"word": "I agree", "translation_fr": "je suis d'accord", "pos": "phrase", "phrase": "I agree with you.", "phrase_fr": "Je suis d'accord avec toi.", "importance": 85, "frequency": "very_high"},
+      {"word": "I disagree", "translation_fr": "je ne suis pas d'accord", "pos": "phrase", "phrase": "I disagree with that opinion.", "phrase_fr": "Je ne suis pas d'accord avec cette opinion.", "importance": 80, "frequency": "high"},
+      {"word": "I'm interested in", "translation_fr": "je suis interesse par", "pos": "phrase", "phrase": "I'm interested in art.", "phrase_fr": "Je suis interesse par l'art.", "importance": 80, "frequency": "high"},
+      {"word": "I'm worried about", "translation_fr": "je m'inquiete pour", "pos": "phrase", "phrase": "I'm worried about the exam.", "phrase_fr": "Je m'inquiete pour l'examen.", "importance": 75, "frequency": "high"},
+      {"word": "I'm excited", "translation_fr": "je suis enthousiaste", "pos": "phrase", "phrase": "I'm excited about the trip.", "phrase_fr": "Je suis enthousiaste a propos du voyage.", "importance": 75, "frequency": "high"},
+      {"word": "I'm disappointed", "translation_fr": "je suis decu", "pos": "phrase", "phrase": "I'm disappointed with the results.", "phrase_fr": "Je suis decu par les resultats.", "importance": 75, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "B1",
+    "theme": "Connecting Ideas",
+    "words": [
+      {"word": "because", "translation_fr": "parce que", "pos": "conjunction", "phrase": "I stay because I want to.", "phrase_fr": "Je reste parce que je veux.", "importance": 95, "frequency": "essential"},
+      {"word": "although", "translation_fr": "bien que", "pos": "conjunction", "phrase": "Although I'm tired, I'll help you.", "phrase_fr": "Bien que je sois fatigue, je t'aiderai.", "importance": 80, "frequency": "high"},
+      {"word": "however", "translation_fr": "cependant", "pos": "adverb", "phrase": "It's difficult, however it's possible.", "phrase_fr": "C'est difficile, cependant c'est possible.", "importance": 80, "frequency": "high"},
+      {"word": "therefore", "translation_fr": "donc / par consequent", "pos": "adverb", "phrase": "It's hot, therefore we need water.", "phrase_fr": "Il fait chaud, donc nous avons besoin d'eau.", "importance": 75, "frequency": "high"},
+      {"word": "moreover", "translation_fr": "de plus", "pos": "adverb", "phrase": "It's good. Moreover, it's cheap.", "phrase_fr": "C'est bon. De plus, c'est pas cher.", "importance": 70, "frequency": "medium"},
+      {"word": "meanwhile", "translation_fr": "pendant ce temps", "pos": "adverb", "phrase": "He works. Meanwhile, she studies.", "phrase_fr": "Il travaille. Pendant ce temps, elle etudie.", "importance": 70, "frequency": "medium"},
+      {"word": "while", "translation_fr": "pendant que / alors que", "pos": "conjunction", "phrase": "While I was sleeping, it rained.", "phrase_fr": "Pendant que je dormais, il pleuvait.", "importance": 80, "frequency": "high"},
+      {"word": "unless", "translation_fr": "a moins que", "pos": "conjunction", "phrase": "Come unless you're busy.", "phrase_fr": "Viens a moins que tu sois occupe.", "importance": 75, "frequency": "high"},
+      {"word": "as soon as", "translation_fr": "des que", "pos": "phrase", "phrase": "As soon as I finish, I'll call you.", "phrase_fr": "Des que j'aurai fini, je t'appellerai.", "importance": 75, "frequency": "high"},
+      {"word": "instead", "translation_fr": "a la place", "pos": "adverb", "phrase": "I stay home instead.", "phrase_fr": "Je reste a la maison a la place.", "importance": 75, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "B1",
+    "theme": "Advanced Verbs (1)",
+    "words": [
+      {"word": "decide", "translation_fr": "decider", "pos": "verb", "phrase": "I can't decide.", "phrase_fr": "Je ne peux pas decider.", "importance": 80, "frequency": "high"},
+      {"word": "explain", "translation_fr": "expliquer", "pos": "verb", "phrase": "Can you explain this?", "phrase_fr": "Peux-tu expliquer cela ?", "importance": 80, "frequency": "high"},
+      {"word": "improve", "translation_fr": "ameliorer", "pos": "verb", "phrase": "I want to improve my English.", "phrase_fr": "Je veux ameliorer mon anglais.", "importance": 80, "frequency": "high"},
+      {"word": "suggest", "translation_fr": "suggerer", "pos": "verb", "phrase": "I suggest we go now.", "phrase_fr": "Je suggere que nous partions maintenant.", "importance": 75, "frequency": "high"},
+      {"word": "offer", "translation_fr": "offrir / proposer", "pos": "verb", "phrase": "Can I offer you something?", "phrase_fr": "Puis-je vous offrir quelque chose ?", "importance": 75, "frequency": "high"},
+      {"word": "accept", "translation_fr": "accepter", "pos": "verb", "phrase": "I accept your offer.", "phrase_fr": "J'accepte votre offre.", "importance": 75, "frequency": "high"},
+      {"word": "refuse", "translation_fr": "refuser", "pos": "verb", "phrase": "She refused to help.", "phrase_fr": "Elle a refuse d'aider.", "importance": 75, "frequency": "high"},
+      {"word": "choose", "translation_fr": "choisir", "pos": "verb", "phrase": "Choose one of these books.", "phrase_fr": "Choisis l'un de ces livres.", "importance": 80, "frequency": "high"},
+      {"word": "spend", "translation_fr": "depenser / passer (temps)", "pos": "verb", "phrase": "I spend time with my family.", "phrase_fr": "Je passe du temps avec ma famille.", "importance": 80, "frequency": "high"},
+      {"word": "change", "translation_fr": "changer", "pos": "verb", "phrase": "I want to change my ticket.", "phrase_fr": "Je veux changer mon billet.", "importance": 80, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "B1",
+    "theme": "Advanced Verbs (2)",
+    "words": [
+      {"word": "create", "translation_fr": "creer", "pos": "verb", "phrase": "She wants to create something new.", "phrase_fr": "Elle veut creer quelque chose de nouveau.", "importance": 75, "frequency": "high"},
+      {"word": "continue", "translation_fr": "continuer", "pos": "verb", "phrase": "Please continue reading.", "phrase_fr": "Veuillez continuer a lire.", "importance": 80, "frequency": "high"},
+      {"word": "become", "translation_fr": "devenir", "pos": "verb", "phrase": "She became a doctor.", "phrase_fr": "Elle est devenue medecin.", "importance": 80, "frequency": "high"},
+      {"word": "happen", "translation_fr": "arriver / se passer", "pos": "verb", "phrase": "What happened yesterday?", "phrase_fr": "Que s'est-il passe hier ?", "importance": 80, "frequency": "high"},
+      {"word": "mean", "translation_fr": "signifier / vouloir dire", "pos": "verb", "phrase": "What does this word mean?", "phrase_fr": "Que veut dire ce mot ?", "importance": 85, "frequency": "very_high"},
+      {"word": "use", "translation_fr": "utiliser", "pos": "verb", "phrase": "I use a computer every day.", "phrase_fr": "J'utilise un ordinateur chaque jour.", "importance": 85, "frequency": "very_high"},
+      {"word": "meet", "translation_fr": "rencontrer", "pos": "verb", "phrase": "Nice to meet you.", "phrase_fr": "Enchante de te rencontrer.", "importance": 85, "frequency": "very_high"},
+      {"word": "lose", "translation_fr": "perdre", "pos": "verb", "phrase": "I don't want to lose my phone.", "phrase_fr": "Je ne veux pas perdre mon telephone.", "importance": 80, "frequency": "high"},
+      {"word": "win", "translation_fr": "gagner", "pos": "verb", "phrase": "I want to win this game.", "phrase_fr": "Je veux gagner ce jeu.", "importance": 75, "frequency": "high"},
+      {"word": "share", "translation_fr": "partager", "pos": "verb", "phrase": "Let's share this cake.", "phrase_fr": "Partageons ce gateau.", "importance": 75, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "B1",
+    "theme": "Abstract Nouns",
+    "words": [
+      {"word": "experience", "translation_fr": "experience", "pos": "noun", "phrase": "I have a lot of experience.", "phrase_fr": "J'ai beaucoup d'experience.", "importance": 80, "frequency": "high"},
+      {"word": "information", "translation_fr": "information", "pos": "noun", "phrase": "I need more information.", "phrase_fr": "J'ai besoin de plus d'informations.", "importance": 80, "frequency": "high"},
+      {"word": "reason", "translation_fr": "raison", "pos": "noun", "phrase": "What is the reason?", "phrase_fr": "Quelle est la raison ?", "importance": 80, "frequency": "high"},
+      {"word": "problem", "translation_fr": "probleme", "pos": "noun", "phrase": "There is a problem.", "phrase_fr": "Il y a un probleme.", "importance": 85, "frequency": "very_high"},
+      {"word": "idea", "translation_fr": "idee", "pos": "noun", "phrase": "I have an idea.", "phrase_fr": "J'ai une idee.", "importance": 85, "frequency": "very_high"},
+      {"word": "question", "translation_fr": "question", "pos": "noun", "phrase": "I have a question.", "phrase_fr": "J'ai une question.", "importance": 85, "frequency": "very_high"},
+      {"word": "example", "translation_fr": "exemple", "pos": "noun", "phrase": "Give me an example.", "phrase_fr": "Donne-moi un exemple.", "importance": 80, "frequency": "high"},
+      {"word": "difference", "translation_fr": "difference", "pos": "noun", "phrase": "What is the difference?", "phrase_fr": "Quelle est la difference ?", "importance": 75, "frequency": "high"},
+      {"word": "result", "translation_fr": "resultat", "pos": "noun", "phrase": "The results are good.", "phrase_fr": "Les resultats sont bons.", "importance": 75, "frequency": "high"},
+      {"word": "health", "translation_fr": "sante", "pos": "noun", "phrase": "Health is important.", "phrase_fr": "La sante est importante.", "importance": 80, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "B1",
+    "theme": "Adjectives B1",
+    "words": [
+      {"word": "important", "translation_fr": "important", "pos": "adjective", "phrase": "This is very important.", "phrase_fr": "C'est tres important.", "importance": 85, "frequency": "very_high"},
+      {"word": "different", "translation_fr": "different", "pos": "adjective", "phrase": "This is a different book.", "phrase_fr": "C'est un livre different.", "importance": 80, "frequency": "high"},
+      {"word": "possible", "translation_fr": "possible", "pos": "adjective", "phrase": "Is it possible to change?", "phrase_fr": "Est-il possible de changer ?", "importance": 80, "frequency": "high"},
+      {"word": "necessary", "translation_fr": "necessaire", "pos": "adjective", "phrase": "Sleep is necessary for health.", "phrase_fr": "Le sommeil est necessaire pour la sante.", "importance": 75, "frequency": "high"},
+      {"word": "available", "translation_fr": "disponible", "pos": "adjective", "phrase": "Is this room available?", "phrase_fr": "Cette chambre est-elle disponible ?", "importance": 75, "frequency": "high"},
+      {"word": "popular", "translation_fr": "populaire", "pos": "adjective", "phrase": "This song is very popular.", "phrase_fr": "Cette chanson est tres populaire.", "importance": 75, "frequency": "high"},
+      {"word": "common", "translation_fr": "commun / courant", "pos": "adjective", "phrase": "This is a common problem.", "phrase_fr": "C'est un probleme courant.", "importance": 75, "frequency": "high"},
+      {"word": "successful", "translation_fr": "reussi", "pos": "adjective", "phrase": "The project was successful.", "phrase_fr": "Le projet a ete reussi.", "importance": 75, "frequency": "high"},
+      {"word": "similar", "translation_fr": "similaire", "pos": "adjective", "phrase": "These two books are similar.", "phrase_fr": "Ces deux livres sont similaires.", "importance": 70, "frequency": "medium"},
+      {"word": "likely", "translation_fr": "probable", "pos": "adjective", "phrase": "It is likely to rain.", "phrase_fr": "Il est probable qu'il pleuve.", "importance": 70, "frequency": "medium"}
+    ]
+  },
+  {
+    "level": "B1",
+    "theme": "Work & Education",
+    "words": [
+      {"word": "company", "translation_fr": "entreprise", "pos": "noun", "phrase": "I work for a big company.", "phrase_fr": "Je travaille pour une grande entreprise.", "importance": 80, "frequency": "high"},
+      {"word": "education", "translation_fr": "education", "pos": "noun", "phrase": "Education is very important.", "phrase_fr": "L'education est tres importante.", "importance": 75, "frequency": "high"},
+      {"word": "technology", "translation_fr": "technologie", "pos": "noun", "phrase": "Technology changes fast.", "phrase_fr": "La technologie change vite.", "importance": 75, "frequency": "high"},
+      {"word": "market", "translation_fr": "marche", "pos": "noun", "phrase": "I go to the market.", "phrase_fr": "Je vais au marche.", "importance": 75, "frequency": "high"},
+      {"word": "news", "translation_fr": "nouvelles / actualites", "pos": "noun", "phrase": "I watch the news every day.", "phrase_fr": "Je regarde les nouvelles chaque jour.", "importance": 80, "frequency": "high"},
+      {"word": "language", "translation_fr": "langue", "pos": "noun", "phrase": "English is a beautiful language.", "phrase_fr": "L'anglais est une belle langue.", "importance": 80, "frequency": "high"},
+      {"word": "environment", "translation_fr": "environnement", "pos": "noun", "phrase": "We must protect the environment.", "phrase_fr": "Nous devons proteger l'environnement.", "importance": 75, "frequency": "high"},
+      {"word": "government", "translation_fr": "gouvernement", "pos": "noun", "phrase": "The government makes the rules.", "phrase_fr": "Le gouvernement fait les regles.", "importance": 70, "frequency": "medium"},
+      {"word": "society", "translation_fr": "societe", "pos": "noun", "phrase": "We live in a changing society.", "phrase_fr": "Nous vivons dans une societe en changement.", "importance": 70, "frequency": "medium"},
+      {"word": "opportunity", "translation_fr": "opportunite", "pos": "noun", "phrase": "This is a great opportunity.", "phrase_fr": "C'est une excellente opportunite.", "importance": 75, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "B1",
+    "theme": "Connectors B1",
+    "words": [
+      {"word": "actually", "translation_fr": "en fait", "pos": "adverb", "phrase": "Actually, I changed my mind.", "phrase_fr": "En fait, j'ai change d'avis.", "importance": 80, "frequency": "high"},
+      {"word": "probably", "translation_fr": "probablement", "pos": "adverb", "phrase": "I will probably be late.", "phrase_fr": "Je serai probablement en retard.", "importance": 80, "frequency": "high"},
+      {"word": "especially", "translation_fr": "surtout", "pos": "adverb", "phrase": "I like fruit, especially apples.", "phrase_fr": "J'aime les fruits, surtout les pommes.", "importance": 75, "frequency": "high"},
+      {"word": "finally", "translation_fr": "finalement", "pos": "adverb", "phrase": "I finally understand.", "phrase_fr": "Je comprends enfin.", "importance": 80, "frequency": "high"},
+      {"word": "quite", "translation_fr": "assez / plutot", "pos": "adverb", "phrase": "This is quite difficult.", "phrase_fr": "C'est assez difficile.", "importance": 75, "frequency": "high"},
+      {"word": "rather", "translation_fr": "plutot", "pos": "adverb", "phrase": "I would rather stay home.", "phrase_fr": "Je prefererais rester a la maison.", "importance": 70, "frequency": "medium"},
+      {"word": "despite", "translation_fr": "malgre", "pos": "preposition", "phrase": "Despite the rain, we went out.", "phrase_fr": "Malgre la pluie, nous sommes sortis.", "importance": 75, "frequency": "high"},
+      {"word": "according to", "translation_fr": "selon", "pos": "preposition", "phrase": "According to the news, it will rain.", "phrase_fr": "Selon les nouvelles, il va pleuvoir.", "importance": 70, "frequency": "medium"},
+      {"word": "whether", "translation_fr": "si (alternative)", "pos": "conjunction", "phrase": "I wonder whether he will come.", "phrase_fr": "Je me demande s'il viendra.", "importance": 70, "frequency": "medium"},
+      {"word": "even though", "translation_fr": "meme si", "pos": "conjunction", "phrase": "Even though it's late, I'll come.", "phrase_fr": "Meme si c'est tard, je viendrai.", "importance": 75, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "B1",
+    "theme": "Daily Life B1",
+    "words": [
+      {"word": "move", "translation_fr": "bouger / demenager", "pos": "verb", "phrase": "I want to move to London.", "phrase_fr": "Je veux demenager a Londres.", "importance": 75, "frequency": "high"},
+      {"word": "prepare", "translation_fr": "preparer", "pos": "verb", "phrase": "I prepare dinner every evening.", "phrase_fr": "Je prepare le diner chaque soir.", "importance": 75, "frequency": "high"},
+      {"word": "plan", "translation_fr": "planifier", "pos": "verb", "phrase": "I plan to travel next year.", "phrase_fr": "Je prevois de voyager l'annee prochaine.", "importance": 75, "frequency": "high"},
+      {"word": "protect", "translation_fr": "proteger", "pos": "verb", "phrase": "We must protect the environment.", "phrase_fr": "Nous devons proteger l'environnement.", "importance": 75, "frequency": "high"},
+      {"word": "fail", "translation_fr": "echouer", "pos": "verb", "phrase": "I don't want to fail.", "phrase_fr": "Je ne veux pas echouer.", "importance": 75, "frequency": "high"},
+      {"word": "succeed", "translation_fr": "reussir", "pos": "verb", "phrase": "I want to succeed.", "phrase_fr": "Je veux reussir.", "importance": 75, "frequency": "high"},
+      {"word": "depend", "translation_fr": "dependre", "pos": "verb", "phrase": "It depends on the weather.", "phrase_fr": "Ca depend du temps.", "importance": 75, "frequency": "high"},
+      {"word": "complain", "translation_fr": "se plaindre", "pos": "verb", "phrase": "He always complains.", "phrase_fr": "Il se plaint toujours.", "importance": 70, "frequency": "medium"},
+      {"word": "promise", "translation_fr": "promettre", "pos": "verb", "phrase": "I promise to help you.", "phrase_fr": "Je promets de t'aider.", "importance": 75, "frequency": "high"},
+      {"word": "allow", "translation_fr": "permettre", "pos": "verb", "phrase": "They don't allow smoking here.", "phrase_fr": "Ils ne permettent pas de fumer ici.", "importance": 75, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "B2",
+    "theme": "Phrasal Verbs",
+    "words": [
+      {"word": "give up", "translation_fr": "abandonner", "pos": "phrase", "phrase": "Don't give up now.", "phrase_fr": "N'abandonne pas maintenant.", "importance": 80, "frequency": "high"},
+      {"word": "put off", "translation_fr": "repousser / remettre", "pos": "phrase", "phrase": "Don't put it off any longer.", "phrase_fr": "Ne le repousse pas plus longtemps.", "importance": 75, "frequency": "high"},
+      {"word": "point out", "translation_fr": "faire remarquer / signaler", "pos": "phrase", "phrase": "Let me point out the issue.", "phrase_fr": "Laisse-moi signaler le probleme.", "importance": 70, "frequency": "medium"},
+      {"word": "bring up", "translation_fr": "soulever (un sujet)", "pos": "phrase", "phrase": "She brought up the topic.", "phrase_fr": "Elle a souleve le sujet.", "importance": 75, "frequency": "high"},
+      {"word": "carry on", "translation_fr": "continuer", "pos": "phrase", "phrase": "Carry on with your work.", "phrase_fr": "Continue avec ton travail.", "importance": 75, "frequency": "high"},
+      {"word": "get along", "translation_fr": "s'entendre", "pos": "phrase", "phrase": "They get along very well.", "phrase_fr": "Ils s'entendent tres bien.", "importance": 80, "frequency": "high"},
+      {"word": "look forward to", "translation_fr": "avoir hate de", "pos": "phrase", "phrase": "I look forward to the weekend.", "phrase_fr": "J'ai hate au weekend.", "importance": 80, "frequency": "high"},
+      {"word": "deal with", "translation_fr": "s'occuper de", "pos": "phrase", "phrase": "I'll deal with it tomorrow.", "phrase_fr": "Je m'en occuperai demain.", "importance": 80, "frequency": "high"},
+      {"word": "come across", "translation_fr": "rencontrer / tomber sur", "pos": "phrase", "phrase": "I came across an interesting article.", "phrase_fr": "J'ai trouve un article interessant.", "importance": 70, "frequency": "medium"},
+      {"word": "take into account", "translation_fr": "tenir compte de", "pos": "phrase", "phrase": "Take into account the cost.", "phrase_fr": "Tiens compte du cout.", "importance": 70, "frequency": "medium"}
+    ]
+  },
+  {
+    "level": "B2",
+    "theme": "Abstract Concepts",
+    "words": [
+      {"word": "challenge", "translation_fr": "defi", "pos": "noun", "phrase": "This is a big challenge.", "phrase_fr": "C'est un grand defi.", "importance": 75, "frequency": "high"},
+      {"word": "impact", "translation_fr": "impact", "pos": "noun", "phrase": "This has a big impact.", "phrase_fr": "Cela a un grand impact.", "importance": 75, "frequency": "high"},
+      {"word": "issue", "translation_fr": "probleme / enjeu", "pos": "noun", "phrase": "This is a serious issue.", "phrase_fr": "C'est un probleme serieux.", "importance": 75, "frequency": "high"},
+      {"word": "value", "translation_fr": "valeur", "pos": "noun", "phrase": "Education has great value.", "phrase_fr": "L'education a une grande valeur.", "importance": 70, "frequency": "medium"},
+      {"word": "benefit", "translation_fr": "avantage / benefice", "pos": "noun", "phrase": "What are the benefits?", "phrase_fr": "Quels sont les avantages ?", "importance": 70, "frequency": "medium"},
+      {"word": "consequence", "translation_fr": "consequence", "pos": "noun", "phrase": "Every action has consequences.", "phrase_fr": "Chaque action a des consequences.", "importance": 70, "frequency": "medium"},
+      {"word": "opinion", "translation_fr": "opinion / avis", "pos": "noun", "phrase": "What is your opinion?", "phrase_fr": "Quel est ton avis ?", "importance": 75, "frequency": "high"},
+      {"word": "process", "translation_fr": "processus", "pos": "noun", "phrase": "It is a long process.", "phrase_fr": "C'est un long processus.", "importance": 70, "frequency": "medium"},
+      {"word": "strategy", "translation_fr": "strategie", "pos": "noun", "phrase": "We need a new strategy.", "phrase_fr": "Nous avons besoin d'une nouvelle strategie.", "importance": 70, "frequency": "medium"},
+      {"word": "perspective", "translation_fr": "perspective", "pos": "noun", "phrase": "I see it from a different perspective.", "phrase_fr": "Je le vois d'une perspective differente.", "importance": 70, "frequency": "medium"},
+      {"word": "approach", "translation_fr": "approche", "pos": "noun", "phrase": "We need a new approach.", "phrase_fr": "Nous avons besoin d'une nouvelle approche.", "importance": 70, "frequency": "medium"},
+      {"word": "factor", "translation_fr": "facteur", "pos": "noun", "phrase": "This is an important factor.", "phrase_fr": "C'est un facteur important.", "importance": 70, "frequency": "medium"},
+      {"word": "evidence", "translation_fr": "preuve", "pos": "noun", "phrase": "There is no evidence.", "phrase_fr": "Il n'y a pas de preuve.", "importance": 70, "frequency": "medium"},
+      {"word": "conclusion", "translation_fr": "conclusion", "pos": "noun", "phrase": "In conclusion, I agree.", "phrase_fr": "En conclusion, je suis d'accord.", "importance": 70, "frequency": "medium"},
+      {"word": "economy", "translation_fr": "economie", "pos": "noun", "phrase": "The economy is growing.", "phrase_fr": "L'economie est en croissance.", "importance": 70, "frequency": "medium"}
+    ]
+  },
+  {
+    "level": "B2",
+    "theme": "Business & Professional Verbs",
+    "words": [
+      {"word": "achieve", "translation_fr": "accomplir / atteindre", "pos": "verb", "phrase": "I want to achieve my goals.", "phrase_fr": "Je veux atteindre mes objectifs.", "importance": 75, "frequency": "high"},
+      {"word": "manage", "translation_fr": "gerer / reussir a", "pos": "verb", "phrase": "I manage a team of ten people.", "phrase_fr": "Je gere une equipe de dix personnes.", "importance": 75, "frequency": "high"},
+      {"word": "consider", "translation_fr": "considerer", "pos": "verb", "phrase": "I consider this important.", "phrase_fr": "Je considere cela important.", "importance": 75, "frequency": "high"},
+      {"word": "recommend", "translation_fr": "recommander", "pos": "verb", "phrase": "I recommend this restaurant.", "phrase_fr": "Je recommande ce restaurant.", "importance": 75, "frequency": "high"},
+      {"word": "require", "translation_fr": "exiger / necessiter", "pos": "verb", "phrase": "This job requires experience.", "phrase_fr": "Ce travail necessite de l'experience.", "importance": 70, "frequency": "medium"},
+      {"word": "involve", "translation_fr": "impliquer", "pos": "verb", "phrase": "This project involves many people.", "phrase_fr": "Ce projet implique beaucoup de personnes.", "importance": 70, "frequency": "medium"},
+      {"word": "organize", "translation_fr": "organiser", "pos": "verb", "phrase": "I organize events for the company.", "phrase_fr": "J'organise des evenements pour l'entreprise.", "importance": 70, "frequency": "medium"},
+      {"word": "reduce", "translation_fr": "reduire", "pos": "verb", "phrase": "We need to reduce costs.", "phrase_fr": "Nous devons reduire les couts.", "importance": 70, "frequency": "medium"},
+      {"word": "avoid", "translation_fr": "eviter", "pos": "verb", "phrase": "I avoid eating late.", "phrase_fr": "J'evite de manger tard.", "importance": 75, "frequency": "high"},
+      {"word": "support", "translation_fr": "soutenir", "pos": "verb", "phrase": "I support your decision.", "phrase_fr": "Je soutiens ta decision.", "importance": 75, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "B2",
+    "theme": "Communication & Debate",
+    "words": [
+      {"word": "argue", "translation_fr": "argumenter / se disputer", "pos": "verb", "phrase": "They argue about politics.", "phrase_fr": "Ils se disputent au sujet de la politique.", "importance": 70, "frequency": "medium"},
+      {"word": "convince", "translation_fr": "convaincre", "pos": "verb", "phrase": "I tried to convince her.", "phrase_fr": "J'ai essaye de la convaincre.", "importance": 70, "frequency": "medium"},
+      {"word": "encourage", "translation_fr": "encourager", "pos": "verb", "phrase": "I encourage you to try.", "phrase_fr": "Je t'encourage a essayer.", "importance": 70, "frequency": "medium"},
+      {"word": "emphasize", "translation_fr": "souligner / insister", "pos": "verb", "phrase": "I want to emphasize this point.", "phrase_fr": "Je veux souligner ce point.", "importance": 70, "frequency": "medium"},
+      {"word": "respond", "translation_fr": "repondre", "pos": "verb", "phrase": "Please respond to my email.", "phrase_fr": "Veuillez repondre a mon email.", "importance": 70, "frequency": "medium"},
+      {"word": "assume", "translation_fr": "supposer", "pos": "verb", "phrase": "I assume you are ready.", "phrase_fr": "Je suppose que tu es pret.", "importance": 70, "frequency": "medium"},
+      {"word": "claim", "translation_fr": "pretendre / revendiquer", "pos": "verb", "phrase": "She claims to be right.", "phrase_fr": "Elle pretend avoir raison.", "importance": 70, "frequency": "medium"},
+      {"word": "demand", "translation_fr": "exiger", "pos": "verb", "phrase": "I demand an explanation.", "phrase_fr": "J'exige une explication.", "importance": 70, "frequency": "medium"},
+      {"word": "indicate", "translation_fr": "indiquer", "pos": "verb", "phrase": "The sign indicates the exit.", "phrase_fr": "Le panneau indique la sortie.", "importance": 65, "frequency": "medium"},
+      {"word": "reflect", "translation_fr": "reflechir / refleter", "pos": "verb", "phrase": "I need time to reflect.", "phrase_fr": "J'ai besoin de temps pour reflechir.", "importance": 70, "frequency": "medium"}
+    ]
+  },
+  {
+    "level": "B2",
+    "theme": "Formal Adjectives",
+    "words": [
+      {"word": "effective", "translation_fr": "efficace", "pos": "adjective", "phrase": "This method is very effective.", "phrase_fr": "Cette methode est tres efficace.", "importance": 70, "frequency": "medium"},
+      {"word": "essential", "translation_fr": "essentiel", "pos": "adjective", "phrase": "Water is essential for life.", "phrase_fr": "L'eau est essentielle pour la vie.", "importance": 70, "frequency": "medium"},
+      {"word": "significant", "translation_fr": "significatif", "pos": "adjective", "phrase": "This is a significant change.", "phrase_fr": "C'est un changement significatif.", "importance": 70, "frequency": "medium"},
+      {"word": "complex", "translation_fr": "complexe", "pos": "adjective", "phrase": "This is a complex issue.", "phrase_fr": "C'est un probleme complexe.", "importance": 70, "frequency": "medium"},
+      {"word": "aware", "translation_fr": "conscient", "pos": "adjective", "phrase": "I am aware of the problem.", "phrase_fr": "Je suis conscient du probleme.", "importance": 70, "frequency": "medium"},
+      {"word": "appropriate", "translation_fr": "approprie", "pos": "adjective", "phrase": "This is not appropriate.", "phrase_fr": "Ce n'est pas approprie.", "importance": 65, "frequency": "medium"},
+      {"word": "specific", "translation_fr": "specifique", "pos": "adjective", "phrase": "I need specific information.", "phrase_fr": "J'ai besoin d'informations specifiques.", "importance": 65, "frequency": "medium"},
+      {"word": "entire", "translation_fr": "entier", "pos": "adjective", "phrase": "I read the entire book.", "phrase_fr": "J'ai lu le livre entier.", "importance": 70, "frequency": "medium"},
+      {"word": "previous", "translation_fr": "precedent", "pos": "adjective", "phrase": "My previous job was different.", "phrase_fr": "Mon emploi precedent etait different.", "importance": 65, "frequency": "medium"},
+      {"word": "recent", "translation_fr": "recent", "pos": "adjective", "phrase": "This is a recent change.", "phrase_fr": "C'est un changement recent.", "importance": 65, "frequency": "medium"}
+    ]
+  },
+  {
+    "level": "B2",
+    "theme": "Formal Connectors",
+    "words": [
+      {"word": "furthermore", "translation_fr": "de plus", "pos": "adverb", "phrase": "Furthermore, I agree with you.", "phrase_fr": "De plus, je suis d'accord avec toi.", "importance": 70, "frequency": "medium"},
+      {"word": "nevertheless", "translation_fr": "neanmoins", "pos": "adverb", "phrase": "It's difficult. Nevertheless, I try.", "phrase_fr": "C'est difficile. Neanmoins, j'essaie.", "importance": 70, "frequency": "medium"},
+      {"word": "consequently", "translation_fr": "par consequent", "pos": "adverb", "phrase": "He was late. Consequently, he missed it.", "phrase_fr": "Il etait en retard. Par consequent, il l'a manque.", "importance": 65, "frequency": "medium"},
+      {"word": "apparently", "translation_fr": "apparemment", "pos": "adverb", "phrase": "Apparently, the meeting is cancelled.", "phrase_fr": "Apparemment, la reunion est annulee.", "importance": 70, "frequency": "medium"},
+      {"word": "eventually", "translation_fr": "finalement / a terme", "pos": "adverb", "phrase": "I will eventually learn.", "phrase_fr": "J'apprendrai finalement.", "importance": 70, "frequency": "medium"},
+      {"word": "indeed", "translation_fr": "en effet", "pos": "adverb", "phrase": "Indeed, this is true.", "phrase_fr": "En effet, c'est vrai.", "importance": 70, "frequency": "medium"},
+      {"word": "regarding", "translation_fr": "concernant", "pos": "preposition", "phrase": "Regarding your question, I agree.", "phrase_fr": "Concernant ta question, je suis d'accord.", "importance": 65, "frequency": "medium"},
+      {"word": "whereas", "translation_fr": "alors que / tandis que", "pos": "conjunction", "phrase": "I like tea, whereas she prefers coffee.", "phrase_fr": "J'aime le the, alors qu'elle prefere le cafe.", "importance": 65, "frequency": "medium"},
+      {"word": "on the other hand", "translation_fr": "d'un autre cote", "pos": "phrase", "phrase": "On the other hand, it could work.", "phrase_fr": "D'un autre cote, ca pourrait marcher.", "importance": 70, "frequency": "medium"},
+      {"word": "as a result", "translation_fr": "en consequence", "pos": "phrase", "phrase": "As a result, we changed our plan.", "phrase_fr": "En consequence, nous avons change notre plan.", "importance": 65, "frequency": "medium"}
+    ]
+  },
+  {
+    "level": "B2",
+    "theme": "More Phrasal Verbs & Expressions",
+    "words": [
+      {"word": "figure out", "translation_fr": "comprendre / resoudre", "pos": "phrase", "phrase": "I need to figure out this problem.", "phrase_fr": "J'ai besoin de resoudre ce probleme.", "importance": 75, "frequency": "high"},
+      {"word": "turn out", "translation_fr": "s'averer", "pos": "phrase", "phrase": "It turned out to be true.", "phrase_fr": "Il s'est avere que c'etait vrai.", "importance": 70, "frequency": "medium"},
+      {"word": "make up", "translation_fr": "inventer / se reconcilier", "pos": "phrase", "phrase": "Don't make up stories.", "phrase_fr": "N'invente pas d'histoires.", "importance": 70, "frequency": "medium"},
+      {"word": "set up", "translation_fr": "mettre en place / installer", "pos": "phrase", "phrase": "Let's set up a meeting.", "phrase_fr": "Mettons en place une reunion.", "importance": 70, "frequency": "medium"},
+      {"word": "run out of", "translation_fr": "manquer de / etre a court de", "pos": "phrase", "phrase": "We ran out of time.", "phrase_fr": "Nous avons manque de temps.", "importance": 70, "frequency": "medium"},
+      {"word": "keep up with", "translation_fr": "suivre le rythme de", "pos": "phrase", "phrase": "I can't keep up with you.", "phrase_fr": "Je ne peux pas suivre ton rythme.", "importance": 70, "frequency": "medium"},
+      {"word": "end up", "translation_fr": "finir par", "pos": "phrase", "phrase": "I ended up staying home.", "phrase_fr": "J'ai fini par rester a la maison.", "importance": 70, "frequency": "medium"},
+      {"word": "come up with", "translation_fr": "trouver / proposer (une idee)", "pos": "phrase", "phrase": "She came up with a great idea.", "phrase_fr": "Elle a propose une excellente idee.", "importance": 70, "frequency": "medium"},
+      {"word": "break down", "translation_fr": "tomber en panne / s'effondrer", "pos": "phrase", "phrase": "The car broke down on the road.", "phrase_fr": "La voiture est tombee en panne sur la route.", "importance": 70, "frequency": "medium"},
+      {"word": "look into", "translation_fr": "examiner / enqueter sur", "pos": "phrase", "phrase": "I will look into this problem.", "phrase_fr": "Je vais examiner ce probleme.", "importance": 65, "frequency": "medium"}
+    ]
+  },
+  {
+    "level": "A2",
+    "theme": "Home & Daily Routines",
+    "words": [
+      {"word": "wake up", "translation_fr": "se reveiller", "pos": "phrase", "phrase": "I wake up at 7 every morning.", "phrase_fr": "Je me reveille a 7 heures chaque matin.", "importance": 85, "frequency": "very_high"},
+      {"word": "shower", "translation_fr": "douche / se doucher", "pos": "noun", "phrase": "I take a shower every morning.", "phrase_fr": "Je prends une douche chaque matin.", "importance": 80, "frequency": "high"},
+      {"word": "cook", "translation_fr": "cuisiner", "pos": "verb", "phrase": "I cook dinner every evening.", "phrase_fr": "Je cuisine le diner chaque soir.", "importance": 80, "frequency": "high"},
+      {"word": "laundry", "translation_fr": "lessive", "pos": "noun", "phrase": "I do laundry on Sundays.", "phrase_fr": "Je fais la lessive le dimanche.", "importance": 75, "frequency": "high"},
+      {"word": "kitchen", "translation_fr": "cuisine", "pos": "noun", "phrase": "I cook in the kitchen.", "phrase_fr": "Je cuisine dans la cuisine.", "importance": 80, "frequency": "high"},
+      {"word": "bedroom", "translation_fr": "chambre", "pos": "noun", "phrase": "My bedroom is upstairs.", "phrase_fr": "Ma chambre est a l'etage.", "importance": 80, "frequency": "high"},
+      {"word": "bathroom", "translation_fr": "salle de bain", "pos": "noun", "phrase": "The bathroom is on the left.", "phrase_fr": "La salle de bain est a gauche.", "importance": 80, "frequency": "high"},
+      {"word": "clean", "translation_fr": "nettoyer / propre", "pos": "verb", "phrase": "I clean my room every week.", "phrase_fr": "Je nettoie ma chambre chaque semaine.", "importance": 80, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "A2",
+    "theme": "Shopping & Money",
+    "words": [
+      {"word": "cost", "translation_fr": "couter", "pos": "verb", "phrase": "How much does it cost?", "phrase_fr": "Combien ca coute ?", "importance": 85, "frequency": "very_high"},
+      {"word": "sell", "translation_fr": "vendre", "pos": "verb", "phrase": "He sells cars for a living.", "phrase_fr": "Il vend des voitures pour gagner sa vie.", "importance": 80, "frequency": "high"},
+      {"word": "price", "translation_fr": "prix", "pos": "noun", "phrase": "What is the price?", "phrase_fr": "Quel est le prix ?", "importance": 85, "frequency": "very_high"},
+      {"word": "cheap", "translation_fr": "pas cher / bon marche", "pos": "adjective", "phrase": "This is very cheap.", "phrase_fr": "C'est tres bon marche.", "importance": 80, "frequency": "high"},
+      {"word": "expensive", "translation_fr": "cher", "pos": "adjective", "phrase": "This hotel is too expensive.", "phrase_fr": "Cet hotel est trop cher.", "importance": 80, "frequency": "high"},
+      {"word": "receipt", "translation_fr": "ticket de caisse", "pos": "noun", "phrase": "Can I have the receipt, please?", "phrase_fr": "Puis-je avoir le ticket de caisse ?", "importance": 75, "frequency": "high"},
+      {"word": "discount", "translation_fr": "reduction", "pos": "noun", "phrase": "Is there a discount?", "phrase_fr": "Y a-t-il une reduction ?", "importance": 75, "frequency": "high"},
+      {"word": "shop", "translation_fr": "magasin / faire les courses", "pos": "noun", "phrase": "The shop closes at 9.", "phrase_fr": "Le magasin ferme a 9 heures.", "importance": 80, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "A2",
+    "theme": "Health & Body",
+    "words": [
+      {"word": "headache", "translation_fr": "mal de tete", "pos": "noun", "phrase": "I have a terrible headache.", "phrase_fr": "J'ai un terrible mal de tete.", "importance": 80, "frequency": "high"},
+      {"word": "hospital", "translation_fr": "hopital", "pos": "noun", "phrase": "She is in the hospital.", "phrase_fr": "Elle est a l'hopital.", "importance": 80, "frequency": "high"},
+      {"word": "sick", "translation_fr": "malade", "pos": "adjective", "phrase": "I feel sick today.", "phrase_fr": "Je me sens malade aujourd'hui.", "importance": 85, "frequency": "very_high"},
+      {"word": "pain", "translation_fr": "douleur", "pos": "noun", "phrase": "I have a pain in my back.", "phrase_fr": "J'ai une douleur dans le dos.", "importance": 80, "frequency": "high"},
+      {"word": "medicine", "translation_fr": "medicament", "pos": "noun", "phrase": "Take your medicine.", "phrase_fr": "Prends tes medicaments.", "importance": 80, "frequency": "high"},
+      {"word": "healthy", "translation_fr": "en bonne sante", "pos": "adjective", "phrase": "Eating fruit is healthy.", "phrase_fr": "Manger des fruits est bon pour la sante.", "importance": 80, "frequency": "high"},
+      {"word": "exercise", "translation_fr": "exercice / faire du sport", "pos": "noun", "phrase": "I exercise three times a week.", "phrase_fr": "Je fais du sport trois fois par semaine.", "importance": 80, "frequency": "high"},
+      {"word": "rest", "translation_fr": "se reposer / repos", "pos": "verb", "phrase": "You need to rest.", "phrase_fr": "Tu as besoin de te reposer.", "importance": 80, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "A1-A2",
+    "theme": "Relationships & Social Life",
+    "words": [
+      {"word": "husband", "translation_fr": "mari", "pos": "noun", "phrase": "Her husband is very kind.", "phrase_fr": "Son mari est tres gentil.", "importance": 80, "frequency": "high"},
+      {"word": "wife", "translation_fr": "femme / epouse", "pos": "noun", "phrase": "My wife is a doctor.", "phrase_fr": "Ma femme est medecin.", "importance": 80, "frequency": "high"},
+      {"word": "neighbour", "translation_fr": "voisin(e)", "pos": "noun", "phrase": "My neighbour is very friendly.", "phrase_fr": "Mon voisin est tres sympathique.", "importance": 75, "frequency": "high"},
+      {"word": "cousin", "translation_fr": "cousin(e)", "pos": "noun", "phrase": "My cousin lives in Canada.", "phrase_fr": "Mon cousin vit au Canada.", "importance": 75, "frequency": "high"},
+      {"word": "uncle", "translation_fr": "oncle", "pos": "noun", "phrase": "My uncle is a pilot.", "phrase_fr": "Mon oncle est pilote.", "importance": 75, "frequency": "high"},
+      {"word": "aunt", "translation_fr": "tante", "pos": "noun", "phrase": "My aunt makes great cakes.", "phrase_fr": "Ma tante fait d'excellents gateaux.", "importance": 75, "frequency": "high"},
+      {"word": "born", "translation_fr": "ne(e)", "pos": "adjective", "phrase": "I was born in Paris.", "phrase_fr": "Je suis ne a Paris.", "importance": 80, "frequency": "high"},
+      {"word": "married", "translation_fr": "marie(e)", "pos": "adjective", "phrase": "They got married last year.", "phrase_fr": "Ils se sont maries l'annee derniere.", "importance": 75, "frequency": "high"},
+      {"word": "single", "translation_fr": "celibataire", "pos": "adjective", "phrase": "She is single.", "phrase_fr": "Elle est celibataire.", "importance": 70, "frequency": "high"},
+      {"word": "elderly", "translation_fr": "age / personne agee", "pos": "adjective", "phrase": "We should help elderly people.", "phrase_fr": "Nous devrions aider les personnes agees.", "importance": 70, "frequency": "medium"}
+    ]
+  },
+  {
+    "level": "B1",
+    "theme": "Feelings & Emotions",
+    "words": [
+      {"word": "worried", "translation_fr": "inquiet", "pos": "adjective", "phrase": "I am worried about the exam.", "phrase_fr": "Je suis inquiet pour l'examen.", "importance": 80, "frequency": "high"},
+      {"word": "excited", "translation_fr": "enthousiaste", "pos": "adjective", "phrase": "I am excited about the trip.", "phrase_fr": "Je suis enthousiaste pour le voyage.", "importance": 75, "frequency": "high"},
+      {"word": "disappointed", "translation_fr": "decu", "pos": "adjective", "phrase": "I am disappointed by the result.", "phrase_fr": "Je suis decu par le resultat.", "importance": 75, "frequency": "high"},
+      {"word": "proud", "translation_fr": "fier", "pos": "adjective", "phrase": "I am proud of you.", "phrase_fr": "Je suis fier de toi.", "importance": 75, "frequency": "high"},
+      {"word": "embarrassed", "translation_fr": "gene / embarrasse", "pos": "adjective", "phrase": "I was so embarrassed.", "phrase_fr": "J'etais tellement gene.", "importance": 70, "frequency": "medium"},
+      {"word": "jealous", "translation_fr": "jaloux", "pos": "adjective", "phrase": "Don't be jealous.", "phrase_fr": "Ne sois pas jaloux.", "importance": 70, "frequency": "medium"},
+      {"word": "confident", "translation_fr": "confiant", "pos": "adjective", "phrase": "She is very confident.", "phrase_fr": "Elle est tres confiante.", "importance": 75, "frequency": "high"},
+      {"word": "confused", "translation_fr": "confus / perdu", "pos": "adjective", "phrase": "I am confused about the rules.", "phrase_fr": "Je suis confus concernant les regles.", "importance": 75, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "B1",
+    "theme": "Media & Technology",
+    "words": [
+      {"word": "internet", "translation_fr": "internet", "pos": "noun", "phrase": "I use the internet every day.", "phrase_fr": "J'utilise internet tous les jours.", "importance": 85, "frequency": "very_high"},
+      {"word": "website", "translation_fr": "site web", "pos": "noun", "phrase": "Visit our website for more info.", "phrase_fr": "Visitez notre site web pour plus d'infos.", "importance": 80, "frequency": "high"},
+      {"word": "screen", "translation_fr": "ecran", "pos": "noun", "phrase": "Don't look at the screen too long.", "phrase_fr": "Ne regarde pas l'ecran trop longtemps.", "importance": 75, "frequency": "high"},
+      {"word": "message", "translation_fr": "message", "pos": "noun", "phrase": "I sent you a message.", "phrase_fr": "Je t'ai envoye un message.", "importance": 85, "frequency": "very_high"},
+      {"word": "social media", "translation_fr": "reseaux sociaux", "pos": "noun", "phrase": "I spend too much time on social media.", "phrase_fr": "Je passe trop de temps sur les reseaux sociaux.", "importance": 80, "frequency": "high"},
+      {"word": "download", "translation_fr": "telecharger", "pos": "verb", "phrase": "I need to download this app.", "phrase_fr": "J'ai besoin de telecharger cette appli.", "importance": 75, "frequency": "high"},
+      {"word": "search", "translation_fr": "chercher / recherche", "pos": "verb", "phrase": "I search for information online.", "phrase_fr": "Je cherche des informations en ligne.", "importance": 80, "frequency": "high"},
+      {"word": "password", "translation_fr": "mot de passe", "pos": "noun", "phrase": "I forgot my password.", "phrase_fr": "J'ai oublie mon mot de passe.", "importance": 80, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "B2",
+    "theme": "Society & Culture",
+    "words": [
+      {"word": "citizen", "translation_fr": "citoyen", "pos": "noun", "phrase": "Every citizen has rights.", "phrase_fr": "Chaque citoyen a des droits.", "importance": 65, "frequency": "medium"},
+      {"word": "freedom", "translation_fr": "liberte", "pos": "noun", "phrase": "Freedom is a fundamental right.", "phrase_fr": "La liberte est un droit fondamental.", "importance": 70, "frequency": "medium"},
+      {"word": "equality", "translation_fr": "egalite", "pos": "noun", "phrase": "We fight for equality.", "phrase_fr": "Nous nous battons pour l'egalite.", "importance": 65, "frequency": "medium"},
+      {"word": "tradition", "translation_fr": "tradition", "pos": "noun", "phrase": "It is a family tradition.", "phrase_fr": "C'est une tradition familiale.", "importance": 70, "frequency": "medium"},
+      {"word": "behaviour", "translation_fr": "comportement", "pos": "noun", "phrase": "His behaviour was unacceptable.", "phrase_fr": "Son comportement etait inacceptable.", "importance": 70, "frequency": "medium"},
+      {"word": "influence", "translation_fr": "influence", "pos": "noun", "phrase": "Social media has a big influence.", "phrase_fr": "Les reseaux sociaux ont une grande influence.", "importance": 70, "frequency": "medium"},
+      {"word": "responsibility", "translation_fr": "responsabilite", "pos": "noun", "phrase": "It is your responsibility.", "phrase_fr": "C'est ta responsabilite.", "importance": 70, "frequency": "medium"},
+      {"word": "contribute", "translation_fr": "contribuer", "pos": "verb", "phrase": "I want to contribute to the project.", "phrase_fr": "Je veux contribuer au projet.", "importance": 65, "frequency": "medium"}
+    ]
+  },
+  {
+    "level": "B2",
+    "theme": "Advanced Adjectives",
+    "words": [
+      {"word": "obvious", "translation_fr": "evident", "pos": "adjective", "phrase": "The answer is obvious.", "phrase_fr": "La reponse est evidente.", "importance": 70, "frequency": "medium"},
+      {"word": "genuine", "translation_fr": "authentique / sincere", "pos": "adjective", "phrase": "She is a genuine person.", "phrase_fr": "C'est une personne sincere.", "importance": 65, "frequency": "medium"},
+      {"word": "remarkable", "translation_fr": "remarquable", "pos": "adjective", "phrase": "This is a remarkable achievement.", "phrase_fr": "C'est une reussite remarquable.", "importance": 65, "frequency": "medium"},
+      {"word": "reliable", "translation_fr": "fiable", "pos": "adjective", "phrase": "He is a very reliable person.", "phrase_fr": "C'est une personne tres fiable.", "importance": 70, "frequency": "medium"},
+      {"word": "relevant", "translation_fr": "pertinent", "pos": "adjective", "phrase": "This information is relevant.", "phrase_fr": "Cette information est pertinente.", "importance": 65, "frequency": "medium"},
+      {"word": "willing", "translation_fr": "dispose / pret a", "pos": "adjective", "phrase": "I am willing to help.", "phrase_fr": "Je suis dispose a aider.", "importance": 70, "frequency": "medium"},
+      {"word": "outstanding", "translation_fr": "exceptionnel", "pos": "adjective", "phrase": "Her work is outstanding.", "phrase_fr": "Son travail est exceptionnel.", "importance": 65, "frequency": "medium"},
+      {"word": "temporary", "translation_fr": "temporaire", "pos": "adjective", "phrase": "This is a temporary solution.", "phrase_fr": "C'est une solution temporaire.", "importance": 65, "frequency": "medium"}
+    ]
+  },
+  {
+    "level": "C1",
+    "theme": "Academic & Professional",
+    "words": [
+      {"word": "acknowledge", "translation_fr": "reconnaitre / admettre", "pos": "verb", "phrase": "I acknowledge my mistake.", "phrase_fr": "Je reconnais mon erreur.", "importance": 65, "frequency": "medium"},
+      {"word": "assess", "translation_fr": "evaluer", "pos": "verb", "phrase": "We need to assess the situation.", "phrase_fr": "Nous devons evaluer la situation.", "importance": 65, "frequency": "medium"},
+      {"word": "enhance", "translation_fr": "ameliorer / renforcer", "pos": "verb", "phrase": "This will enhance your skills.", "phrase_fr": "Cela ameliorera vos competences.", "importance": 60, "frequency": "medium"},
+      {"word": "establish", "translation_fr": "etablir", "pos": "verb", "phrase": "We need to establish clear rules.", "phrase_fr": "Nous devons etablir des regles claires.", "importance": 65, "frequency": "medium"},
+      {"word": "implement", "translation_fr": "mettre en oeuvre", "pos": "verb", "phrase": "We will implement the new plan.", "phrase_fr": "Nous allons mettre en oeuvre le nouveau plan.", "importance": 60, "frequency": "medium"},
+      {"word": "maintain", "translation_fr": "maintenir / entretenir", "pos": "verb", "phrase": "We must maintain high standards.", "phrase_fr": "Nous devons maintenir des standards eleves.", "importance": 65, "frequency": "medium"},
+      {"word": "obtain", "translation_fr": "obtenir", "pos": "verb", "phrase": "I need to obtain a visa.", "phrase_fr": "J'ai besoin d'obtenir un visa.", "importance": 65, "frequency": "medium"},
+      {"word": "ensure", "translation_fr": "assurer / garantir", "pos": "verb", "phrase": "Please ensure everything is ready.", "phrase_fr": "Veuillez vous assurer que tout est pret.", "importance": 65, "frequency": "medium"}
+    ]
+  },
+  {
+    "level": "C1",
+    "theme": "Nuanced Expressions",
+    "words": [
+      {"word": "tend to", "translation_fr": "avoir tendance a", "pos": "phrase", "phrase": "I tend to forget things.", "phrase_fr": "J'ai tendance a oublier les choses.", "importance": 70, "frequency": "medium"},
+      {"word": "rather than", "translation_fr": "plutot que", "pos": "phrase", "phrase": "I prefer tea rather than coffee.", "phrase_fr": "Je prefere le the plutot que le cafe.", "importance": 70, "frequency": "medium"},
+      {"word": "in terms of", "translation_fr": "en termes de", "pos": "phrase", "phrase": "In terms of quality, it's the best.", "phrase_fr": "En termes de qualite, c'est le meilleur.", "importance": 65, "frequency": "medium"},
+      {"word": "as long as", "translation_fr": "tant que / a condition que", "pos": "phrase", "phrase": "You can go as long as you're careful.", "phrase_fr": "Tu peux y aller tant que tu fais attention.", "importance": 70, "frequency": "medium"},
+      {"word": "make sense", "translation_fr": "avoir du sens", "pos": "phrase", "phrase": "Does that make sense?", "phrase_fr": "Est-ce que cela a du sens ?", "importance": 75, "frequency": "high"},
+      {"word": "take place", "translation_fr": "avoir lieu", "pos": "phrase", "phrase": "The meeting takes place at 3.", "phrase_fr": "La reunion a lieu a 3 heures.", "importance": 70, "frequency": "medium"},
+      {"word": "get rid of", "translation_fr": "se debarrasser de", "pos": "phrase", "phrase": "I want to get rid of this old sofa.", "phrase_fr": "Je veux me debarrasser de ce vieux canape.", "importance": 70, "frequency": "medium"},
+      {"word": "no matter", "translation_fr": "peu importe", "pos": "phrase", "phrase": "No matter what, I'll be there.", "phrase_fr": "Peu importe quoi, je serai la.", "importance": 65, "frequency": "medium"}
+    ]
+  },
+  {
+    "level": "C1",
+    "theme": "Advanced Connectors & Discourse",
+    "words": [
+      {"word": "nonetheless", "translation_fr": "neanmoins / toutefois", "pos": "adverb", "phrase": "It was risky. Nonetheless, we succeeded.", "phrase_fr": "C'etait risque. Neanmoins, nous avons reussi.", "importance": 60, "frequency": "medium"},
+      {"word": "hence", "translation_fr": "par consequent / d'ou", "pos": "adverb", "phrase": "He was ill, hence his absence.", "phrase_fr": "Il etait malade, d'ou son absence.", "importance": 60, "frequency": "medium"},
+      {"word": "provided that", "translation_fr": "a condition que", "pos": "conjunction", "phrase": "You can come, provided that you behave.", "phrase_fr": "Tu peux venir, a condition que tu te comportes bien.", "importance": 60, "frequency": "medium"},
+      {"word": "so as to", "translation_fr": "afin de", "pos": "phrase", "phrase": "I left early so as to avoid traffic.", "phrase_fr": "Je suis parti tot afin d'eviter le trafic.", "importance": 60, "frequency": "medium"},
+      {"word": "in addition to", "translation_fr": "en plus de", "pos": "phrase", "phrase": "In addition to English, she speaks French.", "phrase_fr": "En plus de l'anglais, elle parle francais.", "importance": 65, "frequency": "medium"},
+      {"word": "due to", "translation_fr": "en raison de / a cause de", "pos": "phrase", "phrase": "The flight was cancelled due to fog.", "phrase_fr": "Le vol a ete annule en raison du brouillard.", "importance": 70, "frequency": "medium"},
+      {"word": "to sum up", "translation_fr": "pour resumer", "pos": "phrase", "phrase": "To sum up, the results are positive.", "phrase_fr": "Pour resumer, les resultats sont positifs.", "importance": 60, "frequency": "medium"},
+      {"word": "broadly speaking", "translation_fr": "de maniere generale", "pos": "phrase", "phrase": "Broadly speaking, the plan is good.", "phrase_fr": "De maniere generale, le plan est bon.", "importance": 55, "frequency": "medium"}
+    ]
+  },
+  {
+    "level": "C1",
+    "theme": "Formal & Written English",
+    "words": [
+      {"word": "thorough", "translation_fr": "minutieux / approfondi", "pos": "adjective", "phrase": "She did a thorough investigation.", "phrase_fr": "Elle a mene une enquete approfondie.", "importance": 60, "frequency": "medium"},
+      {"word": "substantial", "translation_fr": "substantiel / considerable", "pos": "adjective", "phrase": "There is a substantial difference.", "phrase_fr": "Il y a une difference considerable.", "importance": 60, "frequency": "medium"},
+      {"word": "inevitable", "translation_fr": "inevitable", "pos": "adjective", "phrase": "Change is inevitable.", "phrase_fr": "Le changement est inevitable.", "importance": 60, "frequency": "medium"},
+      {"word": "comprehensive", "translation_fr": "complet / exhaustif", "pos": "adjective", "phrase": "This is a comprehensive guide.", "phrase_fr": "C'est un guide complet.", "importance": 60, "frequency": "medium"},
+      {"word": "crucial", "translation_fr": "crucial", "pos": "adjective", "phrase": "This is a crucial decision.", "phrase_fr": "C'est une decision cruciale.", "importance": 65, "frequency": "medium"},
+      {"word": "widespread", "translation_fr": "repandu", "pos": "adjective", "phrase": "This problem is widespread.", "phrase_fr": "Ce probleme est repandu.", "importance": 60, "frequency": "medium"},
+      {"word": "ultimately", "translation_fr": "en fin de compte", "pos": "adverb", "phrase": "Ultimately, it's your choice.", "phrase_fr": "En fin de compte, c'est ton choix.", "importance": 60, "frequency": "medium"},
+      {"word": "merely", "translation_fr": "simplement / seulement", "pos": "adverb", "phrase": "I merely asked a question.", "phrase_fr": "J'ai simplement pose une question.", "importance": 55, "frequency": "medium"}
+    ]
+  },
+  {
+    "level": "A2",
+    "theme": "Clothes & Appearance",
+    "words": [
+      {"word": "wear", "translation_fr": "porter (vetements)", "pos": "verb", "phrase": "I wear a suit for work.", "phrase_fr": "Je porte un costume pour le travail.", "importance": 85, "frequency": "very_high"},
+      {"word": "clothes", "translation_fr": "vetements", "pos": "noun", "phrase": "I need new clothes.", "phrase_fr": "J'ai besoin de nouveaux vetements.", "importance": 80, "frequency": "high"},
+      {"word": "shoes", "translation_fr": "chaussures", "pos": "noun", "phrase": "These shoes are comfortable.", "phrase_fr": "Ces chaussures sont confortables.", "importance": 80, "frequency": "high"},
+      {"word": "size", "translation_fr": "taille", "pos": "noun", "phrase": "What size do you wear?", "phrase_fr": "Quelle taille portez-vous ?", "importance": 80, "frequency": "high"},
+      {"word": "colour", "translation_fr": "couleur", "pos": "noun", "phrase": "What colour do you prefer?", "phrase_fr": "Quelle couleur preferez-vous ?", "importance": 80, "frequency": "high"},
+      {"word": "try on", "translation_fr": "essayer (un vetement)", "pos": "phrase", "phrase": "Can I try on this jacket?", "phrase_fr": "Puis-je essayer cette veste ?", "importance": 75, "frequency": "high"},
+      {"word": "fit", "translation_fr": "aller (taille)", "pos": "verb", "phrase": "This shirt doesn't fit me.", "phrase_fr": "Cette chemise ne me va pas.", "importance": 80, "frequency": "high"},
+      {"word": "suit", "translation_fr": "costume / aller bien", "pos": "noun", "phrase": "That dress suits you perfectly.", "phrase_fr": "Cette robe te va parfaitement.", "importance": 75, "frequency": "high"}
+    ]
+  },
+  {
+    "level": "B1-B2",
+    "theme": "Everyday Idioms & Phrases",
+    "words": [
+      {"word": "by the way", "translation_fr": "au fait / a propos", "pos": "phrase", "phrase": "By the way, did you call her?", "phrase_fr": "Au fait, tu l'as appelee ?", "importance": 80, "frequency": "high"},
+      {"word": "so far", "translation_fr": "jusqu'ici / pour l'instant", "pos": "phrase", "phrase": "So far, everything is going well.", "phrase_fr": "Jusqu'ici, tout va bien.", "importance": 75, "frequency": "high"},
+      {"word": "at least", "translation_fr": "au moins", "pos": "phrase", "phrase": "At least we tried.", "phrase_fr": "Au moins, nous avons essaye.", "importance": 80, "frequency": "high"},
+      {"word": "as well", "translation_fr": "aussi / egalement", "pos": "phrase", "phrase": "I speak Spanish as well.", "phrase_fr": "Je parle espagnol egalement.", "importance": 80, "frequency": "high"},
+      {"word": "on purpose", "translation_fr": "expres / volontairement", "pos": "phrase", "phrase": "I didn't do it on purpose.", "phrase_fr": "Je ne l'ai pas fait expres.", "importance": 70, "frequency": "medium"},
+      {"word": "in advance", "translation_fr": "a l'avance", "pos": "phrase", "phrase": "Please book in advance.", "phrase_fr": "Veuillez reserver a l'avance.", "importance": 75, "frequency": "high"},
+      {"word": "for instance", "translation_fr": "par exemple", "pos": "phrase", "phrase": "For instance, consider this case.", "phrase_fr": "Par exemple, considerez ce cas.", "importance": 70, "frequency": "medium"},
+      {"word": "right away", "translation_fr": "tout de suite", "pos": "phrase", "phrase": "I'll do it right away.", "phrase_fr": "Je vais le faire tout de suite.", "importance": 80, "frequency": "high"},
+      {"word": "kind of", "translation_fr": "un peu / en quelque sorte", "pos": "phrase", "phrase": "I'm kind of tired.", "phrase_fr": "Je suis un peu fatigue.", "importance": 75, "frequency": "high"},
+      {"word": "a lot of", "translation_fr": "beaucoup de", "pos": "phrase", "phrase": "I have a lot of work.", "phrase_fr": "J'ai beaucoup de travail.", "importance": 85, "frequency": "very_high"}
+    ]
+  }
+]

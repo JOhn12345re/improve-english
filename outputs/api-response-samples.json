@@ -1,0 +1,49 @@
+{
+  "health": {
+    "status": 200,
+    "body": {"status": "ok", "timestamp": "2026-06-06T00:03:04.953Z"}
+  },
+  "health_integrations": {
+    "status": 200,
+    "body": {
+      "status": "degraded",
+      "services": {
+        "dictionary": {"status": "ok", "latencyMs": 147},
+        "datamuse": {"status": "ok", "latencyMs": 246},
+        "languagetool": {"status": "error", "latencyMs": 1546},
+        "translation": {
+          "mymemory": {"status": "ok", "latencyMs": 465},
+          "deepl": {"status": "skipped", "latencyMs": 0}
+        },
+        "tts": {"status": "skipped", "latencyMs": 0},
+        "llm": {
+          "groq": {"status": "ok", "latencyMs": 143},
+          "anthropic": {"status": "skipped", "latencyMs": 0}
+        }
+      }
+    }
+  },
+  "lessons_a1": {
+    "status": 200,
+    "count": 84,
+    "sample": {
+      "id": "383a6cf2-0cdb-4c0e-a75a-1273bafbadf8",
+      "level": "A1",
+      "theme": "daily-life",
+      "content_keys": ["title", "source", "exercises", "description"]
+    }
+  },
+  "auth_unauthorized": {
+    "no_token": {"status": 401, "body": {"message": "Unauthorized", "statusCode": 401}},
+    "invalid_token": {"status": 401, "body": {"message": "Unauthorized", "statusCode": 401}},
+    "tampered_jwt": {"status": 401, "body": {"message": "Unauthorized", "statusCode": 401}}
+  },
+  "security_sql_injection": {
+    "status": 400,
+    "body": {"message": ["email must be an email"], "error": "Bad Request", "statusCode": 400}
+  },
+  "security_xss": {
+    "status": 400,
+    "body": {"message": ["email must be an email"], "error": "Bad Request", "statusCode": 400}
+  }
+}

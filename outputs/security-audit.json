@@ -1,0 +1,34 @@
+{
+  "date": "2026-06-06",
+  "authentication": {
+    "jwt_validation": "PASS",
+    "unauthorized_access_blocked": "PASS",
+    "invalid_token_rejected": "PASS",
+    "tampered_jwt_rejected": "PASS",
+    "password_storage": "PASS (delegated to Supabase Auth)"
+  },
+  "input_validation": {
+    "sql_injection": "PASS (400 - class-validator rejects)",
+    "xss_injection": "PASS (400 - class-validator rejects)",
+    "dto_validation": "PASS (@IsEmail, @IsString, @MinLength)"
+  },
+  "rate_limiting": {
+    "status": "FAIL",
+    "detail": "ThrottlerModule imported but ThrottlerGuard NOT registered as APP_GUARD",
+    "config": {"ttl": 60000, "limit": 100},
+    "fix": "Add { provide: APP_GUARD, useClass: ThrottlerGuard } to AppModule providers"
+  },
+  "rgpd": {
+    "data_export": "PASS (GET /users/me/export)",
+    "account_deletion": "PARTIAL",
+    "soft_delete": "PASS (14-day delay, deleted_at field)",
+    "hard_delete_purge": "FAIL (no cronjob to purge after 14 days)",
+    "password_in_export": "N/A (no password stored)",
+    "env_protection": "PASS (.gitignore blocks .env files)"
+  },
+  "data_protection": {
+    "env_files_gitignored": true,
+    "secrets_in_code": false,
+    "https_enforced": "Not checked (deployment config)"
+  }
+}

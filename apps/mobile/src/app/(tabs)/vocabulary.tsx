@@ -14,6 +14,7 @@ import Animated, {
   withTiming,
   interpolate,
 } from 'react-native-reanimated';
+import { router } from 'expo-router';
 import Button from '@/components/ui/Button';
 import { useDueVocabulary, useReviewVocabulary } from '@/hooks/queries/useVocabulary';
 
@@ -103,6 +104,13 @@ export default function VocabularyScreen() {
             <Text style={styles.emptyTitle}>{t('vocabulary.allDone')}</Text>
             <Text style={styles.emptySubtitle}>{t('vocabulary.allDoneDesc')}</Text>
           </View>
+
+          <TouchableOpacity
+            style={{ backgroundColor: '#4F46E5', borderRadius: 12, paddingVertical: 14, paddingHorizontal: 24, marginBottom: 20, alignItems: 'center' }}
+            onPress={() => router.push('/essentials' as any)}
+          >
+            <Text style={{ color: '#fff', fontSize: 16, fontWeight: '600' }}>Essential 500 Words</Text>
+          </TouchableOpacity>
 
           <View style={styles.statsRow}>
             <View style={styles.statCard}>

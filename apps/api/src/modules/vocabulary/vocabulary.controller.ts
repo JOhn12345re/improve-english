@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query, Req, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { VocabularyService, ReviewVocabularyDto } from './vocabulary.service';
 
@@ -6,6 +6,11 @@ import { VocabularyService, ReviewVocabularyDto } from './vocabulary.service';
 @UseGuards(AuthGuard('jwt'))
 export class VocabularyController {
   constructor(private readonly vocabularyService: VocabularyService) {}
+
+  @Get()
+  async getAll(@Query('pack') pack?: string) {
+    return this.vocabularyService.getWordsByPack(pack);
+  }
 
   @Get('due')
   async getDue(@Req() req: { user: { id: string } }) {

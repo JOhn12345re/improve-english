@@ -1,4 +1,5 @@
 import { Controller, Get, Module } from '@nestjs/common';
+import { SkipThrottle } from '@nestjs/throttler';
 import { DictionaryService } from '../integrations/dictionary/dictionary.service';
 import { DatamuseService } from '../integrations/datamuse/datamuse.service';
 import { LanguageToolService } from '../integrations/languagetool/languagetool.service';
@@ -7,6 +8,7 @@ import { TtsService } from '../integrations/tts/tts.service';
 import { LlmService } from '../integrations/llm/llm.service';
 import { IntegrationsModule } from '../integrations/integrations.module';
 
+@SkipThrottle()
 @Controller('health')
 export class HealthController {
   constructor(
