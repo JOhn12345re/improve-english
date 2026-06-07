@@ -32,6 +32,7 @@ export class VocabularyController {
     return this.vocabularyService.reviewWord(req.user.id, dto);
   }
 
+  @UseGuards(AuthGuard('jwt'))
   @Post('add-words')
   async addWords(
     @Req() req: { user: { id: string } },
