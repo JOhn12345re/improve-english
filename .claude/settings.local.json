@@ -27,7 +27,8 @@
       "Bash(curl -s \"https://englishflowapi-production.up.railway.app/vocabulary?pack=essentials-500\")",
       "Bash(railway status:*)",
       "WebFetch(domain:railway.com)",
-      "Bash(railway redeploy:*)"
+      "Bash(railway redeploy:*)",
+      "Bash(railway up:*)"
     ]
   }
 }
