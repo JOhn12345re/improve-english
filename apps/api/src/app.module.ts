@@ -20,7 +20,7 @@ import { validate } from './config/config.validation';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true, load: [configuration], validate }),
-    ThrottlerModule.forRoot({ throttlers: [{ ttl: 60_000, limit: 100 }] }),
+    ThrottlerModule.forRoot([{ ttl: 60_000, limit: 100 }] as any),
     PrismaModule,
     CacheModule,
     HealthModule,
