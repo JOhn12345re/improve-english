@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useQuery } from '@tanstack/react-query';
+import { router } from 'expo-router';
 import { api } from '@/services/api';
 
 // ── Types ──────────────────────────────────────────────────────────────────
