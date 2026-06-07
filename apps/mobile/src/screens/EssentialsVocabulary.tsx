@@ -243,6 +243,24 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     paddingBottom: 12,
   },
+  headerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+  },
+  backButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#F3F4F6',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  backArrow: {
+    fontSize: 20,
+    color: '#1E1B4B',
+    marginTop: Platform.OS === 'ios' ? -1 : 0,
+  },
   headerTitle: {
     fontSize: 28,
     fontWeight: '700',
