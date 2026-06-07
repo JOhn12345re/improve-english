@@ -23,6 +23,7 @@ export class VocabularyController {
     return this.vocabularyService.getStats(req.user.id);
   }
 
+  @UseGuards(AuthGuard('jwt'))
   @Post('review')
   async review(
     @Req() req: { user: { id: string } },
