@@ -22,7 +22,12 @@
       "Bash(node:*)",
       "Bash(npx prisma:*)",
       "Bash(npx tsc:*)",
-      "WebFetch(domain:expo.dev)"
+      "WebFetch(domain:expo.dev)",
+      "Bash(railway logs:*)",
+      "Bash(curl -s \"https://englishflowapi-production.up.railway.app/vocabulary?pack=essentials-500\")",
+      "Bash(railway status:*)",
+      "WebFetch(domain:railway.com)",
+      "Bash(railway redeploy:*)"
     ]
   }
 }
