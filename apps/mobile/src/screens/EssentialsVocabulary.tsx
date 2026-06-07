@@ -153,10 +153,17 @@ export default function EssentialsVocabulary() {
     <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Essential 500</Text>
-        <Text style={styles.headerSubtitle}>
-          {filtered.length} words {selectedLevel !== 'All' ? `(${selectedLevel})` : ''}
-        </Text>
+        <View style={styles.headerRow}>
+          <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
+            <Text style={styles.backArrow}>{'\u2190'}</Text>
+          </TouchableOpacity>
+          <View>
+            <Text style={styles.headerTitle}>Essential 500</Text>
+            <Text style={styles.headerSubtitle}>
+              {filtered.length} words {selectedLevel !== 'All' ? `(${selectedLevel})` : ''}
+            </Text>
+          </View>
+        </View>
       </View>
 
       {/* Search */}
