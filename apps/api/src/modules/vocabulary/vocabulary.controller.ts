@@ -17,6 +17,7 @@ export class VocabularyController {
     return this.vocabularyService.getDueWords(req.user.id);
   }
 
+  @UseGuards(AuthGuard('jwt'))
   @Get('stats')
   async getStats(@Req() req: { user: { id: string } }) {
     return this.vocabularyService.getStats(req.user.id);
