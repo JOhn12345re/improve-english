@@ -21,7 +21,8 @@
       "Bash(node -e \"require\\(''@nestjs/testing''\\)\")",
       "Bash(node:*)",
       "Bash(npx prisma:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "WebFetch(domain:expo.dev)"
     ]
   }
 }

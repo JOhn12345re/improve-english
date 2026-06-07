@@ -3,7 +3,6 @@ import { AuthGuard } from '@nestjs/passport';
 import { VocabularyService, ReviewVocabularyDto } from './vocabulary.service';
 
 @Controller('vocabulary')
-@UseGuards(AuthGuard('jwt'))
 export class VocabularyController {
   constructor(private readonly vocabularyService: VocabularyService) {}
 
@@ -12,6 +11,7 @@ export class VocabularyController {
     return this.vocabularyService.getWordsByPack(pack);
   }
 
+  @UseGuards(AuthGuard('jwt'))
   @Get('due')
   async getDue(@Req() req: { user: { id: string } }) {
     return this.vocabularyService.getDueWords(req.user.id);
