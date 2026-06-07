@@ -2,6 +2,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
+// deploy-13
 console.log('[BOOT] Starting NestJS application...');
 console.log('[BOOT] NODE_ENV:', process.env.NODE_ENV ?? 'not set');
 console.log('[BOOT] DATABASE_URL set:', !!process.env.DATABASE_URL);
