@@ -40,17 +40,22 @@ export default function DashboardScreen() {
               <Text style={styles.levelLabel}>{t('dashboard.currentLevel')}</Text>
             </View>
           </View>
-          <View style={styles.streakBox}>
-            <Text style={styles.streakFlame}>{'\uD83D\uDD25'}</Text>
-            <Text style={styles.streakCount}>{profile?.streak ?? 0}</Text>
-            <Text style={styles.streakLabel}>{t('dashboard.days')}</Text>
-          </View>
+        </View>
+
+        {/* Streak */}
+        <View style={styles.streakSection}>
+          <StreakCard
+            current={streak?.current ?? profile?.streak ?? 0}
+            longest={streak?.longest ?? profile?.streak ?? 0}
+            isActiveToday={streak?.isActiveToday ?? false}
+            nextMilestone={streak?.nextMilestone ?? 3}
+          />
         </View>
 
         {/* Stats */}
         <View style={styles.statsRow}>
           <View style={styles.statCard}>
-            <Text style={styles.statValue}>{profile?.xp ?? 0}</Text>
+            <Text style={styles.statValue}>{streak?.xp ?? profile?.xp ?? 0}</Text>
             <Text style={styles.statLabel}>{t('dashboard.totalXp')}</Text>
           </View>
           <View style={styles.statCard}>
