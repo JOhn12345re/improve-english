@@ -15,6 +15,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLesson } from '@/hooks/queries/useLessons';
 import { Exercise } from '@/data/lessons';
+import { getTrollMessage } from '@/data/troll-messages';
 import ProgressBar from '@/components/ui/ProgressBar';
 import Button from '@/components/ui/Button';
 import { useProfileStore } from '@/stores/profile.store';
