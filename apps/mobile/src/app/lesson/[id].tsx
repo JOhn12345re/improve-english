@@ -108,7 +108,7 @@ export default function LessonScreen() {
           level: 'A1',
         },
       );
-      setAnswerState(result.correct ? 'correct' : 'wrong');
+      setAnswer(result.correct ? 'correct' : 'wrong');
       if (result.correct) setScore((s) => s + 1);
       if (!result.correct && result.explanation) {
         setAiExplanation(result.explanation);
