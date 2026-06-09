@@ -18,6 +18,7 @@ export default function DashboardScreen() {
   const { profile } = useProfileStore();
   const userLevel = profile?.level ?? CefrLevel.A1;
   const { data: lessons = [], isLoading } = useLessons();
+  const { data: streak } = useStreak();
 
   const nextLesson = lessons[0];
   const levelColor = LEVEL_COLORS[userLevel];
