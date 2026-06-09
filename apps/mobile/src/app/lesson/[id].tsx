@@ -64,6 +64,11 @@ export default function LessonScreen() {
   const progress = (index + 1) / lesson.exercises.length;
   const isLast = index === lesson.exercises.length - 1;
 
+  function setAnswer(state: 'correct' | 'wrong') {
+    setAnswerState(state);
+    setTrollMsg(getTrollMessage(state, userLevel));
+  }
+
   function handleMCQ(optionIndex: number) {
     if (answerState !== 'idle') return;
     const ex = exercise as Extract<Exercise, { type: 'mcq' }>;
