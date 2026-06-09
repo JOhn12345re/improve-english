@@ -58,6 +58,34 @@ export class ProgressService {
     });
   }
 
+  async getStreakInfo(userId: string) {
+    const user = await this.prisma.user.findUnique({
+      where: { id: userId },
+      select: { streak: true, longest_streak: true, last_activity: true, xp: true },
+    });
+    if (!user) return null;
+
+    const now = new Date();
+    const lastActivity = user.last_activity;
+    let isActiveToday = false;
+    if (lastActivity) {
+      const hoursSinceLast = (now.getTime() - lastActivity.getTime()) / 3_600_000;
+      isActiveToday = hoursSinceLast < 20;
+    }
+
+    // Milestones
+    const milestones = [3, 7, 14, 30, 60, 100, 200, 365];
+    const nextMilestone = milestones.find((m) => m > user.streak) ?? null;
+
+    return {
+      current: user.streak,
+      longest: user.longest_streak,
+      isActiveToday,
+      nextMilestone,
+      xp: user.xp,
+    };
+  }
+
   private async updateStreakAndXp(userId: string, score: number) {
     const user = await this.prisma.user.findUnique({ where: { id: userId } });
     if (!user) return;
@@ -78,9 +106,16 @@ export class ProgressService {
       newStreak = 1;
     }
 
+    const newLongest = Math.max(newStreak, user.longest_streak);
+
     await this.prisma.user.update({
       where: { id: userId },
-      data: { streak: newStreak, last_activity: now, xp: { increment: xpGained } },
+      data: {
+        streak: newStreak,
+        longest_streak: newLongest,
+        last_activity: now,
+        xp: { increment: xpGained },
+      },
     });
   }
 
