@@ -93,7 +93,7 @@ export default function LessonScreen() {
     const normalize = (s: string) => s.toLowerCase().trim().replace(/[.!?,]/g, '');
 
     if (normalize(translationInput) === normalize(ex.targetEn)) {
-      setAnswerState('correct');
+      setAnswer('correct');
       setScore((s) => s + 1);
       return;
     }
@@ -114,7 +114,7 @@ export default function LessonScreen() {
         setAiExplanation(result.explanation);
       }
     } catch {
-      setAnswerState('wrong');
+      setAnswer('wrong');
     }
   }
 
