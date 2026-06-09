@@ -168,7 +168,7 @@ export default function LessonScreen() {
         const allCorrect = Array.from(newPaired.entries()).every(
           ([l, r]) => l === r,
         );
-        setAnswerState(allCorrect ? 'correct' : 'wrong');
+        setAnswer(allCorrect ? 'correct' : 'wrong');
         if (allCorrect) setScore((s) => s + 1);
       }
     }
