@@ -81,6 +81,7 @@ model User {
   daily_goal      Int            @default(10)
   learning_goal   LearningGoal   @default(other)
   streak          Int            @default(0)
+  longest_streak  Int            @default(0)
   last_activity   DateTime?
   timezone        String         @default("Europe/Paris")
   xp              Int            @default(0)
