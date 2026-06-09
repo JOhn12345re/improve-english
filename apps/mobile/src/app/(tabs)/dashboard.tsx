@@ -4,7 +4,9 @@ import { ScrollView, StyleSheet, Text, TouchableOpacity, View, ActivityIndicator
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CefrLevel } from '@englishflow/shared-types';
 import { useLessons } from '@/hooks/queries/useLessons';
+import { useStreak } from '@/hooks/queries/useStreak';
 import { useProfileStore } from '@/stores/profile.store';
+import StreakCard from '@/components/StreakCard';
 
 const LEVEL_COLORS: Record<CefrLevel, string> = {
   A1: '#10B981', A2: '#3B82F6', B1: '#F59E0B',
