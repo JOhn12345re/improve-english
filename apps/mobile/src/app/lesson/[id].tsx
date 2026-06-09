@@ -74,7 +74,7 @@ export default function LessonScreen() {
     const ex = exercise as Extract<Exercise, { type: 'mcq' }>;
     const correct = optionIndex === ex.correctIndex;
     setSelectedOption(optionIndex);
-    setAnswerState(correct ? 'correct' : 'wrong');
+    setAnswer(correct ? 'correct' : 'wrong');
     if (correct) setScore((s) => s + 1);
   }
 
@@ -83,7 +83,7 @@ export default function LessonScreen() {
     const ex = exercise as Extract<Exercise, { type: 'fill' }>;
     const correct = answer === ex.answer;
     setSelectedOption(optionIndex);
-    setAnswerState(correct ? 'correct' : 'wrong');
+    setAnswer(correct ? 'correct' : 'wrong');
     if (correct) setScore((s) => s + 1);
   }
 
@@ -122,7 +122,7 @@ export default function LessonScreen() {
     if (answerState !== 'idle') return;
     const ex = exercise as SentenceBuildExercise;
     const correct = JSON.stringify(selectedWords) === JSON.stringify(ex.correctOrder);
-    setAnswerState(correct ? 'correct' : 'wrong');
+    setAnswer(correct ? 'correct' : 'wrong');
     if (correct) setScore((s) => s + 1);
   }
 
@@ -131,7 +131,7 @@ export default function LessonScreen() {
     const ex = exercise as ListenTypeExercise;
     const normalize = (s: string) => s.toLowerCase().trim().replace(/[.!?,]/g, '');
     const correct = normalize(listenInput) === normalize(ex.word);
-    setAnswerState(correct ? 'correct' : 'wrong');
+    setAnswer(correct ? 'correct' : 'wrong');
     if (correct) setScore((s) => s + 1);
   }
 
@@ -140,7 +140,7 @@ export default function LessonScreen() {
     const ex = exercise as Extract<Exercise, { type: 'fill' }>;
     const normalize = (s: string) => s.toLowerCase().trim().replace(/[.!?,]/g, '');
     const correct = normalize(translationInput) === normalize(ex.answer);
-    setAnswerState(correct ? 'correct' : 'wrong');
+    setAnswer(correct ? 'correct' : 'wrong');
     if (correct) setScore((s) => s + 1);
   }
 
@@ -149,7 +149,7 @@ export default function LessonScreen() {
     const ex = exercise as WordOrderExercise;
     const userSentence = wordOrderSelected.map((i) => ex.shuffledWords[i]).join(' ');
     const correct = userSentence === ex.correctOrder.join(' ');
-    setAnswerState(correct ? 'correct' : 'wrong');
+    setAnswer(correct ? 'correct' : 'wrong');
     if (correct) setScore((s) => s + 1);
   }
 
