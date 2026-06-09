@@ -19,4 +19,9 @@ export class ProgressController {
   async getProgress(@Req() req: { user: { id: string } }) {
     return this.progressService.getUserProgress(req.user.id);
   }
+
+  @Get('streak')
+  async getStreak(@Req() req: { user: { id: string } }) {
+    return this.progressService.getStreakInfo(req.user.id);
+  }
 }
