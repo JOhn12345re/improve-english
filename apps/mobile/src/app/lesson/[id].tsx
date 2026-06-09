@@ -31,9 +31,11 @@ export default function LessonScreen() {
   const { t } = useTranslation();
   const { data: lesson, isLoading } = useLesson(id ?? '');
   const addXp = useProfileStore((s) => s.addXp);
+  const userLevel = useProfileStore((s) => s.profile?.level);
   const addWordsMutation = useAddVocabularyWords();
 
   const [index, setIndex] = useState(0);
+  const [trollMsg, setTrollMsg] = useState('');
   const [vocabExtracted, setVocabExtracted] = useState(false);
   const [score, setScore] = useState(0);
   const [answerState, setAnswerState] = useState<AnswerState>('idle');
