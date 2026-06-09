@@ -461,7 +461,7 @@ export default function LessonScreen() {
               <Text style={styles.feedbackEmoji}>{answerState === 'correct' ? '\u2705' : '\u274C'}</Text>
               <View style={{ flex: 1 }}>
               <Text style={styles.feedbackTitle}>
-                {answerState === 'correct' ? t('lesson.correct') : t('lesson.incorrect')}
+                {trollMsg}
               </Text>
               {exercise.type === 'mcq' && (showFr ? exercise.explanationFr : exercise.explanation) && (
                 <Text style={styles.feedbackExplanation}>
