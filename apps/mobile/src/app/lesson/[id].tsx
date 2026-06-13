@@ -88,6 +88,18 @@ export default function LessonScreen() {
   function setAnswer(state: 'correct' | 'wrong') {
     setAnswerState(state);
     setTrollMsg(getTrollMessage(state, userLevel));
+    if (state === 'correct') {
+      const perExercise = Math.round((lesson?.xpReward ?? 10) / (lesson?.exercises?.length ?? 1));
+      setXpFloat(perExercise);
+      xpFloatOpacity.value = withSequence(
+        withTiming(1, { duration: 150 }),
+        withDelay(800, withTiming(0, { duration: 400 })),
+      );
+      xpFloatY.value = withSequence(
+        withTiming(0, { duration: 0 }),
+        withTiming(-40, { duration: 1200 }),
+      );
+    }
   }
 
   function handleMCQ(optionIndex: number) {
