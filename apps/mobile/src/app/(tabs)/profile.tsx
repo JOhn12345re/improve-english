@@ -4,7 +4,9 @@ import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Button from '@/components/ui/Button';
+import LevelBadge from '@/components/LevelBadge';
 import { useProfileStore } from '@/stores/profile.store';
+import { useStreak } from '@/hooks/queries/useStreak';
 
 export default function ProfileScreen() {
   const { t } = useTranslation();
