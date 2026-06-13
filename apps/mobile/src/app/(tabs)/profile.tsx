@@ -60,7 +60,10 @@ export default function ProfileScreen() {
 
         <Text style={styles.name}>{fullName}</Text>
         <Text style={styles.level}>{t('profile.level', { level: profile?.level ?? 'A1' })}</Text>
-        <Text style={styles.xp}>{profile?.xp ?? 0} XP {'\u2022'} {profile?.streak ?? 0} {t('dashboard.days')}</Text>
+
+        <View style={styles.levelBadgeWrap}>
+          <LevelBadge xp={totalXp} />
+        </View>
 
         <View style={styles.menu}>
           <TouchableOpacity
