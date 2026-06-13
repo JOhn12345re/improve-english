@@ -1,5 +1,5 @@
 import { router, useLocalSearchParams } from 'expo-router';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   ActivityIndicator,
@@ -12,10 +12,21 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  withDelay,
+  withSequence,
+  runOnJS,
+} from 'react-native-reanimated';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLesson } from '@/hooks/queries/useLessons';
 import { Exercise } from '@/data/lessons';
 import { getTrollMessage } from '@/data/troll-messages';
+import { getLevelInfo, didLevelUp } from '@/data/xp-levels';
+import LevelBadge from '@/components/LevelBadge';
+import LevelUpModal from '@/components/LevelUpModal';
 import ProgressBar from '@/components/ui/ProgressBar';
 import Button from '@/components/ui/Button';
 import { useProfileStore } from '@/stores/profile.store';
