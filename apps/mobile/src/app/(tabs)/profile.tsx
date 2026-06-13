@@ -11,6 +11,8 @@ import { useStreak } from '@/hooks/queries/useStreak';
 export default function ProfileScreen() {
   const { t } = useTranslation();
   const { profile } = useProfileStore();
+  const { data: streak } = useStreak();
+  const totalXp = streak?.xp ?? profile?.xp ?? 0;
 
   const initials = `${profile?.firstName?.charAt(0) ?? ''}${profile?.lastName?.charAt(0) ?? ''}`.toUpperCase();
   const fullName = profile ? `${profile.firstName} ${profile.lastName}` : '';
