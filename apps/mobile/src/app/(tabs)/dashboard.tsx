@@ -43,6 +43,11 @@ export default function DashboardScreen() {
           </View>
         </View>
 
+        {/* Level & XP */}
+        <View style={styles.streakSection}>
+          <LevelBadge xp={streak?.xp ?? profile?.xp ?? 0} />
+        </View>
+
         {/* Streak */}
         <View style={styles.streakSection}>
           <StreakCard
@@ -55,10 +60,6 @@ export default function DashboardScreen() {
 
         {/* Stats */}
         <View style={styles.statsRow}>
-          <View style={styles.statCard}>
-            <Text style={styles.statValue}>{streak?.xp ?? profile?.xp ?? 0}</Text>
-            <Text style={styles.statLabel}>{t('dashboard.totalXp')}</Text>
-          </View>
           <View style={styles.statCard}>
             {isLoading ? <ActivityIndicator size="small" /> : (
               <Text style={styles.statValue}>{lessons.length}</Text>
