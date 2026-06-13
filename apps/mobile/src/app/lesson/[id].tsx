@@ -342,6 +342,9 @@ export default function LessonScreen() {
             <Text style={styles.resultPctText}>{pct}%</Text>
           </View>
           <Text style={styles.resultXp}>+{xpEarned} {t('lesson.xpEarned')}</Text>
+          <View style={{ marginTop: 16, width: '100%' }}>
+            <LevelBadge xp={(useProfileStore.getState().profile?.xp ?? 0)} />
+          </View>
           {pct < 60 && (
             <View style={styles.retryBanner}>
               <Text style={styles.retryText}>{t('lesson.retryHint')}</Text>
@@ -356,6 +359,11 @@ export default function LessonScreen() {
             style={{ marginTop: 16 }}
           />
         </View>
+        <LevelUpModal
+          visible={showLevelUp}
+          levelInfo={levelUpInfo}
+          onDismiss={() => setShowLevelUp(false)}
+        />
       </SafeAreaView>
     );
   }
