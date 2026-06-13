@@ -210,7 +210,13 @@ export default function LessonScreen() {
   function handleNext() {
     if (isLast) {
       const xpEarned = Math.round((score / (lesson?.exercises?.length ?? 1)) * (lesson?.xpReward ?? 0));
+      const currentXp = useProfileStore.getState().profile?.xp ?? 0;
       addXp(xpEarned);
+      const newLevelInfo = didLevelUp(currentXp, currentXp + xpEarned);
+      if (newLevelInfo) {
+        setLevelUpInfo(newLevelInfo);
+        setShowLevelUp(true);
+      }
       setFinished(true);
 
       // Extract vocabulary words from exercises and add to review queue
