@@ -1180,6 +1180,7 @@ const styles = StyleSheet.create({
   backText: { fontSize: 18, color: '#9CA3AF', fontWeight: '600' },
   progressWrap: { flex: 1 },
   scoreLabel: { fontSize: 14, fontWeight: '700', color: '#4F46E5', minWidth: 30 },
+  xpFloat: { position: 'absolute', top: -20, right: 0, fontSize: 14, fontWeight: '800', color: '#10B981' },
   body: { paddingHorizontal: 24, paddingBottom: 24, paddingTop: 8 },
   lessonTitle: { fontSize: 13, fontWeight: '600', color: '#9CA3AF', marginBottom: 20, textTransform: 'uppercase', letterSpacing: 0.5 },
   exerciseWrap: { gap: 16 },
