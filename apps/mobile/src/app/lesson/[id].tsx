@@ -371,7 +371,14 @@ export default function LessonScreen() {
           <View style={styles.progressWrap}>
             <ProgressBar progress={progress} />
           </View>
-          <Text style={styles.scoreLabel}>{score} {'\u2714'}</Text>
+          <View>
+            <Text style={styles.scoreLabel}>{score} {'\u2714'}</Text>
+            {xpFloat !== null && (
+              <Animated.Text style={[styles.xpFloat, xpFloatStyle]}>
+                +{xpFloat} XP
+              </Animated.Text>
+            )}
+          </View>
         </View>
 
         <ScrollView
