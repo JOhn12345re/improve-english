@@ -61,6 +61,16 @@ export default function LessonScreen() {
   const [showFr, setShowFr] = useState(false);
   const [aiExplanation, setAiExplanation] = useState<string | null>(null);
   const [aiLoading, setAiLoading] = useState(false);
+  const [showLevelUp, setShowLevelUp] = useState(false);
+  const [levelUpInfo, setLevelUpInfo] = useState<import('@/data/xp-levels').LevelInfo | null>(null);
+  const [xpFloat, setXpFloat] = useState<number | null>(null);
+  const xpFloatOpacity = useSharedValue(0);
+  const xpFloatY = useSharedValue(0);
+
+  const xpFloatStyle = useAnimatedStyle(() => ({
+    opacity: xpFloatOpacity.value,
+    transform: [{ translateY: xpFloatY.value }],
+  }));
 
   if (isLoading) return <View style={{flex: 1, justifyContent: 'center'}}><ActivityIndicator size='large' /></View>;
   if (!lesson || !lesson.exercises) {
