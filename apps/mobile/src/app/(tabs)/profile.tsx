@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   avatarText: { fontSize: 28, fontWeight: '800', color: '#fff' },
   name: { fontSize: 20, fontWeight: '700', color: '#1E1B4B' },
   level: { fontSize: 14, color: '#6366F1', fontWeight: '600' },
-  xp: { fontSize: 13, color: '#9CA3AF' },
+  levelBadgeWrap: { width: '100%', marginTop: 8 },
   menu: { width: '100%', marginTop: 8 },
   menuItem: {
     flexDirection: 'row',
