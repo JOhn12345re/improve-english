@@ -7,6 +7,7 @@ import { useLessons } from '@/hooks/queries/useLessons';
 import { useStreak } from '@/hooks/queries/useStreak';
 import { useProfileStore } from '@/stores/profile.store';
 import StreakCard from '@/components/StreakCard';
+import LevelBadge from '@/components/LevelBadge';
 
 const LEVEL_COLORS: Record<CefrLevel, string> = {
   A1: '#10B981', A2: '#3B82F6', B1: '#F59E0B',
