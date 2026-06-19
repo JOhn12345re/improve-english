@@ -7,6 +7,9 @@
     "build:ios": "eas build --platform ios",
     "build:android": "eas build --platform android",
     "test": "jest",
+    "test:vitest": "vitest run --config vitest.config.ts",
+    "test:vitest:watch": "vitest --config vitest.config.ts",
+    "test:vitest:coverage": "vitest run --config vitest.config.ts --coverage",
     "test:e2e": "detox test --configuration ios.sim.debug",
     "lint": "eslint src --ext .ts,.tsx",
     "typecheck": "tsc --noEmit"
