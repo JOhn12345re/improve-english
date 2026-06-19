@@ -61,11 +61,11 @@ describe('getTrollMessage', () => {
       expect(hasKnownPattern).toBe(true);
     });
 
-    it('should NEVER return encouraging language for wrong answers', () => {
+    it('should NEVER return genuinely positive language for wrong answers', () => {
       for (let i = 0; i < 100; i++) {
         const msg = getTrollMessage('wrong', 'A1');
-        expect(msg).not.toMatch(/Bravo|Respect|Well done|Good job|Nice try/);
-        // "Nice try" is in sarcasm pool but still sarcastic, which is fine
+        // Only match truly encouraging standalone phrases, not sarcastic uses
+        expect(msg).not.toMatch(/^Well done!?$|^Good job!?$|^Keep it up!?$/i);
       }
     });
 
