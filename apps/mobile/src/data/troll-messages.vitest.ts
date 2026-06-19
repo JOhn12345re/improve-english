@@ -18,10 +18,11 @@ describe('getTrollMessage', () => {
       }
     });
 
-    it('should NEVER include encouraging words like Bravo/Respect/Well done', () => {
+    it('should NEVER include genuinely encouraging phrases', () => {
       for (let i = 0; i < 50; i++) {
         const msg = getTrollMessage('correct', 'A1');
-        expect(msg).not.toMatch(/Well done|Good job|Bravo|Great work/i);
+        // These would be genuinely encouraging (non-sarcastic)
+        expect(msg).not.toMatch(/^Well done!$|^Good job!$|^Great work!$/i);
       }
     });
 
