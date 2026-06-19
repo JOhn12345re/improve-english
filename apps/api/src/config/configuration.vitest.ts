@@ -10,7 +10,8 @@ describe('configuration', () => {
     const config = configuration();
 
     expect(config.port).toBe(3000);
-    expect(config.nodeEnv).toBe('development');
+    // NODE_ENV is 'test' when running vitest
+    expect(config.nodeEnv).toBe(process.env.NODE_ENV ?? 'development');
     expect(config.redis.url).toBe('redis://localhost:6379');
     expect(config.jwt.secret).toBe('change-me');
     expect(config.jwt.expiresIn).toBe('7d');
