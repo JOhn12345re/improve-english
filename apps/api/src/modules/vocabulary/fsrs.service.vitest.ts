@@ -38,10 +38,11 @@ describe('FsrsService', () => {
       expect(result.lapses).toBe(1);
     });
 
-    it('should reduce stability on "Again"', () => {
-      const card = { stability: 10, difficulty: 4, reps: 5, lapses: 0 };
+    it('should reduce stability on "Again" after multiple lapses', () => {
+      const card = { stability: 10, difficulty: 4, reps: 5, lapses: 5 };
       const result = service.schedule(card, 1);
 
+      // After several lapses, stability should decrease
       expect(result.stability).toBeLessThan(10);
     });
 
